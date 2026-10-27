@@ -1,0 +1,116 @@
+﻿{
+    "revision":  "M2-METRICS-2",
+    "date":  "2026-10-27",
+    "sdk":  "ESP-IDF 6.1.0",
+    "hardware_tested":  false,
+    "python_tests":  16,
+    "sources":  [
+                    {
+                        "path":  "main/main.c",
+                        "sha256":  "608F4A838FF1E61A5273467B0884089EC589365CF81D62FB4A8CB56174E04714"
+                    },
+                    {
+                        "path":  "main/experiment.c",
+                        "sha256":  "5BCD22A62DB27C5D121FF38B3FC6F4E8C428D2FE88433303B3D292CDF1B763C5"
+                    },
+                    {
+                        "path":  "main/experiment.h",
+                        "sha256":  "90B33F11D17AF21D8CAC87B5272B050D0899BCFE7B11C2FF8599311022E92E77"
+                    },
+                    {
+                        "path":  "main/monitor.c",
+                        "sha256":  "68C318B04D6EACAE27F64670A1CF186A899C1A9806B6C79D17D91745E83FBAA5"
+                    },
+                    {
+                        "path":  "main/monitor.h",
+                        "sha256":  "369EF2D303251DB538D44296F3EB357ADC23296C188A95527BAA291D93C4648D"
+                    },
+                    {
+                        "path":  "main/monitor_protocol.c",
+                        "sha256":  "E8A1F89404CBB588ABBD45BD2E60140D140B39EBF33C7BE4CB2C3EA85BB51122"
+                    },
+                    {
+                        "path":  "main/monitor_protocol.h",
+                        "sha256":  "56625A5F50C27F27A8E340F60AE5C86A09FDFAC5CAFAA2C7A7B07D7888239CB3"
+                    },
+                    {
+                        "path":  "main/event_auto.c",
+                        "sha256":  "09F7D79D742581E3CBDCDF75015393423EC6461318BADD8F9403C5E423AAA1E9"
+                    },
+                    {
+                        "path":  "main/event_auto.h",
+                        "sha256":  "4AE5C76DA1D134D4388CDE5631A30E5F64C636B0A0EE9D0E20660E8C0ED8632D"
+                    },
+                    {
+                        "path":  "main/time_task.c",
+                        "sha256":  "3C7673AD7F4A0DC0C5926E86CBE18D82F3425368867E84B3D8D29B4845094773"
+                    },
+                    {
+                        "path":  "main/Kconfig.projbuild",
+                        "sha256":  "D5EE1C17DFD1B9141556F0A149B48FDD0DE6062A576A4D990ACADA09CEFD8636"
+                    },
+                    {
+                        "path":  "pc/monitor_pc.py",
+                        "sha256":  "CB44DCE907055A4690921D177BB10070A73D0C0FD730BED76351B06B70555DA6"
+                    },
+                    {
+                        "path":  "pc/relogio_sntp.py",
+                        "sha256":  "3A885D8D2C7D4F1605E034564E72DCD2F4E1E29D20C11BACF91487A4554C9265"
+                    },
+                    {
+                        "path":  "pc/executar_ensaio.py",
+                        "sha256":  "7D672EF826FA9F1CBFCD8DACB50E843AA6834B889F87A1873A8EFB1B0082FDF7"
+                    },
+                    {
+                        "path":  "tools/configurar_teste.py",
+                        "sha256":  "A99C890E4A3349FC8188C80A82818BD733E95ED8548060123ECF195E4A867A8D"
+                    },
+                    {
+                        "path":  "tools/analisar_ensaio.py",
+                        "sha256":  "2B94056F695EA3460070B1DF614A061993771B443B36624E0DF68B5DBC9A036D"
+                    },
+                    {
+                        "path":  "tools/arquivar_anexo.py",
+                        "sha256":  "B3ECBCB438E232B82AE59C8E77E94D3710CC6F6A58E4D4D9F3AB09B72EE04DDE"
+                    },
+                    {
+                        "path":  "tools/atualizar_indice.py",
+                        "sha256":  "1578CBA2273AACB239DBE327FD12BC9715599B4ECC4B15925711D39DFC535B72"
+                    },
+                    {
+                        "path":  "tests/test_monitor_pc.py",
+                        "sha256":  "0FC4F194409F76E197BB3D52A4BB956C3C0D85BA6AB228D2F0CF03283F2BAF04"
+                    },
+                    {
+                        "path":  "tests/test_ensaios.py",
+                        "sha256":  "2B888834AE2FAA11B2A58FCF36B89110842F892B0A89F7118DDE2F05D2DDFF3B"
+                    }
+                ],
+    "binaries":  [
+                     {
+                         "path":  "build/STR_M2_Drone.bin",
+                         "bytes":  825872,
+                         "sha256":  "76B66699688A0350BFEB058CA88D255D280F98A05A0D37905F7FC61BA9BF84F1"
+                     },
+                     {
+                         "path":  "build_monitor_tcp/STR_M2_Drone.bin",
+                         "bytes":  828656,
+                         "sha256":  "D0B7CF95F82108925E150BCCAD51261130E8036AB35C9A02AD88AF65C0B54C09"
+                     },
+                     {
+                         "path":  "build_pior/STR_M2_Drone.bin",
+                         "bytes":  825664,
+                         "sha256":  "59A899C379F78A041CBDBD8BC8AC743313254CE5BA51023BC2C90F0E5A71F8D6"
+                     },
+                     {
+                         "path":  "build_ensaio_p_tcp/STR_M2_Drone.bin",
+                         "bytes":  828448,
+                         "sha256":  "0BB31963C1E93D25D0E3FA20B8CA54EDD233A16E74A68B3E824E1C18AA68C16E"
+                     },
+                     {
+                         "path":  "build_touch/STR_M2_Drone.bin",
+                         "bytes":  833744,
+                         "sha256":  "1D659FCAE599D34B531F5C305F029B45BA8C12413AAA539F6FB68E191994C59E"
+                     }
+                 ]
+}

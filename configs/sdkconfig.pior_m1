@@ -1,0 +1,5 @@
+# Complemento de sdkconfig.defaults em um build/configuracao separado.
+CONFIG_ESP_DEFAULT_CPU_FREQ_MHZ_80=y
+CONFIG_M2_PRIORITY_POLICY=2
+# CONFIG_M2_PREEMPTION is not set
+CONFIG_M2_TIME_SLICING=y

@@ -1,0 +1,4 @@
+# Exemplo: preencha estes campos em idf.py menuconfig.
+# Nao substitua o sdkconfig inteiro por este arquivo.
+CONFIG_M2_WIFI_SSID="SUA_REDE_2_4_GHZ"
+CONFIG_M2_WIFI_PASSWORD="SUA_SENHA"

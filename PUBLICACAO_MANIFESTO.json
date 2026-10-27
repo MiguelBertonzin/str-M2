@@ -1,0 +1,650 @@
+{
+  "note": "Hashes das copias publicadas; originais locais preservados.",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "sha256": "a62e1285a74126dab9cd2d82e45d6a2bfed4a212d128382c63b0cd24fa086a55",
+      "sanitized": false
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "18dd38f8502cfc99d97949dbf98700e47ad262a61e8ac4e6bf857f8acfdcc200",
+      "sanitized": false
+    },
+    {
+      "path": "cmake/m2_scheduler.cmake",
+      "sha256": "74ec5b2b56e3ce051c5acd01816db2e2f2b5f9019aa39623efd7020ae6f6d35f",
+      "sanitized": false
+    },
+    {
+      "path": "CMakeLists.txt",
+      "sha256": "1edde559a15762955a62220873caefae5beeb6fd8950a4c47f325a68c62c72eb",
+      "sanitized": false
+    },
+    {
+      "path": "configs/sdkconfig.monitor_tcp",
+      "sha256": "221a5c6756867fbbb004a6d2be6c11c22feb2d4e0df5eb619d9f506c281b76e5",
+      "sanitized": false
+    },
+    {
+      "path": "configs/sdkconfig.monitor_udp",
+      "sha256": "cf789fa9587f1fd9f110e71a4e39a0d7f3beb4d2c4540b047b3109412c4eb078",
+      "sanitized": false
+    },
+    {
+      "path": "configs/sdkconfig.pior_m1",
+      "sha256": "d3cb07d34b241b676b9a20248d0aa10967d92437ba78d977ba9304ea9cf48da0",
+      "sanitized": false
+    },
+    {
+      "path": "configs/sdkconfig.touch",
+      "sha256": "1c9566a62e69cdd4e40cc946a7f404db2d7247cc5bb88279eaa23bf32a79d376",
+      "sanitized": false
+    },
+    {
+      "path": "docs/APRESENTACAO.md",
+      "sha256": "8b9fc18f8c82837b846b7849a54bd3041c8f2548511e1cb97b110710e488e1b9",
+      "sanitized": false
+    },
+    {
+      "path": "docs/AUTOMACAO.md",
+      "sha256": "f1f4c35c05f1b51c080e704fa04b99da48b540d36bcae70a39b0f77c41d40b2a",
+      "sanitized": false
+    },
+    {
+      "path": "docs/INICIO_M2.md",
+      "sha256": "ec43eec59df1f59de08c2bb6b5db8bc6a1a1e7c3248df12f1d45fc968c9821ef",
+      "sanitized": false
+    },
+    {
+      "path": "docs/METODOLOGIA_TESTES.md",
+      "sha256": "84d64f1ab7b2225f09f1d218aad7ea1cdb649d941be5ac41ce9f079d5595494d",
+      "sanitized": false
+    },
+    {
+      "path": "docs/MONITOR_TASK.md",
+      "sha256": "3260532307ee5ae0e9a0ddf4fc14e0baf5eb5500253708de9edd2c61f1eb27f2",
+      "sanitized": false
+    },
+    {
+      "path": "docs/PUBLICACAO.md",
+      "sha256": "f6553fd17372539c5cfaafaf2a23388e85ac02b1b2e6dd46496428a7e84d3e39",
+      "sanitized": false
+    },
+    {
+      "path": "docs/TIME_TASK.md",
+      "sha256": "1fadec6749d9dce7faaba4ddb6a316bf77f10569282897aa7a66de2d3de976df",
+      "sanitized": false
+    },
+    {
+      "path": "docs/VALIDACAO.md",
+      "sha256": "7fa90aeedd4745eb2be26f130473bfeb691c40f050d46697581013550bc078c7",
+      "sanitized": false
+    },
+    {
+      "path": "docs/validacao_builds.json",
+      "sha256": "6ef868e7d71992399d930298f7ffdff83d0f369ea43f970fb7bdc7f0f074c6a3",
+      "sanitized": false
+    },
+    {
+      "path": "docs/VALIDACAO_METODOLOGIA.md",
+      "sha256": "f091cbba6417b29c7fc7cda59178bbe6d7d918e82613f95f95d2ec2421aa3034",
+      "sanitized": false
+    },
+    {
+      "path": "docs/validacao_metodologia_builds.json",
+      "sha256": "5faf24dacf07822e48602cd84d7e98d7557b2c18a78923e32eed6a174f297710",
+      "sanitized": false
+    },
+    {
+      "path": "docs/VALIDACAO_MONITOR.md",
+      "sha256": "78731f5d9eacee2913b248746be3b421ce184159447eacaab9281d4099231eb4",
+      "sanitized": false
+    },
+    {
+      "path": "docs/validacao_monitor_builds.json",
+      "sha256": "2556d257195d96792c56d7128c9087d1436c1cb9961764e8e0d38878fa1453fb",
+      "sanitized": false
+    },
+    {
+      "path": "docs/VALIDACAO_TIME.md",
+      "sha256": "19fd9938000e11da13aa86839e481aeafb166cc3bf527e69bb0b78efd47db0ca",
+      "sanitized": false
+    },
+    {
+      "path": "docs/validacao_time_builds.json",
+      "sha256": "f715fb2552906db43404fe57790a6b8a622ac155a11e08eddfc93947a9bce674",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/01_planejamento/MATRIZ.csv",
+      "sha256": "465e5200e66169e6afb5f9327a794af4ec4350f9ecb58a688b0379b659305f3f",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/M_UDP/R01/comandos.jsonl",
+      "sha256": "dc3b4fceb3aae8839ed90c39116fcd2c6ea8967a3aa8f126fc27549fc0805894",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/M_UDP/R01/manifesto.json",
+      "sha256": "155ecb6aaf045653cef20479dede199c66296f6bf89774e483290334fcca3dc8",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/M_UDP/R01/rede.jsonl",
+      "sha256": "4285b8bfac0cf5f226359322446a0cddf02d06651b7a1c1fbf651a329497a6cb",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/M_UDP/R01/roteiro.json",
+      "sha256": "040a00e7b11d82ad6b982b71a6aeb2928f686b793b65016e40931c2edff616ea",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/M_UDP/R01/serial.txt",
+      "sha256": "2c30c3c0bb66869bf77a84ec6b14c87e4a744ca5ec545bba83c29ebf02c062c7",
+      "sanitized": true
+    },
+    {
+      "path": "ensaios_M2/02_coletas/M_UDP/R01_T02/comandos.jsonl",
+      "sha256": "227155b85a214b4abb469a1745f84a6f2756defb75d99c5a5002b167b5d4cdd9",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/M_UDP/R01_T02/estatisticas.json",
+      "sha256": "68f16111c31e77919db9748756bb8502600554de60cf3d67c5e8f6856a65e7c3",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/M_UDP/R01_T02/manifesto.json",
+      "sha256": "72fcbed799ac067f9d64831b8b9515a7158204e689918175c45caf8c981ca2d2",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/M_UDP/R01_T02/rede.jsonl",
+      "sha256": "7b2a2cb871c2722d0d618aa22027287f6097910e5c4c8be75b937c9cc35cbf2a",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/M_UDP/R01_T02/resumo.json",
+      "sha256": "bff46655a12bec5dd662c5074cfaa05e2746ed06000e1c1362d747a051160a55",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/M_UDP/R01_T02/RESUMO.md",
+      "sha256": "b8e52343d227d7aa6f26b0aa01a530a29cc2bb9c75550c0282cb4c22775aaf9a",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/M_UDP/R01_T02/roteiro.json",
+      "sha256": "040a00e7b11d82ad6b982b71a6aeb2928f686b793b65016e40931c2edff616ea",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/M_UDP/R01_T02/serial.txt",
+      "sha256": "0cfcfaaeba04d2906f9a5cc864b4d745d9d57d36c738ac778d0b7492e19563f9",
+      "sanitized": true
+    },
+    {
+      "path": "ensaios_M2/02_coletas/M_UDP/R01_T02/tarefas.csv",
+      "sha256": "5e323c2a0eea5ee9cdf0c7a32e890589ae3a6f9e10cacafff09f77c124e5216d",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/03_anexos_chat/H01_BASE_AUTO/origens.json",
+      "sha256": "050711977557312e6aedf03e2308547c34f7127b35085d423a1085ac6ef656fe",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/03_anexos_chat/H01_BASE_AUTO/serial_base_automatica.txt",
+      "sha256": "a891c856419013ced7e510afe2510b38103c2efd972ed942e3fd6d2dcca6ccd4",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/03_anexos_chat/H02_UDP_SEM_CLIENTE/origens.json",
+      "sha256": "3ab64027a084a3720966dcee1d4b823dc22c16f48a80a5cca88f6bc7f0e7fe16",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/03_anexos_chat/H02_UDP_SEM_CLIENTE/serial_ip_incorreto_no_cliente.txt",
+      "sha256": "99d79d70e3248ff7f3201286f9d508d39d219ce6bce8f6490a32e2a3f702229f",
+      "sanitized": true
+    },
+    {
+      "path": "ensaios_M2/03_anexos_chat/H03_UDP_NAV/origens.json",
+      "sha256": "8f26466bbfbe0770dea2e6308c6e4956d4e86b2c15450c443aaeba2fb2ab1a1b",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/03_anexos_chat/H03_UDP_NAV/serial_nav.txt",
+      "sha256": "932e6ad919b3743aed4bd846f97c51cc901c0c2e90bd1401378f06950539b7dc",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/03_anexos_chat/H04_UDP_FS/origens.json",
+      "sha256": "29c8245de2c935826a6bf0ef7eb2ddb344e08dbf6de0821c6d2506ce65e7ca22",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/03_anexos_chat/H04_UDP_FS/serial_nav_failsafe.txt",
+      "sha256": "ea18e16cf4ec588eb4e432b52299e1fc9e42029714cd38dc2ff6add665234ad7",
+      "sanitized": true
+    },
+    {
+      "path": "ensaios_M2/03_anexos_chat/H05_TIME_SNTP/origens.json",
+      "sha256": "3a26ac68400b78d164736fbf2a24f66cbe3e9ac8067b5603fe16f8c4a6c3e81d",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/03_anexos_chat/H05_TIME_SNTP/serial_time.txt",
+      "sha256": "8a5f0c8984e2855d8a1c6d659e99a92015c7f96ecf81b54b0a1193158b020898",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/03_anexos_chat/H05_TIME_SNTP/terminal_pc_time.txt",
+      "sha256": "ee85c95fa6d4ebf5a578c02422a02b040e779abc60b160af742ca21d9cae180a",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/03_anexos_chat/M_UDP_R01/origens.json",
+      "sha256": "31b9fce07e80cb1f3eacbea9f1742b327e2b45b047f84078a1234369f751cef4",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/03_anexos_chat/M_UDP_R01/REVISAO.md",
+      "sha256": "b7430096c825058f6f0ac9cb795f4f11691fdf4acb9f1d6d95b807bcf3e81f62",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/03_anexos_chat/M_UDP_R01/terminal_interrupcao_usb.txt",
+      "sha256": "7127d4260388ad56dcfd7e9909296e5e4d732169d960ae77fda36ad91b404dee",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/03_anexos_chat/M_UDP_R01_T02/origens.json",
+      "sha256": "20e7fe8372e68d86ca7f299bf96ec6a62afe39b621319633fb1762f9d45c1b42",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/03_anexos_chat/M_UDP_R01_T02/REVISAO.md",
+      "sha256": "c859355f7a94ffad4d4266ade37ea1d53df49f083cf9fc1bb21acd501337cec0",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/03_anexos_chat/M_UDP_R01_T02/terminal_coleta_completa.txt",
+      "sha256": "39816aa7d150daed5010f1c8cdf0381d9cd94cf4a636bfb14f73b8535e5a3cb1",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/03_anexos_chat/README.md",
+      "sha256": "0ad49903b001acc3ed787167306678c6309e0f9968c815f121c67b14dd2479d5",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/04_relatorio/README.md",
+      "sha256": "2deea0520a29011849fadb7b0e62cd7e66eaae88a4825e5525cd1898f6c42ed0",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/INDICE.csv",
+      "sha256": "c2b1d99bde1bddebabcb7e4ba2cf1224abf2e34d92c92a544db88ec85a3027ac",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/README.md",
+      "sha256": "71ef9842f1abe9ed3fc07bf093632cde0586a82aadae977758ba4f1cab861568",
+      "sanitized": false
+    },
+    {
+      "path": "main/CMakeLists.txt",
+      "sha256": "fc414827d0f28945b5d19021e675498c0d487f3e21fb1ecb023e135d9fc3e6f2",
+      "sanitized": false
+    },
+    {
+      "path": "main/event_auto.c",
+      "sha256": "09f7d79d742581e3cbdcdf75015393423ec6461318badd8f9403c5e423aaa1e9",
+      "sanitized": false
+    },
+    {
+      "path": "main/event_auto.h",
+      "sha256": "4ae5c76da1d134d4388cde5631a30e5f64c636b0a0ee9d0e20660e8c0ed8632d",
+      "sanitized": false
+    },
+    {
+      "path": "main/event_script.c",
+      "sha256": "d2213dc24f91c7f1f409011a887e46fbf4f6a2cc00b5c08446d3ee63cb952745",
+      "sanitized": false
+    },
+    {
+      "path": "main/event_script.h",
+      "sha256": "93cae184dfd9b283dc325e1765c0e1cf9a019c9ef671fbfe9beabfcbf0c2fd36",
+      "sanitized": false
+    },
+    {
+      "path": "main/experiment.c",
+      "sha256": "5bcd22a62db27c5d121ff38b3fc6f4e8c428d2fe88433303b3d292cdf1b763c5",
+      "sanitized": false
+    },
+    {
+      "path": "main/experiment.h",
+      "sha256": "90b33f11d17af21d8cac87b5272b050d0899bcfe7b11c2ff8599311022e92e77",
+      "sanitized": false
+    },
+    {
+      "path": "main/Kconfig.projbuild",
+      "sha256": "d5ee1c17dfd1b9141556f0a149b48fdd0de6062a576a4d990acada09cefd8636",
+      "sanitized": false
+    },
+    {
+      "path": "main/main.c",
+      "sha256": "608f4a838ff1e61a5273467b0884089ec589365cf81d62fb4a8cb56174e04714",
+      "sanitized": false
+    },
+    {
+      "path": "main/monitor.c",
+      "sha256": "68c318b04d6eacae27f64670a1cf186a899c1a9806b6c79d17d91745e83fbaa5",
+      "sanitized": false
+    },
+    {
+      "path": "main/monitor.h",
+      "sha256": "369ef2d303251db538d44296f3eb357adc23296c188a95527baa291d93c4648d",
+      "sanitized": false
+    },
+    {
+      "path": "main/monitor_protocol.c",
+      "sha256": "e8a1f89404cbb588abbd45bd2e60140d140b39ebf33c7be4cb2c3ea85bb51122",
+      "sanitized": false
+    },
+    {
+      "path": "main/monitor_protocol.h",
+      "sha256": "56625a5f50c27f27a8e340f60ae5c86a09fdfac5cafaa2c7a7b07d7888239cb3",
+      "sanitized": false
+    },
+    {
+      "path": "main/time_task.c",
+      "sha256": "3c7673ad7f4a0dc0c5926e86cbe18d82f3425368867e84b3d8d29b4845094773",
+      "sanitized": false
+    },
+    {
+      "path": "main/time_task.h",
+      "sha256": "04bd04a3545784be7e1a5cf40063487d8bb771e5754a5901cfcde162f86f8c6f",
+      "sanitized": false
+    },
+    {
+      "path": "pc/executar_ensaio.py",
+      "sha256": "08c5a7064dc334b8ccb1b3ddf8c8f29a526ff72183210b216275990ae8b81026",
+      "sanitized": false
+    },
+    {
+      "path": "pc/monitor_pc.py",
+      "sha256": "cb44dce907055a4690921d177bb10070a73d0c0fd730bed76351b06b70555da6",
+      "sanitized": false
+    },
+    {
+      "path": "pc/relogio_sntp.py",
+      "sha256": "3a885d8d2c7d4f1605e034564e72dcd2f4e1e29d20c11bacf91487a4554c9265",
+      "sanitized": false
+    },
+    {
+      "path": "pc/requirements.txt",
+      "sha256": "95fdad543f34e4a191cd17219e1a73b4ab4b0b5ad9806a25c3b49e7b48ab8ca0",
+      "sanitized": false
+    },
+    {
+      "path": "README.md",
+      "sha256": "b68a805515cbf5f85f7eb5218a9be67accb505990679de515b8bf6f7e1346930",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/m1/CMakeLists.txt",
+      "sha256": "ac480c1ec5ffc58d14a7f26fd1e038bdd0e41228bdb79cd4475916d0fbe7ebbd",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/m1/IMPORTACAO.json",
+      "sha256": "446c47817e999a304aca2aaafea54028934952365fcd2953b7ace044e20a97fb",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/m1/main/CMakeLists.txt",
+      "sha256": "27d6d39ef0cb6a9097984b41e080b09f7ff972339a0bb4ddf771db4001cb9782",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/m1/main/main.c",
+      "sha256": "2901e73687563eb09849909f4e53daec394b23b9ca25fb7dd438bfa1363035cd",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/m1/main/Trabalho M1 - STR.pdf",
+      "sha256": "8a81e7d80c54814c07c974566173863100d93e5b22c89086cea0b541f29e4e4b",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/m1/overleaf12/Relatorio_M1_Drone.pdf",
+      "sha256": "01c71d80716e8da3fc157800dc071b11549ddb813034e956c36b7aa9f70a1c1a",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/m1/sdkconfig",
+      "sha256": "33e8f7a9193fb9858cf287b9fd859e1a8f545f5f8287e7a991a1cbf11e640051",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/m1/sdkconfig.defaults",
+      "sha256": "e69e8cb712b230725d0774683661e2deceb82de6a79bd73a620bdf7f9fd64c1e",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/m1/tabelas_graficos/AUDITORIA_MEDICOES.md",
+      "sha256": "2e26a89f4d5b8af075b7a0ec545f7f5aa7240d4377706923584d41b5e9b419ba",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/m1/tabelas_graficos/dados/metricas_finais_por_tarefa.csv",
+      "sha256": "2ab44461f099e0859cb75157fd04a461e260920e58cb28bc269368cf06113dd9",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/m1/tabelas_graficos/dados/resumo_cenarios.csv",
+      "sha256": "9e97d7033e3bfa2738b0a61421c73fd5f2458143e85427b42449ae045ab0d22a",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/m1/tabelas_graficos/METODOLOGIA.md",
+      "sha256": "88926cb560c2c59614a0077ca1ef2ee9993adbcd9ca43b99c81f988b53622b21",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/m1/Tarefas_Trabalho_M1.txt",
+      "sha256": "5459fc98549ead8a4c04c804fa59020702b1f40b3b82bcd8bc63461018991160",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/m1/Validos/01_CUSTOM_PREEMPTIVO_80MHz_UNICORE.txt",
+      "sha256": "7162629e6056293bec2dd3719654f4f2eafcdcdc6c059fee0aba587f5359e54d",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/m1/Validos/02_CUSTOM_PREEMPTIVO_240MHz_UNICORE.txt",
+      "sha256": "a38c06063250e7aa238b1f9922b0225bfff9fe3e0dd36510d3cd2aa9de1ff20b",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/m1/Validos/03_CUSTOM_COOPERATIVO_80MHz_UNICORE.txt",
+      "sha256": "e6b1de57783a417f151f1cf6690bd4ffbbde536725c2a8d5f9ebbb986ee59398",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/m1/Validos/04_CUSTOM_COOPERATIVO_240MHz_UNICORE.txt",
+      "sha256": "81df5e8b21a8dced6d3cb62e414185614a7f13017ce59f98fa955da7ad816bd9",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/m1/Validos/05_DM_PREEMPTIVO_80MHz_UNICORE.txt",
+      "sha256": "b43e0d23b44f7e86c3ecd6882ba123a23ab19b3952c326b0e873b2073b5b77d8",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/m1/Validos/06_DM_PREEMPTIVO_240MHz_UNICORE.txt",
+      "sha256": "ffbb5db0ca2c309b94465ee1c8b25089c92d9101fcb0c5a3056652a7eab23a5d",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/m1/Validos/07_DM_COOPERATIVO_80MHz_UNICORE.txt",
+      "sha256": "279bd639da9efe770b56c09024e344e7e579e0256054cb2850fabc3ee542f109",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/m1/Validos/08_DM_COOPERATIVO_240MHz_UNICORE.txt",
+      "sha256": "d23514e9d8d578bd67f9cd018f2715a712fa9fc3b2a89cac0f155acf1e3e2482",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/m1/Validos/EXTRA_01_CUSTOM_PREEMPTIVO_160MHz_UNICORE.txt",
+      "sha256": "7eff2fe6d547cfe289e765192d0a90b693f021ceaa8fcb594c46b271ce5af201",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/m1/Validos/EXTRA_02_CUSTOM_COOPERATIVO_160MHz_UNICORE.txt",
+      "sha256": "1551578e8af681e205f4fedec4df27d33ff62e8e001a3a752bb2557c5d68e94a",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/m1/Validos/EXTRA_03_DM_PREEMPTIVO_160MHz_UNICORE.txt",
+      "sha256": "e0a491fcb8b9670ec950437628988bcab6a163bece86682033ed69051673e0d9",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/m1/Validos/EXTRA_04_DM_COOPERATIVO_160MHz_UNICORE.txt",
+      "sha256": "a31ce6700f0376585aab2b28e71ec1fb66451109903c6a4414ada4a2591e7e4f",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/m1/Validos/EXTRA_05_DM_PREEMPTIVO_80MHz_UNICORE_SLICING_OFF.txt",
+      "sha256": "e4b5ee8a15b78051eea13f7a76e97d6dde2879351d294c87afd765a64da3b524",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/m1/Validos/EXTRA_06_DM_PREEMPTIVO_240MHz_UNICORE_SLICING_OFF.txt",
+      "sha256": "497797f3e61f7502cbbb9c2b7b5f972881f4d65965edafe0697fa1c919ebe042",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/m1/Validos/EXTRA_07_RM_PREEMPTIVO_240MHz_UNICORE_SLICING_ON.txt",
+      "sha256": "fb7a40656bac53ee6553670d043eb16f8afbd061ce4941ecf68fea5f76a79fa3",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/m1/Validos/EXTRA_08_RM_PREEMPTIVO_80MHz_UNICORE_SLICING_ON.txt",
+      "sha256": "d6ff42dc793a6041d191e8f71a362cc1f6196fde1f940f8605464d2a1a5df441",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/m1/Validos/EXTRA_09_RM_COOPERATIVO_80MHz_UNICORE.txt",
+      "sha256": "cea670f26b2542016ba08586e64247d9184909929fc3e68e38a03d2c9ac8a612",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/m1/Validos/EXTRA_10_RM_COOPERATIVO_240MHz_UNICORE.txt",
+      "sha256": "9737368fb201a7bb6e52cd6a9d98891cd182cb8cfa6ce2b086eeabdb3885df76",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/professor/IMPORTACAO_NETWORK_ESP32.json",
+      "sha256": "b7bcb42afbf7f8b2a18912c4b6b8875895f6131d303d83a236ee88669e15d1da",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/professor/Network_ESP32/esp32_sntp_con.c",
+      "sha256": "ae51694b292a62089cb931460695817fb1c4acf1b5f37ca7ea1c0d10b3be54fd",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/professor/Network_ESP32/README.md",
+      "sha256": "a0ae134ecb9fa5bd1014531541eb361e24ae1be3c2a3e19c1d766b78cb418d7e",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/professor/Network_ESP32/tcp_client.py",
+      "sha256": "4daf34776a3f484cfce2e4cb4171c03fba96c43d7c007e2e393f6706046b301a",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/professor/Network_ESP32/tcp_udp_esp32_wifi_con.c",
+      "sha256": "3053f6378aae2b7f292c593f75b1af06862be61f9dc58b509ce808deefb1c508",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/professor/Network_ESP32/udp_server.py",
+      "sha256": "220f3e14f8c9e21f555b8becc2597e994630cddea345cde5016d18ef593c0496",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/professor/README.md",
+      "sha256": "1ca8118f8ffe2d1a13293641144f917b43e1f84562a770179396a32e29ff6069",
+      "sanitized": false
+    },
+    {
+      "path": "resultados/base_automatica/CUSTOM_PRE_240MHz_sem_monitor.txt",
+      "sha256": "a891c856419013ced7e510afe2510b38103c2efd972ed942e3fd6d2dcca6ccd4",
+      "sanitized": false
+    },
+    {
+      "path": "resultados/base_automatica/README.md",
+      "sha256": "dda33760b9de17db841eb71327adf4f0f81340d01166b934182d2630f8cad969",
+      "sanitized": false
+    },
+    {
+      "path": "sdkconfig.defaults",
+      "sha256": "64c5d617f624b2363dffca977126ab7386262a778a96f157addc3cc6adde258f",
+      "sanitized": false
+    },
+    {
+      "path": "sdkconfig.wifi.example",
+      "sha256": "c9366e06c6d5ddec4e2f5518478b8c0013c9d85067960ecc31ac2d3244b737a5",
+      "sanitized": false
+    },
+    {
+      "path": "tests/test_ensaios.py",
+      "sha256": "8b6d50b4266e3b1e1eac80005376a15a471d2aabc36ff8e63066b61d20d2cedd",
+      "sanitized": false
+    },
+    {
+      "path": "tests/test_monitor_pc.py",
+      "sha256": "0fc4f194409f76e197bb3d52a4bb956c3c0d85ba6ab228d2f0cf03283f2baf04",
+      "sanitized": false
+    },
+    {
+      "path": "tools/analisar_ensaio.py",
+      "sha256": "2b94056f695ea3460070b1df614a061993771b443b36624e0df68b5dbc9a036d",
+      "sanitized": false
+    },
+    {
+      "path": "tools/arquivar_anexo.py",
+      "sha256": "b3ecbcb438e232b82ae59c8e77e94d3710cc6f6a58e4d4d9f3ab09b72ee04dde",
+      "sanitized": false
+    },
+    {
+      "path": "tools/atualizar_indice.py",
+      "sha256": "1578cba2273aacb239dbe327fd12bc9715599b4ecc4b15925711d39dfc535b72",
+      "sanitized": false
+    },
+    {
+      "path": "tools/configurar_teste.py",
+      "sha256": "a99c890e4a3349fc8188c80a82818bd733e95ed8548060123ecf195e4a867a8d",
+      "sanitized": false
+    },
+    {
+      "path": "tools/verificar_base.py",
+      "sha256": "a83fb5de57d748f57715518c5a0a93951ef3b026e7ebdf672887f85e15f7a7d2",
+      "sanitized": false
+    },
+    {
+      "path": "Trabalho M2 - STR .pdf",
+      "sha256": "2fdb6a672784df63dbbebee1d261c68c5d1049616057c2a93e68a864f5ee7faf",
+      "sanitized": false
+    }
+  ]
+}

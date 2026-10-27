@@ -1,0 +1,25 @@
+{
+  "data": "2026-10-26",
+  "wifi_testado_na_placa": false,
+  "testes_cliente_passaram": 5,
+  "fontes": {
+    "main/main.c": "bc68737e2d3e95a75a2287a00d6f7a59a6f2935678d164e1915d2bddd82c0a2b",
+    "main/monitor.c": "92e3cfe639926fca927e79bc55ef05e61ff0656ebf3d385d7661c4e6ee4a3f91",
+    "main/monitor.h": "75198ab89c336613ab6a179eaea62aa366269508e92f3ae0950019199b602566",
+    "main/monitor_protocol.c": "bd9a3a13eac5f56d95471d7906efcce75d245ee5fb9246527b4556b4aae86ac9",
+    "main/monitor_protocol.h": "4358f90fb27c6f18ac0a4fef206b8a31e408eac78d9996114b318f3c2dce5c4a",
+    "main/Kconfig.projbuild": "f8e523471a1e168bf85e834353860b7b13fafc74f2e5bcf0e04d9b87670c78ff",
+    "main/CMakeLists.txt": "404c5b39afb504ea2d2a5cd62fa65901e6cf3b87d5c73905b30c9587cb2d2d12",
+    "pc/monitor_pc.py": "4c326caa46f81e359bcb5e987c9b91decb2eac24b5240b282d4ffc4c802d4ac4"
+  },
+  "builds": {
+    "build": {
+      "bytes": 287120,
+      "sha256": "fc35cc6bb62f925c4fcea97bf4ee34b871c28b5a087754ab082a5c7a83edc2af"
+    },
+    "build_monitor_tcp": {
+      "bytes": 785600,
+      "sha256": "28669bf9d9d97b86841d92a1e550491cdd2161bb6fd71f25a5b66556871b046d"
+    }
+  }
+}

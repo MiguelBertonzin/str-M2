@@ -1,0 +1,16 @@
+[
+  {
+    "file": "terminal_pc_time.txt",
+    "source": "C:\\Users\\Migue\\.codex\\attachments\\f015e320-66f9-4c2a-bf22-a755a0c6bc90\\Texto colado.txt",
+    "bytes": 9475,
+    "sha256": "ee85c95fa6d4ebf5a578c02422a02b040e779abc60b160af742ca21d9cae180a",
+    "classification": "anexo do usuario; nao promover automaticamente a ensaio final"
+  },
+  {
+    "file": "serial_time.txt",
+    "source": "C:\\Users\\Migue\\.codex\\attachments\\2b65162d-44b3-4ca3-80c8-d06f1031db68\\Texto colado.txt",
+    "bytes": 36603,
+    "sha256": "8a5f0c8984e2855d8a1c6d659e99a92015c7f96ecf81b54b0a1193158b020898",
+    "classification": "anexo do usuario; nao promover automaticamente a ensaio final"
+  }
+]

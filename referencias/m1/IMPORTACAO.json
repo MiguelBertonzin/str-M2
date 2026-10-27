@@ -1,0 +1,156 @@
+{
+  "origem": "C:\\Users\\Migue\\Trab-STR-M1.2",
+  "data": "2026-10-26",
+  "arquivos": [
+    {
+      "arquivo": "main/main.c",
+      "bytes": 54799,
+      "sha256": "2901e73687563eb09849909f4e53daec394b23b9ca25fb7dd438bfa1363035cd"
+    },
+    {
+      "arquivo": "main/CMakeLists.txt",
+      "bytes": 75,
+      "sha256": "27d6d39ef0cb6a9097984b41e080b09f7ff972339a0bb4ddf771db4001cb9782"
+    },
+    {
+      "arquivo": "CMakeLists.txt",
+      "bytes": 243,
+      "sha256": "ac480c1ec5ffc58d14a7f26fd1e038bdd0e41228bdb79cd4475916d0fbe7ebbd"
+    },
+    {
+      "arquivo": "sdkconfig",
+      "bytes": 88451,
+      "sha256": "33e8f7a9193fb9858cf287b9fd859e1a8f545f5f8287e7a991a1cbf11e640051"
+    },
+    {
+      "arquivo": "sdkconfig.defaults",
+      "bytes": 188,
+      "sha256": "e69e8cb712b230725d0774683661e2deceb82de6a79bd73a620bdf7f9fd64c1e"
+    },
+    {
+      "arquivo": "Tarefas_Trabalho_M1.txt",
+      "bytes": 2308,
+      "sha256": "5459fc98549ead8a4c04c804fa59020702b1f40b3b82bcd8bc63461018991160"
+    },
+    {
+      "arquivo": "main/Trabalho M1 - STR.pdf",
+      "bytes": 570495,
+      "sha256": "8a81e7d80c54814c07c974566173863100d93e5b22c89086cea0b541f29e4e4b"
+    },
+    {
+      "arquivo": "tabelas_graficos/dados/resumo_cenarios.csv",
+      "bytes": 2247,
+      "sha256": "9e97d7033e3bfa2738b0a61421c73fd5f2458143e85427b42449ae045ab0d22a"
+    },
+    {
+      "arquivo": "tabelas_graficos/dados/metricas_finais_por_tarefa.csv",
+      "bytes": 10709,
+      "sha256": "2ab44461f099e0859cb75157fd04a461e260920e58cb28bc269368cf06113dd9"
+    },
+    {
+      "arquivo": "tabelas_graficos/AUDITORIA_MEDICOES.md",
+      "bytes": 14470,
+      "sha256": "2e26a89f4d5b8af075b7a0ec545f7f5aa7240d4377706923584d41b5e9b419ba"
+    },
+    {
+      "arquivo": "tabelas_graficos/METODOLOGIA.md",
+      "bytes": 6509,
+      "sha256": "88926cb560c2c59614a0077ca1ef2ee9993adbcd9ca43b99c81f988b53622b21"
+    },
+    {
+      "arquivo": "overleaf12/Relatorio_M1_Drone.pdf",
+      "bytes": 351994,
+      "sha256": "01c71d80716e8da3fc157800dc071b11549ddb813034e956c36b7aa9f70a1c1a"
+    },
+    {
+      "arquivo": "Validos/01_CUSTOM_PREEMPTIVO_80MHz_UNICORE.txt",
+      "bytes": 6985,
+      "sha256": "7162629e6056293bec2dd3719654f4f2eafcdcdc6c059fee0aba587f5359e54d"
+    },
+    {
+      "arquivo": "Validos/02_CUSTOM_PREEMPTIVO_240MHz_UNICORE.txt",
+      "bytes": 6841,
+      "sha256": "a38c06063250e7aa238b1f9922b0225bfff9fe3e0dd36510d3cd2aa9de1ff20b"
+    },
+    {
+      "arquivo": "Validos/03_CUSTOM_COOPERATIVO_80MHz_UNICORE.txt",
+      "bytes": 7184,
+      "sha256": "e6b1de57783a417f151f1cf6690bd4ffbbde536725c2a8d5f9ebbb986ee59398"
+    },
+    {
+      "arquivo": "Validos/04_CUSTOM_COOPERATIVO_240MHz_UNICORE.txt",
+      "bytes": 6927,
+      "sha256": "81df5e8b21a8dced6d3cb62e414185614a7f13017ce59f98fa955da7ad816bd9"
+    },
+    {
+      "arquivo": "Validos/05_DM_PREEMPTIVO_80MHz_UNICORE.txt",
+      "bytes": 7010,
+      "sha256": "b43e0d23b44f7e86c3ecd6882ba123a23ab19b3952c326b0e873b2073b5b77d8"
+    },
+    {
+      "arquivo": "Validos/06_DM_PREEMPTIVO_240MHz_UNICORE.txt",
+      "bytes": 6840,
+      "sha256": "ffbb5db0ca2c309b94465ee1c8b25089c92d9101fcb0c5a3056652a7eab23a5d"
+    },
+    {
+      "arquivo": "Validos/07_DM_COOPERATIVO_80MHz_UNICORE.txt",
+      "bytes": 7034,
+      "sha256": "279bd639da9efe770b56c09024e344e7e579e0256054cb2850fabc3ee542f109"
+    },
+    {
+      "arquivo": "Validos/08_DM_COOPERATIVO_240MHz_UNICORE.txt",
+      "bytes": 6854,
+      "sha256": "d23514e9d8d578bd67f9cd018f2715a712fa9fc3b2a89cac0f155acf1e3e2482"
+    },
+    {
+      "arquivo": "Validos/EXTRA_01_CUSTOM_PREEMPTIVO_160MHz_UNICORE.txt",
+      "bytes": 6867,
+      "sha256": "7eff2fe6d547cfe289e765192d0a90b693f021ceaa8fcb594c46b271ce5af201"
+    },
+    {
+      "arquivo": "Validos/EXTRA_02_CUSTOM_COOPERATIVO_160MHz_UNICORE.txt",
+      "bytes": 7041,
+      "sha256": "1551578e8af681e205f4fedec4df27d33ff62e8e001a3a752bb2557c5d68e94a"
+    },
+    {
+      "arquivo": "Validos/EXTRA_03_DM_PREEMPTIVO_160MHz_UNICORE.txt",
+      "bytes": 7074,
+      "sha256": "e0a491fcb8b9670ec950437628988bcab6a163bece86682033ed69051673e0d9"
+    },
+    {
+      "arquivo": "Validos/EXTRA_04_DM_COOPERATIVO_160MHz_UNICORE.txt",
+      "bytes": 6888,
+      "sha256": "a31ce6700f0376585aab2b28e71ec1fb66451109903c6a4414ada4a2591e7e4f"
+    },
+    {
+      "arquivo": "Validos/EXTRA_05_DM_PREEMPTIVO_80MHz_UNICORE_SLICING_OFF.txt",
+      "bytes": 7036,
+      "sha256": "e4b5ee8a15b78051eea13f7a76e97d6dde2879351d294c87afd765a64da3b524"
+    },
+    {
+      "arquivo": "Validos/EXTRA_06_DM_PREEMPTIVO_240MHz_UNICORE_SLICING_OFF.txt",
+      "bytes": 6335,
+      "sha256": "497797f3e61f7502cbbb9c2b7b5f972881f4d65965edafe0697fa1c919ebe042"
+    },
+    {
+      "arquivo": "Validos/EXTRA_07_RM_PREEMPTIVO_240MHz_UNICORE_SLICING_ON.txt",
+      "bytes": 6391,
+      "sha256": "fb7a40656bac53ee6553670d043eb16f8afbd061ce4941ecf68fea5f76a79fa3"
+    },
+    {
+      "arquivo": "Validos/EXTRA_08_RM_PREEMPTIVO_80MHz_UNICORE_SLICING_ON.txt",
+      "bytes": 6665,
+      "sha256": "d6ff42dc793a6041d191e8f71a362cc1f6196fde1f940f8605464d2a1a5df441"
+    },
+    {
+      "arquivo": "Validos/EXTRA_09_RM_COOPERATIVO_80MHz_UNICORE.txt",
+      "bytes": 6513,
+      "sha256": "cea670f26b2542016ba08586e64247d9184909929fc3e68e38a03d2c9ac8a612"
+    },
+    {
+      "arquivo": "Validos/EXTRA_10_RM_COOPERATIVO_240MHz_UNICORE.txt",
+      "bytes": 6855,
+      "sha256": "9737368fb201a7bb6e52cd6a9d98891cd182cb8cfa6ce2b086eeabdb3885df76"
+    }
+  ]
+}

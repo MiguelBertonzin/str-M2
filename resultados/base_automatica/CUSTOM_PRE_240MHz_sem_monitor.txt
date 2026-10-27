@@ -1,0 +1,158 @@
+--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6268
+ho 0 tail 12 room 4
+load:0x40078000,len:15740
+load:0x40080400,len:3768
+--- 0x40080400: _invalid_pc_placeholder at C:/esp/v6.1/esp-idf/components/xtensa/xtensa_vectors.S:2259
+entry 0x4008061c
+I (29) boot: ESP-IDF v6.1.0 2nd stage bootloader
+I (29) boot: compile time Oct 26 2026 14:49:54
+W (29) boot: Unicore bootloader
+I (30) boot: chip revision: v3.1
+I (33) boot.esp32: SPI Speed      : 40MHz
+I (37) boot.esp32: SPI Mode       : DIO
+I (40) boot.esp32: SPI Flash Size : 4MB
+I (44) boot: Enabling RNG early entropy source...
+I (49) boot: Partition Table:
+I (51) boot: ## Label            Usage          Type ST Offset   Length
+I (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (71) boot:  2 factory          factory app      00 00 00010000 00100000
+I (77) boot: End of partition table
+I (80) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=09628h ( 38440) map
+I (102) esp_image: segment 1: paddr=00019650 vaddr=3ffb0000 size=020c0h (  8384) load
+I (105) esp_image: segment 2: paddr=0001b718 vaddr=40080000 size=04900h ( 18688) load
+I (113) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=0f368h ( 62312) map
+I (136) esp_image: segment 4: paddr=0002f390 vaddr=40084900 size=05854h ( 22612) load
+I (145) esp_image: segment 5: paddr=00034bec vaddr=50000000 size=00028h (    40) load
+I (151) boot: Loaded app from partition at offset 0x10000
+I (151) boot: Disabling RNG early entropy source...
+I (163) cpu_start: Unicore app
+I (163) cpu_start: Single core mode
+I (171) cpu_start: GPIO 3 and 1 are used as console UART I/O pins
+I (171) cpu_start: Pro cpu start user code
+I (171) cpu_start: cpu freq: 240000000 Hz
+I (175) app_init: Application information:
+I (179) app_init: Project name:     STR_M2_Drone
+I (184) app_init: App version:      1
+I (187) app_init: Compile time:     Oct 26 2026 14:49:21
+I (192) app_init: ELF file SHA256:  002b46283...
+I (196) app_init: ESP-IDF:          v6.1.0
+I (200) efuse_init: Min chip rev:     v0.0
+I (204) efuse_init: Max chip rev:     v3.99 
+I (208) efuse_init: Chip rev:         v3.1
+I (212) heap_init: Initializing. RAM available for dynamic allocation:
+I (218) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM
+I (223) heap_init: At 3FFB2E10 len 0002D1F0 (180 KiB): DRAM
+I (228) heap_init: At 3FFE0440 len 0001FBC0 (126 KiB): D/IRAM
+I (234) heap_init: At 40078000 len 00008000 (32 KiB): IRAM
+I (239) heap_init: At 4008A154 len 00015EAC (87 KiB): IRAM
+I (244) heap_init: At 3FF80000 len 00002000 (8 KiB): RTCRAM
+I (251) spi_flash: detected chip: generic
+I (253) spi_flash: flash io: dio
+I (257) main_task: Started on CPU0
+I (259) main_task: Calling app_main()
+GUIA_AUTO | 0/14 eventos | aguardando roteiro do timer
+POLITICA | CUSTOM | FS=5 | FUS=4 | CTRL=3 | NAV=2
+CONFIG | escalonamento=PREEMPTIVO | nucleos=1 | cpu=240 MHz | preemption=1 | slicing=1 | tick_hz=1000
+INPUT | fonte=GPTIMER_ISR | eventos sinteticos A/B/C/D | nao mede contato fisico
+AUTO_EVENT;fonte;passo;mascara;planejado_timer_us;observado_timer_us;evento_isr_us;atraso_alarme_us
+METRIC;tempo_s;politica;tarefa;jobs;misses;miss_pct;exec_min_us;exec_avg_us;exec_max_us;resp_min_us;resp_avg_us;resp_max_us;lat_inicio_max_us;jitter_avg_us;jitter_max_us;cpu_pct;evento_us;inicio_us;fim_us
+DRONE | simulacao iniciada | FUS_IMU=5 ms | metricas=5000 ms
+I (320) main_task: Returned from app_main()
+TEL | seq=401 | waypoint=0 | rpy=[-6.55, 4.13, 16.04] | motores=[61.7, 27.9, 59.4, 51.1] | fail-safe=OFF | stress_evento=OFF | stress_restante=0 | latencia=65 us | descartados=0
+GUIA_AUTO | 1/14 eventos | aguardando roteiro do timer
+NAV | waypoint=1 | ref=[5.0, 0.0, 30.0] | stress_evento=OFF | latencia=13 us
+GUIA_AUTO | 2/14 eventos | aguardando roteiro do timer
+METRIC;5.000;CUSTOM;FUS_IMU;1000;0;0.000;668;668.4;763;625;625.5;763;0;42.9;43;13.580;5009488;5009445;5010113
+METRIC;5.000;CUSTOM;CTRL_ATT;1000;0;0.000;451;451.2;519;1129;1130.2;1420;901;0.9;128;9.295;5009445;5010123;5010574
+METRIC;5.000;CUSTOM;NAV_PLAN;2;0;0.000;17;3252.5;6488;82;3291.5;6501;65;26.0;52;0.192;4017022;4017035;4023523
+METRIC;5.000;CUSTOM;FAIL_SAFE;0;0;0.000;0;0.0;0;0;0.0;0;0;0.0;0;0.003;0;0;0
+AUTO_EVENT;GPTIMER_ISR;1;0x10;2000000;2000001;2017026;1
+AUTO_EVENT;GPTIMER_ISR;2;0x80;4000000;4000001;4017022;1
+TOUCH_SEQ;5.000;CB;A=0;B=1;C=1;D=0;descartados=0
+TEL | seq=1201 | waypoint=1 | rpy=[-6.55, -4.54, 48.04] | motores=[79.8, 29.2, 44.0, 47.0] | fail-safe=OFF | stress_evento=OFF | stress_restante=0 | latencia=21 us | descartados=0
+GUIA_AUTO | 3/14 eventos | aguardando roteiro do timer
+STRESS | perturbacao e carga extras iniciadas por 10000 ms | restantes=0 amostras | latencia=17 us
+GUIA_AUTO | 4/14 eventos | aguardando roteiro do timer
+METRIC;10.000;CUSTOM;FUS_IMU;2000;0;0.000;668;674.0;814;625;631.1;771;0;42.9;43;13.801;10009488;10009445;10010224
+METRIC;10.000;CUSTOM;CTRL_ATT;2000;0;0.000;451;451.2;519;1129;1135.7;1420;901;12.0;189;9.297;10009445;10010234;10010685
+NAV | waypoint=2 | ref=[0.0, 5.0, 60.0] | stress_evento=ON | latencia=13 us
+METRIC;10.000;CUSTOM;NAV_PLAN;3;0;0.000;2;2169.0;6488;23;2202.0;6501;65;20.0;52;0.277;6017030;6017051;6017053
+METRIC;10.000;CUSTOM;FAIL_SAFE;0;0;0.000;0;0.0;0;0;0.0;0;0;0.0;0;0.000;0;0;0
+AUTO_EVENT;GPTIMER_ISR;3;0x10;6000000;6000001;6017030;1
+AUTO_EVENT;GPTIMER_ISR;4;0x1;8000000;8000001;8017022;1
+AUTO_EVENT;GPTIMER_ISR;5;0x80;10000000;10000001;10017026;1
+TOUCH_SEQ;10.000;CBCAB;A=1;B=2;C=2;D=0;descartados=0
+GUIA_AUTO | 5/14 eventos | aguardando roteiro do timer
+TEL | seq=2401 | waypoint=2 | rpy=[16.48, -21.11, -163.96] | motores=[0.0, 100.0, 0.0, 100.0] | fail-safe=OFF | stress_evento=ON | stress_restante=1200 | latencia=13 us | descartados=0
+GUIA_AUTO | 6/14 eventos | aguardando roteiro do timer
+NAV | waypoint=0 | ref=[0.0, 0.0, 0.0] | stress_evento=ON | latencia=17 us
+GUIA_AUTO | 7/14 eventos | aguardando roteiro do timer
+METRIC;15.000;CUSTOM;FUS_IMU;3000;0;0.000;668;681.4;819;625;638.5;783;0;42.9;43;14.137;15009488;15009445;15010224
+METRIC;15.000;CUSTOM;CTRL_ATT;3000;0;0.000;451;451.2;519;1129;1143.3;1420;901;26.6;189;9.303;15009445;15010234;15010685
+METRIC;15.000;CUSTOM;NAV_PLAN;6;0;0.000;2;3248.3;6508;15;3272.0;6521;65;12.0;52;0.193;14017022;14017039;14023512
+METRIC;15.000;CUSTOM;FAIL_SAFE;0;0;0.000;0;0.0;0;0;0.0;0;0;0.0;0;0.000;0;0;0
+AUTO_EVENT;GPTIMER_ISR;6;0x10;12000000;12000001;12017030;1
+AUTO_EVENT;GPTIMER_ISR;7;0x80;14000000;14000001;14017022;1
+TOUCH_SEQ;15.000;CBCABCB;A=1;B=3;C=3;D=0;descartados=0
+TEL | seq=3201 | waypoint=0 | rpy=[16.48, -18.39, -31.96] | motores=[31.4, 100.0, 28.9, 22.4] | fail-safe=OFF | stress_evento=ON | stress_restante=400 | latencia=13 us | descartados=0
+GUIA_AUTO | 8/14 eventos | aguardando roteiro do timer
+NAV | waypoint=1 | ref=[5.0, 0.0, 30.0] | stress_evento=OFF | latencia=17 us
+GUIA_AUTO | 9/14 eventos | aguardando roteiro do timer
+METRIC;20.000;CUSTOM;FUS_IMU;4000;0;0.000;668;682.4;819;625;639.4;783;0;42.9;43;13.911;20009488;20009445;20010113
+METRIC;20.000;CUSTOM;CTRL_ATT;4000;0;0.000;451;451.2;519;1129;1144.2;1420;901;28.5;190;9.300;20009445;20010123;20010574
+TEL | seq=4001 | waypoint=1 | rpy=[-6.54, 4.12, 50.04] | motores=[71.3, 22.4, 54.9, 51.4] | fail-safe=OFF | stress_evento=OFF | stress_restante=0 | latencia=13 us | descartados=0
+METRIC;20.000;CUSTOM;NAV_PLAN;8;0;0.000;2;3245.5;6508;15;3267.0;6521;65;10.0;52;0.434;18017022;18017039;18023511
+METRIC;20.000;CUSTOM;FAIL_SAFE;0;0;0.000;0;0.0;0;0;0.0;0;0;0.0;0;0.000;0;0;0
+AUTO_EVENT;GPTIMER_ISR;8;0x10;16000000;16000001;16017030;1
+AUTO_EVENT;GPTIMER_ISR;9;0x80;18000000;18000001;18017022;1
+AUTO_EVENT;GPTIMER_ISR;10;0x10;20000000;20000001;20017026;1
+TOUCH_SEQ;20.000;CBCABCBCBC;A=1;B=4;C=5;D=0;descartados=0
+GUIA_AUTO | 10/14 eventos | aguardando roteiro do timer
+NAV | waypoint=2 | ref=[0.0, 5.0, 60.0] | stress_evento=OFF | latencia=19 us
+TEL | seq=4402 | waypoint=2 | rpy=[-6.23, -1.89, 66.08] | motores=[89.1, 19.6, 56.4, 35.0] | fail-safe=OFF | stress_evento=OFF | stress_restante=0 | latencia=6732 us | descartados=0
+GUIA_AUTO | 12/14 eventos | aguardando roteiro do timer
+FAIL-SAFE | motores zerados | modo seguro ativado | latencia_inicio=13 us | resposta=1352 us
+GUIA_AUTO | 13/14 eventos | aguardando roteiro do timer
+METRIC;25.000;CUSTOM;FUS_IMU;5000;0;0.000;668;679.6;819;625;636.7;783;0;42.9;43;13.590;25009488;25009445;25010113
+METRIC;25.000;CUSTOM;CTRL_ATT;5000;0;0.000;451;451.2;519;1129;1141.5;1420;901;23.0;190;9.297;25009445;25010123;25010575
+METRIC;25.000;CUSTOM;NAV_PLAN;11;0;0.000;1;2949.0;6508;15;3579.5;6733;6732;618.5;6713;0.277;22017030;22023762;22023763
+METRIC;25.000;CUSTOM;FAIL_SAFE;1;0;0.000;1339;1339.0;1339;1352;1352.0;1352;13;0.0;0;0.031;24017022;24017035;24018374
+AUTO_EVENT;GPTIMER_ISR;11;0x90;22000000;22000001;22017030;1
+AUTO_EVENT;GPTIMER_ISR;12;0x200;24000000;24000001;24017022;1
+TOUCH_SEQ;25.000;CBCABCBCBCBCD;A=1;B=5;C=6;D=1;descartados=0
+TEL | seq=5201 | waypoint=2 | rpy=[-6.55, 4.13, 98.04] | motores=[0.0, 0.0, 0.0, 0.0] | fail-safe=ON | stress_evento=OFF | stress_restante=0 | latencia=32 us | descartados=0
+GUIA | sequencia concluida em 26.0 s | aguarde uma linha METRIC com tempo_s >= 30 e a sintese final
+METRIC;30.000;CUSTOM;FUS_IMU;6000;0;0.000;668;677.7;819;625;634.8;783;0;42.9;43;13.578;30009488;30009445;30010113
+METRIC;30.000;CUSTOM;CTRL_ATT;6000;0;0.000;451;451.4;519;1129;1139.7;1420;901;19.4;190;9.304;30009445;30010123;30010575
+METRIC;30.000;CUSTOM;NAV_PLAN;12;0;0.000;1;2703.3;6508;15;3284.0;6733;6732;1125.2;6713;0.061;26017030;26017062;26017063
+METRIC;30.000;CUSTOM;FAIL_SAFE;1;0;0.000;1339;1339.0;1339;1352;1352.0;1352;13;0.0;0;0.000;24017022;24017035;24018374
+AUTO_EVENT;GPTIMER_ISR;13;0x10;26000000;26000001;26017030;1
+TOUCH_SEQ;30.000;CBCABCBCBCBCDC;A=1;B=5;C=7;D=1;descartados=0
+
++=============================================================+
+|                     SINTESE DO ENSAIO                       |
++=============================================================+
+| CONFIG | politica=CUSTOM | PREEMPTIVO | cpu=240 MHz | nucleos=1
+| ROTEIRO | CONCLUIDO | tempo=30.0 s | eventos=14/14 | descartados=0
+| ESTADO | fail-safe=ATIVO | waypoint=2
++-------------+------+----------+----------+----------+----------+
+| TAREFA      | TIPO |     JOBS |   MISSES | EMAX(ms) | RMAX(ms) |
++-------------+------+----------+----------+----------+----------+
+| FUS_IMU     | HARD |     6000 |        0 |    0.819 |    0.783 |
+| CTRL_ATT    | HARD |     6000 |        0 |    0.519 |    1.420 |
+| NAV_PLAN    | SOFT |       12 |        0 |    6.508 |    6.733 |
+| FAIL_SAFE   | HARD |        1 |        0 |    1.339 |    1.352 |
++-------------+------+----------+----------+----------+----------+
+| TOTAL | jobs=12013 | misses=0 | hard=0 | soft=0
+| DEADLINES HARD | ATENDIDOS NESTE ENSAIO
+| DEADLINE SOFT  | ATENDIDO NESTE ENSAIO
+| NOTA | EMAX e RMAX sao maximos observados, nao WCET garantido.
++=============================================================+

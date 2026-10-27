@@ -1,0 +1,93 @@
+menu "M2 - Drone e experimentos"
+
+    config M2_RUN_SECONDS
+        int "Duracao da janela de medicao (segundos)"
+        range 30 600
+        default 180
+
+    config M2_AUTO_WAIT_PC
+        bool "Roteiro automatico aguarda comando BEGIN do PC"
+        depends on M2_MONITOR_ENABLE && M2_INPUT_AUTO
+        default y
+
+    choice M2_INPUT_SOURCE
+        prompt "Origem dos eventos A/B/C/D"
+        default M2_INPUT_AUTO
+        config M2_INPUT_AUTO
+            bool "Automatico: roteiro por ISR de GPTimer"
+        config M2_INPUT_TOUCH
+            bool "Fisico: sensores touch da ESP32"
+        config M2_INPUT_PC
+            bool "Somente comandos do PC (sem roteiro automatico)"
+            depends on M2_MONITOR_ENABLE
+    endchoice
+
+    config M2_PRIORITY_POLICY
+        int "Prioridades: 1=CUSTOM, 2=DM, 3=RM"
+        range 1 3
+        default 1
+
+    config M2_PREEMPTION
+        bool "Escalonamento preemptivo (desmarcado: cooperativo com yields)"
+        default y
+        help
+            Vale para todo o kernel, via copia de FreeRTOSConfig no build.
+            A ISR continua podendo solicitar yield no modo cooperativo,
+            como na implementacao da M1.
+
+    config M2_TIME_SLICING
+        bool "Time slicing entre tarefas de mesma prioridade"
+        default y
+
+    config M2_MONITOR_ENABLE
+        bool "Habilitar MONITOR_TASK e Wi-Fi"
+        default y
+
+    if M2_MONITOR_ENABLE
+        config M2_WIFI_SSID
+            string "Nome da rede Wi-Fi 2.4 GHz (SSID)"
+            default ""
+        config M2_WIFI_PASSWORD
+            string "Senha da rede Wi-Fi"
+            default ""
+        choice M2_MONITOR_PROTOCOL
+            prompt "Protocolo da MONITOR_TASK"
+            default M2_MONITOR_UDP
+            config M2_MONITOR_UDP
+                bool "UDP"
+            config M2_MONITOR_TCP
+                bool "TCP"
+        endchoice
+        config M2_MONITOR_PORT
+            int "Porta do servidor na ESP32"
+            range 1024 65535
+            default 5000
+        config M2_MONITOR_SAMPLE_N
+            int "Enviar 1 log a cada N jobs FUS/CTRL (1: todos)"
+            range 1 1000
+            default 100
+            help
+                NAV, FS e MONITOR sao enviados sem amostragem.
+                A fila e limitada; perdas sao reportadas. Nao obter percentis
+                nem (m,k)-firm completos a partir de logs amostrados.
+        config M2_TIME_ENABLE
+            bool "Habilitar TIME_TASK e sincronizacao SNTP"
+            default y
+            help
+                Tarefa periodica T=D=1s. Consulta SNTP assincrona, sem esperar
+                resposta do servidor a cada job. Desmarque para comparar impacto.
+        if M2_TIME_ENABLE
+            config M2_SNTP_SERVER
+                string "Servidor SNTP"
+                default "pool.ntp.org"
+            config M2_SNTP_INTERVAL_S
+                int "Intervalo entre atualizacoes SNTP (segundos)"
+                range 15 86400
+                default 60
+                help
+                    Independente do periodo de 1s da TIME_TASK. O intervalo
+                    real depende da rede, DNS, retentativas e servidor.
+        endif
+    endif
+
+endmenu

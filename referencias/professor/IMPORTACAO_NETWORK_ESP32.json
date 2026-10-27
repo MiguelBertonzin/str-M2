@@ -1,0 +1,50 @@
+{
+  "repositorio": "https://github.com/VielF/Real_Time_Systems",
+  "pasta_origem": "Codes/Network_ESP32",
+  "branch": "main",
+  "commit": "03eb2eef47a77e53c5fbfadebf6f5a32d3bbcaf7",
+  "data_commit": "2026-10-15T11:02:35Z",
+  "importado_em_utc": "2026-10-26T18:42:16.042227+00:00",
+  "arquivos": [
+    {
+      "arquivo": "README.md",
+      "origem": "Codes/Network_ESP32/README.md",
+      "url": "https://raw.githubusercontent.com/VielF/Real_Time_Systems/03eb2eef47a77e53c5fbfadebf6f5a32d3bbcaf7/Codes/Network_ESP32/README.md",
+      "bytes": 282,
+      "git_blob_sha": "d595f24f4b97482b449cf52c46a11e53f9cf0269",
+      "sha256": "a0ae134ecb9fa5bd1014531541eb361e24ae1be3c2a3e19c1d766b78cb418d7e"
+    },
+    {
+      "arquivo": "esp32_sntp_con.c",
+      "origem": "Codes/Network_ESP32/esp32_sntp_con.c",
+      "url": "https://raw.githubusercontent.com/VielF/Real_Time_Systems/03eb2eef47a77e53c5fbfadebf6f5a32d3bbcaf7/Codes/Network_ESP32/esp32_sntp_con.c",
+      "bytes": 2750,
+      "git_blob_sha": "125f7df6e1d99c06be803c3ac843a9323a6ee820",
+      "sha256": "ae51694b292a62089cb931460695817fb1c4acf1b5f37ca7ea1c0d10b3be54fd"
+    },
+    {
+      "arquivo": "tcp_client.py",
+      "origem": "Codes/Network_ESP32/tcp_client.py",
+      "url": "https://raw.githubusercontent.com/VielF/Real_Time_Systems/03eb2eef47a77e53c5fbfadebf6f5a32d3bbcaf7/Codes/Network_ESP32/tcp_client.py",
+      "bytes": 981,
+      "git_blob_sha": "f133f1002fa6d5b604f11e8a157628d8b25b7ef4",
+      "sha256": "4daf34776a3f484cfce2e4cb4171c03fba96c43d7c007e2e393f6706046b301a"
+    },
+    {
+      "arquivo": "tcp_udp_esp32_wifi_con.c",
+      "origem": "Codes/Network_ESP32/tcp_udp_esp32_wifi_con.c",
+      "url": "https://raw.githubusercontent.com/VielF/Real_Time_Systems/03eb2eef47a77e53c5fbfadebf6f5a32d3bbcaf7/Codes/Network_ESP32/tcp_udp_esp32_wifi_con.c",
+      "bytes": 3955,
+      "git_blob_sha": "dc7b2ebafa703edb76ada653535de64396db4fc0",
+      "sha256": "3053f6378aae2b7f292c593f75b1af06862be61f9dc58b509ce808deefb1c508"
+    },
+    {
+      "arquivo": "udp_server.py",
+      "origem": "Codes/Network_ESP32/udp_server.py",
+      "url": "https://raw.githubusercontent.com/VielF/Real_Time_Systems/03eb2eef47a77e53c5fbfadebf6f5a32d3bbcaf7/Codes/Network_ESP32/udp_server.py",
+      "bytes": 845,
+      "git_blob_sha": "c4c062877327833a95d2e75ee05d325730df7c6e",
+      "sha256": "220f3e14f8c9e21f555b8becc2597e994630cddea345cde5016d18ef593c0496"
+    }
+  ]
+}

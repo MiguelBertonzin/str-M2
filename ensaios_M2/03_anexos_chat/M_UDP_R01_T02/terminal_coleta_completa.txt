@@ -1,0 +1,172 @@
+(venv) PS C:\Users\Migue\Desktop\SistemasTempoReal\M2\trabalho_M2\sample_project> python pc/executar_ensaio.py --cenario M_UDP --repeticao R01 --tentativa 2 --host 192.168.15.23 --serial COM7
+Aguardando boot e rede da ESP32...
+[ESP32] GUIA_AUTO | 0/14 eventos | aguardando roteiro do timer
+[ESP32] MONITOR_IP | 192.168.15.23 | UDP | porta=5000
+[ESP32] TIME_SYNC | atualizacoes=1 | mono_us=3943856
+Conferindo SNTP do notebook e da ESP32...
+MEDICAO INICIADA: 180 segundos. Mantenha o cabo conectado ate "Arquivos salvos em:" e o retorno ao PowerShell.
+[ESP32] RUN_BEGIN | mono_us=7808230 | duration_s=180
+   1.5s NAV: QUEUED
+[ESP32] GUIA_AUTO | 1/14 eventos | aguardando roteiro do timer
+   3.5s PING: OK
+[ESP32] GUIA_AUTO | 2/14 eventos | aguardando roteiro do timer
+   4.0s NAV: QUEUED
+   6.0s PING: OK
+JOB: {"type": "job", "protocol": "UDP", "stream": 63, "task": "NAV_PLAN", "source": "PC_UDP", "job": 1, "event_us": 9316217, "start_us": 9316311, "end_us": 9323384, "miss": false, "session": 2740962972, "command_seq": 3, "end_unix_ms": 1793142010800, "time_sync_count": 1, "safe_us": -1, "sample_sequence": 0, "tx_mono_us": 13302711, "tx_unix_ms": 1793142014781, "tx_sync_count": 1, "tx_bytes": 358}
+[ESP32] GUIA_AUTO | 3/14 eventos | aguardando roteiro do timer
+   6.0s NAV: QUEUED
+   8.0s PING: OK
+JOB: {"type": "job", "protocol": "UDP", "stream": 82, "task": "NAV_PLAN", "source": "PC_UDP", "job": 3, "event_us": 11806547, "start_us": 11806637, "end_us": 11813424, "miss": false, "session": 2740962972, "command_seq": 5, "end_unix_ms": 1793142013290, "time_sync_count": 1, "safe_us": -1, "sample_sequence": 0, "tx_mono_us": 15317378, "tx_unix_ms": 1793142016795, "tx_sync_count": 1, "tx_bytes": 361}
+[ESP32] GUIA_AUTO | 4/14 eventos | aguardando roteiro do timer
+   8.0s NAV: QUEUED
+  10.0s PING: OK
+[ESP32] GUIA_AUTO | 5/14 eventos | aguardando roteiro do timer
+  10.0s NAV: QUEUED
+JOB: {"type": "job", "protocol": "UDP", "stream": 99, "task": "NAV_PLAN", "source": "PC_UDP", "job": 6, "event_us": 13818868, "start_us": 13821423, "end_us": 13828637, "miss": false, "session": 2740962972, "command_seq": 7, "end_unix_ms": 1793142015306, "time_sync_count": 1, "safe_us": -1, "sample_sequence": 0, "tx_mono_us": 19311984, "tx_unix_ms": 1793142020790, "tx_sync_count": 1, "tx_bytes": 361}
+  12.5s PING: OK
+[ESP32] GUIA_AUTO | 6/14 eventos | aguardando roteiro do timer
+  13.0s NAV: QUEUED
+  14.5s PING: OK
+JOB: {"type": "job", "protocol": "UDP", "stream": 115, "task": "NAV_PLAN", "source": "PC_UDP", "job": 8, "event_us": 15810844, "start_us": 15810931, "end_us": 15817530, "miss": false, "session": 2740962972, "command_seq": 9, "end_unix_ms": 1793142017295, "time_sync_count": 1, "safe_us": -1, "sample_sequence": 0, "tx_mono_us": 21317787, "tx_unix_ms": 1793142022796, "tx_sync_count": 1, "tx_bytes": 362}
+[ESP32] GUIA_AUTO | 7/14 eventos | aguardando roteiro do timer
+  14.5s NAV: QUEUED
+  16.5s PING: OK
+[ESP32] GUIA_AUTO | 8/14 eventos | aguardando roteiro do timer
+JOB: {"type": "job", "protocol": "UDP", "stream": 135, "task": "NAV_PLAN", "source": "PC_UDP", "job": 10, "event_us": 18308605, "start_us": 18308699, "end_us": 18316681, "miss": false, "session": 2740962972, "command_seq": 11, "end_unix_ms": 1793142019794, "time_sync_count": 1, "safe_us": -1, "sample_sequence": 0, "tx_mono_us": 24302976, "tx_unix_ms": 1793142025781, "tx_sync_count": 1, "tx_bytes": 364}
+  16.5s NAV: QUEUED
+  18.5s PING: OK
+[ESP32] GUIA_AUTO | 9/14 eventos | aguardando roteiro do timer
+  18.5s NAV: QUEUED
+JOB: {"type": "job", "protocol": "UDP", "stream": 151, "task": "NAV_PLAN", "source": "PC_UDP", "job": 12, "event_us": 20313926, "start_us": 20315623, "end_us": 20322285, "miss": false, "session": 2740962972, "command_seq": 13, "end_unix_ms": 1793142021799, "time_sync_count": 1, "safe_us": -1, "sample_sequence": 0, "tx_mono_us": 27307366, "tx_unix_ms": 1793142028785, "tx_sync_count": 1, "tx_bytes": 364}
+[ESP32] GUIA_AUTO | 10/14 eventos | aguardando roteiro do timer
+  21.0s PING: OK
+JOB: {"type": "job", "protocol": "UDP", "stream": 167, "task": "NAV_PLAN", "source": "PC_UDP", "job": 14, "event_us": 22317000, "start_us": 22317093, "end_us": 22325674, "miss": false, "session": 2740962972, "command_seq": 15, "end_unix_ms": 1793142023803, "time_sync_count": 1, "safe_us": -1, "sample_sequence": 0, "tx_mono_us": 28816957, "tx_unix_ms": 1793142030295, "tx_sync_count": 1, "tx_bytes": 364}
+  22.0s NAV: QUEUED
+[ESP32] GUIA_AUTO | 12/14 eventos | aguardando roteiro do timer
+  23.5s PING: OK
+JOB: {"type": "job", "protocol": "UDP", "stream": 183, "task": "NAV_PLAN", "source": "PC_UDP", "job": 16, "event_us": 24318200, "start_us": 24318306, "end_us": 24326557, "miss": false, "session": 2740962972, "command_seq": 17, "end_unix_ms": 1793142025804, "time_sync_count": 1, "safe_us": -1, "sample_sequence": 0, "tx_mono_us": 31313975, "tx_unix_ms": 1793142032792, "tx_sync_count": 1, "tx_bytes": 364}
+[ESP32] GUIA_AUTO | 13/14 eventos | aguardando roteiro do timer
+  24.0s NAV: QUEUED
+  26.0s PING: OK
+JOB: {"type": "job", "protocol": "UDP", "stream": 202, "task": "NAV_PLAN", "source": "PC_UDP", "job": 18, "event_us": 26806344, "start_us": 26806429, "end_us": 26813719, "miss": false, "session": 2740962972, "command_seq": 19, "end_unix_ms": 1793142028291, "time_sync_count": 1, "safe_us": -1, "sample_sequence": 0, "tx_mono_us": 33818157, "tx_unix_ms": 1793142035296, "tx_sync_count": 1, "tx_bytes": 364}
+[ESP32] GUIA | sequencia concluida em 33.8 s | aguarde uma linha METRIC com tempo_s >= 30 e a sintese final
+  27.0s PING: OK
+JOB: {"type": "job", "protocol": "UDP", "stream": 222, "task": "NAV_PLAN", "source": "PC_UDP", "job": 20, "event_us": 29311462, "start_us": 29311544, "end_us": 29318186, "miss": false, "session": 2740962972, "command_seq": 21, "end_unix_ms": 1793142030795, "time_sync_count": 1, "safe_us": -1, "sample_sequence": 0, "tx_mono_us": 35816186, "tx_unix_ms": 1793142037294, "tx_sync_count": 1, "tx_bytes": 364}
+  29.0s PING: OK
+  30.0s NAV: SAFE_ACTIVE
+  31.5s PING: OK
+JOB: {"type": "job", "protocol": "UDP", "stream": 243, "task": "NAV_PLAN", "source": "PC_UDP", "job": 23, "event_us": 31807341, "start_us": 31807430, "end_us": 31820249, "miss": false, "session": 2740962972, "command_seq": 23, "end_unix_ms": 1793142033297, "time_sync_count": 1, "safe_us": -1, "sample_sequence": 0, "tx_mono_us": 38318005, "tx_unix_ms": 1793142039796, "tx_sync_count": 1, "tx_bytes": 364}
+  31.5s PING: OK
+  33.0s FS: QUEUED
+  34.5s PING: OK
+  36.0s PING: OK
+  37.5s PING: OK
+JOB: {"type": "job", "protocol": "UDP", "stream": 305, "task": "FAIL_SAFE", "source": "PC_UDP", "job": 2, "event_us": 40317852, "start_us": 40317935, "end_us": 40319956, "miss": false, "session": 2740962972, "command_seq": 30, "end_unix_ms": 1793142041797, "time_sync_count": 1, "safe_us": 40317951, "sample_sequence": 0, "tx_mono_us": 45802737, "tx_unix_ms": 1793142047281, "tx_sync_count": 1, "tx_bytes": 370}
+  39.0s PING: OK
+  40.5s PING: OK
+  42.0s FS: QUEUED
+  43.5s PING: OK
+  45.0s PING: OK
+JOB: {"type": "job", "protocol": "UDP", "stream": 369, "task": "FAIL_SAFE", "source": "PC_UDP", "job": 3, "event_us": 49315955, "start_us": 49316028, "end_us": 49317918, "miss": false, "session": 2740962972, "command_seq": 36, "end_unix_ms": 1793142050795, "time_sync_count": 1, "safe_us": 49316033, "sample_sequence": 0, "tx_mono_us": 52311968, "tx_unix_ms": 1793142053790, "tx_sync_count": 1, "tx_bytes": 370}
+  46.0s PING: OK
+  48.0s PING: OK
+  50.0s PING: OK
+  50.8s FS: QUEUED
+JOB: {"type": "job", "protocol": "UDP", "stream": 429, "task": "FAIL_SAFE", "source": "PC_UDP", "job": 4, "event_us": 57811476, "start_us": 57811565, "end_us": 57812913, "miss": false, "session": 2740962972, "command_seq": 42, "end_unix_ms": 1793142059290, "time_sync_count": 1, "safe_us": 57811574, "sample_sequence": 0, "tx_mono_us": 58806241, "tx_unix_ms": 1793142060284, "tx_sync_count": 1, "tx_bytes": 370}
+  52.0s PING: OK
+  54.0s PING: OK
+  56.0s PING: OK
+[ESP32] TIME_SYNC | atualizacoes=2 | mono_us=64023848
+  58.0s PING: OK
+  60.0s PING: OK
+  60.8s FS: QUEUED
+JOB: {"type": "job", "protocol": "UDP", "stream": 497, "task": "FAIL_SAFE", "source": "PC_UDP", "job": 5, "event_us": 67298653, "start_us": 67298730, "end_us": 67300161, "miss": false, "session": 2740962972, "command_seq": 48, "end_unix_ms": 1793142068754, "time_sync_count": 2, "safe_us": 67298739, "sample_sequence": 0, "tx_mono_us": 67806351, "tx_unix_ms": 1793142069261, "tx_sync_count": 2, "tx_bytes": 370}
+  62.0s PING: OK
+  64.0s PING: OK
+  66.0s PING: OK
+  68.0s PING: OK
+  70.0s PING: OK
+  70.8s FS: QUEUED
+JOB: {"type": "job", "protocol": "UDP", "stream": 568, "task": "FAIL_SAFE", "source": "PC_UDP", "job": 6, "event_us": 77298685, "start_us": 77298754, "end_us": 77300185, "miss": false, "session": 2740962972, "command_seq": 54, "end_unix_ms": 1793142078754, "time_sync_count": 2, "safe_us": 77298763, "sample_sequence": 0, "tx_mono_us": 77808061, "tx_unix_ms": 1793142079263, "tx_sync_count": 2, "tx_bytes": 370}
+  72.0s PING: OK
+  74.0s PING: OK
+  76.0s PING: OK
+  78.0s PING: OK
+  80.0s PING: OK
+  80.8s FS: QUEUED
+JOB: {"type": "job", "protocol": "UDP", "stream": 639, "task": "FAIL_SAFE", "source": "PC_UDP", "job": 7, "event_us": 87298669, "start_us": 87298742, "end_us": 87300162, "miss": false, "session": 2740962972, "command_seq": 60, "end_unix_ms": 1793142088754, "time_sync_count": 2, "safe_us": 87298751, "sample_sequence": 0, "tx_mono_us": 87807384, "tx_unix_ms": 1793142089262, "tx_sync_count": 2, "tx_bytes": 370}
+  82.0s PING: OK
+  84.0s PING: OK
+  86.0s PING: OK
+  88.0s PING: OK
+  90.0s PING: OK
+  90.8s FS: QUEUED
+JOB: {"type": "job", "protocol": "UDP", "stream": 710, "task": "FAIL_SAFE", "source": "PC_UDP", "job": 8, "event_us": 97298649, "start_us": 97298722, "end_us": 97300146, "miss": false, "session": 2740962972, "command_seq": 66, "end_unix_ms": 1793142098754, "time_sync_count": 2, "safe_us": 97298731, "sample_sequence": 0, "tx_mono_us": 97807247, "tx_unix_ms": 1793142099262, "tx_sync_count": 2, "tx_bytes": 370}
+  92.0s PING: OK
+  94.0s PING: OK
+  96.0s PING: OK
+  98.0s PING: OK
+ 100.0s PING: OK
+ 100.8s FS: QUEUED
+JOB: {"type": "job", "protocol": "UDP", "stream": 781, "task": "FAIL_SAFE", "source": "PC_UDP", "job": 9, "event_us": 107298681, "start_us": 107298754, "end_us": 107300189, "miss": false, "session": 2740962972, "command_seq": 72, "end_unix_ms": 1793142108754, "time_sync_count": 2, "safe_us": 107298763, "sample_sequence": 0, "tx_mono_us": 107806041, "tx_unix_ms": 1793142109261, "tx_sync_count": 2, "tx_bytes": 375}
+ 102.0s PING: OK
+ 104.0s PING: OK
+ 106.0s PING: OK
+ 108.0s PING: OK
+ 110.0s PING: OK
+ 110.8s FS: QUEUED
+JOB: {"type": "job", "protocol": "UDP", "stream": 852, "task": "FAIL_SAFE", "source": "PC_UDP", "job": 10, "event_us": 117298633, "start_us": 117298706, "end_us": 117300134, "miss": false, "session": 2740962972, "command_seq": 78, "end_unix_ms": 1793142118754, "time_sync_count": 2, "safe_us": 117298715, "sample_sequence": 0, "tx_mono_us": 117808278, "tx_unix_ms": 1793142119263, "tx_sync_count": 2, "tx_bytes": 376}
+ 112.0s PING: OK
+ 114.0s PING: OK
+ 116.0s PING: OK
+ 118.0s PING: OK
+[ESP32] TIME_SYNC | atualizacoes=3 | mono_us=124086750
+ 120.0s PING: OK
+ 120.8s FS: QUEUED
+JOB: {"type": "job", "protocol": "UDP", "stream": 923, "task": "FAIL_SAFE", "source": "PC_UDP", "job": 11, "event_us": 127298665, "start_us": 127298742, "end_us": 127300181, "miss": false, "session": 2740962972, "command_seq": 84, "end_unix_ms": 1793142128749, "time_sync_count": 3, "safe_us": 127298751, "sample_sequence": 0, "tx_mono_us": 127803369, "tx_unix_ms": 1793142129253, "tx_sync_count": 3, "tx_bytes": 376}
+ 122.0s PING: OK
+ 124.0s PING: OK
+ 126.0s PING: OK
+ 128.0s PING: OK
+ 130.0s PING: OK
+ 130.8s FS: QUEUED
+JOB: {"type": "job", "protocol": "UDP", "stream": 994, "task": "FAIL_SAFE", "source": "PC_UDP", "job": 12, "event_us": 137298629, "start_us": 137298699, "end_us": 137300138, "miss": false, "session": 2740962972, "command_seq": 90, "end_unix_ms": 1793142138749, "time_sync_count": 3, "safe_us": 137298707, "sample_sequence": 0, "tx_mono_us": 137806731, "tx_unix_ms": 1793142139256, "tx_sync_count": 3, "tx_bytes": 376}
+ 132.0s PING: OK
+ 134.0s PING: OK
+ 136.0s PING: OK
+ 138.0s PING: OK
+ 140.0s PING: OK
+ 140.8s FS: QUEUED
+JOB: {"type": "job", "protocol": "UDP", "stream": 1065, "task": "FAIL_SAFE", "source": "PC_UDP", "job": 13, "event_us": 147298665, "start_us": 147298738, "end_us": 147300169, "miss": false, "session": 2740962972, "command_seq": 96, "end_unix_ms": 1793142148749, "time_sync_count": 3, "safe_us": 147298747, "sample_sequence": 0, "tx_mono_us": 147808315, "tx_unix_ms": 1793142149258, "tx_sync_count": 3, "tx_bytes": 377}
+ 142.0s PING: OK
+ 144.0s PING: OK
+ 146.0s PING: OK
+ 148.0s PING: OK
+ 150.0s PING: OK
+ 150.8s FS: QUEUED
+JOB: {"type": "job", "protocol": "UDP", "stream": 1136, "task": "FAIL_SAFE", "source": "PC_UDP", "job": 14, "event_us": 157298684, "start_us": 157298753, "end_us": 157300200, "miss": false, "session": 2740962972, "command_seq": 102, "end_unix_ms": 1793142158749, "time_sync_count": 3, "safe_us": 157298762, "sample_sequence": 0, "tx_mono_us": 157812032, "tx_unix_ms": 1793142159261, "tx_sync_count": 3, "tx_bytes": 378}
+ 152.0s PING: OK
+ 154.0s PING: OK
+ 156.0s PING: OK
+ 158.0s PING: OK
+ 160.0s PING: OK
+ 160.8s FS: QUEUED
+JOB: {"type": "job", "protocol": "UDP", "stream": 1207, "task": "FAIL_SAFE", "source": "PC_UDP", "job": 15, "event_us": 167298673, "start_us": 167298742, "end_us": 167300166, "miss": false, "session": 2740962972, "command_seq": 108, "end_unix_ms": 1793142168749, "time_sync_count": 3, "safe_us": 167298751, "sample_sequence": 0, "tx_mono_us": 167808584, "tx_unix_ms": 1793142169258, "tx_sync_count": 3, "tx_bytes": 378}
+ 162.0s PING: OK
+ 164.0s PING: OK
+ 166.0s PING: OK
+ 168.0s PING: OK
+ 170.0s PING: OK
+ 170.8s FS: QUEUED
+JOB: {"type": "job", "protocol": "UDP", "stream": 1278, "task": "FAIL_SAFE", "source": "PC_UDP", "job": 16, "event_us": 177298633, "start_us": 177298710, "end_us": 177300129, "miss": false, "session": 2740962972, "command_seq": 114, "end_unix_ms": 1793142178749, "time_sync_count": 3, "safe_us": 177298719, "sample_sequence": 0, "tx_mono_us": 177808718, "tx_unix_ms": 1793142179258, "tx_sync_count": 3, "tx_bytes": 378}
+ 172.0s PING: OK
+ 174.0s PING: OK
+ 176.0s PING: OK
+ 178.0s PING: OK
+[ESP32] TIME_SYNC | atualizacoes=4 | mono_us=184372348
+Medicao encerrada. Recebendo estatisticas finais; mantenha o cabo conectado...
+Indice atualizado: C:\Users\Migue\Desktop\SistemasTempoReal\M2\trabalho_M2\sample_project\ensaios_M2\INDICE.csv
+M_UDP_R01_T02 REVISAR hard=0, soft=0
+Indice atualizado: C:\Users\Migue\Desktop\SistemasTempoReal\M2\trabalho_M2\sample_project\ensaios_M2\INDICE.csv
+Arquivos salvos em: C:\Users\Migue\Desktop\SistemasTempoReal\M2\trabalho_M2\sample_project\ensaios_M2\02_coletas\M_UDP\R01_T02
+(venv) PS C:\Users\Migue\Desktop\SistemasTempoReal\M2\trabalho_M2\sample_project> 
