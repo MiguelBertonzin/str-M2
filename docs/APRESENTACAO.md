@@ -1,4 +1,4 @@
-# Apresentação presencial sem depender do chat
+# Roteiro da apresentação presencial
 
 Use o terminal ESP-IDF na raiz do projeto. Substitua COM7 e o IP pelos da sua placa. Prepare a rede Wi-Fi 2,4 GHz com acesso SNTP previamente.
 

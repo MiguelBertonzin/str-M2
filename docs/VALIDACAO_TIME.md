@@ -1,11 +1,15 @@
 # Validacao TIME_TASK - 26/10/2026
 
+> Registro histórico da etapa indicada no título. O estado atual e as coletas
+> posteriores estão no [README do projeto](../README.md). As pendências abaixo
+> descrevem o momento dessa validação, não necessariamente a versão atual.
+
 Implementacao compilada com ESP-IDF 6.1.0, Xtensa e alvo ESP32. Nao foi gravada
 na placa nesta etapa; testes fisicos anteriores eram do firmware sem TIME_TASK.
 
 | Build | Configuracao | Resultado |
 |---|---|---|
-| `build` | Configuracao local do usuario, UDP, PC, CUSTOM, 240 MHz, cooperativo, slicing OFF, TIME ON | Compilacao e link concluidos; app 0xc5690 bytes |
+| `build` | Configuracao local do ensaio, UDP, PC, CUSTOM, 240 MHz, cooperativo, slicing OFF, TIME ON | Compilacao e link concluidos; app 0xc5690 bytes |
 | `build_monitor_tcp` | Configuracao isolada de teste, TCP, PC, TIME ON | Compilacao e link concluidos; app 0xc61e0 bytes |
 
 Ambos cabem na particao de 1 MiB, com 23% livre. Nenhum warning/error do compilador

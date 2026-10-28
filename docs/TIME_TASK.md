@@ -99,16 +99,16 @@ As linhas das demais tarefas continuam disponiveis para comparar interferencia.
 - A linha TIME de cada segundo e parte da carga medida. O envio de mais um job
   e um snapshot de hora por segundo tambem acrescenta trabalho ao monitor.
 
-Para uma primeira comparacao, grave dois ensaios com TIME desabilitada/habilitada,
+Como diagnóstico opcional, fora da matriz principal, compare TIME desabilitada/habilitada,
 mantendo politica, preempcao/slicing, CPU, protocolo, entrada, comandos, duracao e
 momento de conexao do cliente iguais. Registre a inicializacao separadamente da
 fase estavel; inclua varias atualizacoes SNTP na coleta. Nao atribua todo miss a
 TIME: ja existiam misses em FUS/CTRL nos testes anteriores sem ela.
 
-Esta etapa nao executa as baterias finais. Antes delas, revisar a referencia de
-liberacao da FUS herdada da M1 (eventos por vezes posteriores ao inicio), perdas
-por sobrescrita da fila CTRL, amostragem de logs, percentis e (m,k)-firm. Uma
-comparacao de desempenho exige resolver/explicitar essas limitacoes.
+Na revisão M2-METRICS-2, a FUS usa liberações nominais; perdas de amostras são
+contabilizadas e HWM/(m,k)-firm são calculados localmente. A amostragem dos logs
+individuais permanece, sem reduzir os acumuladores. A comparação entre cenários
+ainda depende da revisão da agenda do PC e das coletas restantes.
 
 ## Dados enviados ao notebook
 
@@ -130,5 +130,6 @@ de dispositivos diferentes sem avaliar o erro de sincronizacao.
 ## Validacao
 
 Compilacao e testes de software registrados em [VALIDACAO_TIME](VALIDACAO_TIME.md).
-A primeira sincronizacao real, ressincronizacao, reconexao e o impacto temporal
-precisam ser observados na ESP32. Nenhum resultado fisico foi presumido.
+Primeira sincronização e ressincronização foram observadas na ESP32, incluindo
+três novas atualizações durante M_UDP/R01_T02. Reconexão sob falha e comparação
+de impacto entre cenários ainda dependem de validação específica.

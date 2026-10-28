@@ -1,6 +1,6 @@
 ﻿# M2 — Drone ESP32: código, testes e evidências
 
-Continuação da M1 em C/FreeRTOS, com MONITOR_TASK (Wi-Fi UDP/TCP) e TIME_TASK (SNTP). Cliente/coletor do PC em Python. **Versão em validação: não é uma bateria concluída nem garantia de todos os requisitos atendidos.**
+Neste trabalho, continuo a implementação do drone da M1 em C/FreeRTOS, acrescentando MONITOR_TASK (Wi-Fi UDP/TCP) e TIME_TASK (SNTP). O cliente e o coletor do PC são escritos em Python. **O projeto está em validação; ainda não concluí a bateria de testes nem demonstrei o atendimento de todos os requisitos.**
 
 [Enunciado M2 em PDF](Trabalho%20M2%20-%20STR%20.pdf). Estado publicado em 27/10/2026, instrumentação `M2-METRICS-2`.
 
@@ -64,7 +64,7 @@ Para refazer uma tentativa falha, adicione `--tentativa 2` (ou próximo número 
 | P_UDP | DM | OFF/cooperativo | 80 MHz | ON | UDP | R01–R05 |
 | P_TCP | DM | OFF/cooperativo | 80 MHz | ON | TCP | R01–R05 |
 
-Melhor/pior vêm dos cenários 02/07 da M1, não são extremos garantidos. Cinco repetições e 180 s são escolhas nossas; o PDF pede vários testes sem fixar esses números. Slicing ON no cooperativo não implica preempção por tick; há yields explícitos.
+Adotei os cenários 02/07 da M1 como referências de melhor/pior atendimento, sem considerar que sejam extremos garantidos. Planejei cinco repetições de 180 s por cenário; o PDF pede vários testes sem fixar esses números. Slicing ON no cooperativo não implica preempção por tick; há yields explícitos.
 
 **Faltam 19 coletas completas no plano**, com aceitação da R01 atual ainda sujeita à revisão da agenda. Se mudar a carga/metodologia, pode ser necessário repetir R01. Primeiro validar R01 dos outros três cenários; depois multiplicar repetições. [Matriz](ensaios_M2/01_planejamento/MATRIZ.csv) e [guia operacional](ensaios_M2/README.md).
 
@@ -87,7 +87,7 @@ Melhor/pior vêm dos cenários 02/07 da M1, não são extremos garantidos. Cinco
 
 Outras limitações: SNTP não garante precisão de 1 ms. Timestamps são da aplicação, não do rádio. RTT inclui monitor de 500 ms, escalonamento e retries. WCRT observado não é garantia formal de WCET. HWM99 tem intervalos de 100 us e overflow acima de 102,4 ms. FS fica travado até reiniciar; FS posteriores reafirmam o estado seguro. Tempo decorrido da tarefa pode incluir preempção; CPU é medida separadamente. Instrumentação também custa CPU/memória.
 
-## Apresentação sem Codex
+## Configuração durante a apresentação
 
 **Sim: pode mudar os parâmetros pelo menuconfig, recompilar e gravar.** Veja [APRESENTACAO.md](docs/APRESENTACAO.md), com parâmetros, comandos e diagnóstico.
 

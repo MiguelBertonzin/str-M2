@@ -1,6 +1,6 @@
 # Ensaios M2 — começar aqui
 
-Esta pasta reúne planejamento, coletas e anexos do chat para o relatório.
+Nesta pasta, organizo o planejamento, as coletas e os registros complementares do relatório.
 **Há uma coleta completa M_UDP/R01_T02, ainda marcada REVISAR por atraso na agenda.**
 A tentativa R01 interrompida está preservada. Faltam 19 coletas completas no plano;
 a aceitação final e eventual repetição de R01 dependem da revisão da comparabilidade.
@@ -8,8 +8,8 @@ Os testes antigos
 estão separados em `03_anexos_chat/H...` e não devem ser misturados à bateria.
 
 Campanha atual: **20 ensaios automáticos**, cinco por cenário, com TIME ligada.
-A primeira repetição R01 serve também para conferir a coleta. Por escolha do
-usuário, não haverá acionamento físico de touch nesta campanha. Os eventos A/B/C/D
+A primeira repetição R01 serve também para conferir a coleta. Optei por executar
+esta campanha sem acionamento físico de touch. Os eventos A/B/C/D
 serão produzidos por GPTimer; isso não demonstra o requisito de touch físico do PDF.
 
 ## Primeiro teste: M_UDP / R01
@@ -43,10 +43,11 @@ Mantenha o cabo conectado até aparecer **Arquivos salvos em:** e o terminal
 voltar ao PowerShell. São 180 s de medição, mais boot/SNTP e coleta final;
 normalmente o processo leva de 3 a 4 minutos, podendo demorar mais na conexão.
 
-Ao terminar, envie pelo chat o identificador **M_UDP_R01**, `RESUMO.md` e,
-preferencialmente, os arquivos `manifesto.json`, `estatisticas.json`, `serial.txt`
-e `rede.jsonl` (ou um ZIP da pasta). Vou conferir e organizar as evidências.
-Se enviar apenas um trecho colado, ele será guardado como anexo parcial.
+Ao terminar, preserve a pasta completa com o identificador do ensaio, `RESUMO.md`,
+`manifesto.json`, `estatisticas.json`, `serial.txt` e `rede.jsonl`.
+Para compartilhar os resultados, envie um ZIP dessa pasta, identificando a placa,
+a rede e a versão do código. Trechos copiados do terminal são anexos parciais e
+não substituem os arquivos completos da coleta.
 
 ## Quais variáveis alternar
 
@@ -79,8 +80,8 @@ python pc/executar_ensaio.py --cenario M_UDP --repeticao R01 --host 192.168.15.2
    repetições. Total de medição: 60 minutos, mais aquecimento, gravação e coleta final.
 
 A lista individual está em [01_planejamento/MATRIZ.csv](01_planejamento/MATRIZ.csv).
-Os cinco ensaios e 180 s são escolhas experimentais nossas, não quantidades
-impostas pelo professor. Não afirmar WCET garantido com base nessas amostras.
+Defini cinco ensaios de 180 s por cenário; essas quantidades não foram impostas
+pelo professor. As amostras não demonstram um WCET garantido.
 
 As opções de desenvolvimento `--touch` e `--sem-time` continuam disponíveis no
 código, mas não fazem parte desta campanha nem da matriz atual.
@@ -100,7 +101,7 @@ ensaios_M2/
     tarefas.csv          métricas para tabelas
     resumo.json          conferências e RTT
     RESUMO.md            leitura humana
-  03_anexos_chat/         arquivos enviados aqui, com origem e SHA256
+  03_anexos_chat/         registros complementares, com origem e SHA256
   04_relatorio/           guia para o relatório futuro
 ```
 

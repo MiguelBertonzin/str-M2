@@ -2,9 +2,9 @@
 
 Atualização: a implementação inicial de MONITOR_TASK, Wi-Fi, UDP/TCP e cliente
 PC foi acrescentada depois desta preparação. Veja [MONITOR_TASK](MONITOR_TASK.md)
-para essa etapa, cujo teste funcional UDP foi realizado pelo usuário. A etapa
-seguinte implementa [TIME_TASK/SNTP](TIME_TASK.md), cuja sincronização e contagem
-foram confirmadas nos logs da placa. O próximo roteiro é a
+para essa etapa. Validei o fluxo funcional UDP na placa. A implementação de
+[TIME_TASK/SNTP](TIME_TASK.md) também está concluída, com sincronização e contagem
+confirmadas nos logs. A campanha atual está descrita na
 [Metodologia de testes](METODOLOGIA_TESTES.md).
 
 Fonte: `Trabalho M2 - STR .pdf`, cinco páginas, temática Drone. O enunciado
@@ -62,41 +62,28 @@ local de `FreeRTOSConfig.h` com os valores escolhidos em menuconfig e a fornece 
 kernel e aos consumidores. O original permanece intacto. Esse mecanismo é específico
 à estrutura validada do IDF 6.1 e falha explicitamente se as definições não forem encontradas.
 
-## Etapas seguintes do M2
+## Estado atual e próximas etapas
 
-Roteiro original de planejamento: as etapas MONITOR_TASK e TIME_TASK abaixo ja
-foram implementadas. UDP e duas sincronizacoes SNTP foram exercitados na placa
-pelo usuario. O cliente atual e Python, seguindo os exemplos de PC do professor.
-Atualizacao de 27/10: a instrumentacao e o coletor foram revisados; as baterias
-fisicas seguem pendentes. Veja [ensaios_M2](../ensaios_M2/README.md).
+Implementei MONITOR_TASK, TIME_TASK e o coletor Python, seguindo os exemplos de
+comunicação com o PC disponibilizados pelo professor. A instrumentação atual
+registra liberações nominais da FUS, perdas de ativações/amostras, ação segura,
+WCRT, HWM e janelas (9,10)-firm. O roteiro passou a contabilizar A/STRESS como job
+NAV: são 13 jobs NAV automáticos, além das ativações aceitas do PC.
 
-1. **Validar esta base na ESP32:** roteiro automático, modo touch físico, 14 eventos,
-   nenhuma perda de fila, 12 jobs NAV e 1 job FS por execução do roteiro. Repetir os ensaios.
-2. **Revisar a instrumentação por job antes das coletas finais:** alinhar a referência
-   de liberação da FUS aos ticks; registrar evento/início/fim de cada job; timestamp
-   separado para a ação segura; contar saltos de sequência no CTRL. A base ainda
-   usa acumuladores M1 e imprime apenas os últimos timestamps por tarefa a cada 5 s.
-3. **MONITOR_TASK:** implementar Wi-Fi e comunicação PC por UDP e TCP, envio de logs
-   e recebimento de comandos NAV/FS. O enunciado informa periodicidade e D=500 ms;
-   adotar inicialmente T=500 ms como hipótese explícita a confirmar no modelo.
-   Evitar I/O sem timeout e tratar mensagens parciais do TCP.
-4. **TIME_TASK:** integração SNTP, estado de sincronização e contagem de ciclos desde
-   a última sincronização. O enunciado informa periodicidade e D=1 s; adotar T=1 s
-   inicialmente. Não confundir uma consulta ao relógio local com uma nova resposta SNTP.
-5. **PC em C/C++ e protocolo:** definir sequência, tamanho, origem e timestamps;
-   implementar echo/ACK para RTT. Usar tempo monotônico para deadlines e RTT local;
-   usar hora SNTP com ms para correlação entre máquinas. A diferença de relógios
-   afeta latência unidirecional e deve ser explicitada.
-6. **Novas análises:** máximo observado de resposta por tarefa (WCRT experimental),
-   HWM/percentis com definição explícita, janelas deslizantes (m,k)-firm, interferência,
-   bloqueio, misses, CPU e latência ISR→task. Resumos agregados M1 não permitem
-   reconstruir percentis nem a ordem de acertos/misses necessária ao (m,k)-firm.
-7. **Matriz mínima:** melhor×UDP, melhor×TCP, pior×UDP, pior×TCP; múltiplas repetições
-   com origem dos estímulos identificada, duração/pacotes/fases registrados.
-   Variar a fase inicial em ensaios posteriores: repetir um roteiro fixo não cobre
-   todas as fases possíveis de interferência.
-8. **Extra:** acender o LED da placa por comando FS vindo do PC, confirmando o GPIO
-   do modelo de placa. Produzir relatório e demonstração com resultados reais.
+A primeira coleta completa, M_UDP/R01_T02, terminou com zero misses nas seis
+tarefas, mas permanece REVISAR por 34 comandos enviados com atraso na agenda.
+O detalhamento está em [ensaios_M2](../ensaios_M2/README.md).
+
+1. Revisar o efeito da espera pelo ACK na agenda e na comparação dos protocolos.
+2. Validar na placa M_TCP, P_UDP e P_TCP antes de repetir a bateria em lote.
+3. Concluir a matriz de quatro cenários, com cinco repetições de 180 s cada.
+   Uma alteração de carga/metodologia pode exigir repetir a coleta já concluída.
+4. Consolidar resultados por tarefa e cenário e analisar interferência, bloqueio,
+   deadlines, CPU e latência. Justificar a classificação hard/soft no relatório.
+5. Registrar a diferença entre os estímulos automáticos e o touch físico exigido
+   no PDF. A campanha automática não comprova a latência do sensor capacitivo.
+6. Implementar e validar o LED acionado por FS remoto, caso seja realizado o extra.
+7. Finalizar relatório e demonstração usando resultados efetivamente coletados.
 
 Não há mutex de aplicação implementando PIP/PCP nesta base: há filas e seções
 críticas. Bloqueio esperando uma mensagem não deve ser automaticamente classificado

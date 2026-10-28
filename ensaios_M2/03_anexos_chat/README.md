@@ -1,10 +1,10 @@
-# Anexos recebidos no chat
+# Registros complementares das validações
 
 Arquivos originais preservados com nomes descritivos e `origens.json` (origem,
 quantidade de bytes e SHA256). Hxx são testes de desenvolvimento anteriores à
 instrumentação M2-METRICS-2; não são repetições da bateria principal.
 
-Ao receber novos resultados, usar o ID informado pelo usuário, por exemplo
+Para arquivar novos resultados, usar o ID correspondente ao ensaio, por exemplo
 `M_UDP_R01`. Sem ID/configuração suficientes, arquivar como provisório e não
 atribuir silenciosamente um cenário. Nunca sobrescrever um anexo diferente.
 

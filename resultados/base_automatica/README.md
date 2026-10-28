@@ -1,7 +1,7 @@
-# Base automatica validada pelo usuario
+# Validação da base automática na ESP32
 
-`CUSTOM_PRE_240MHz_sem_monitor.txt` preserva o texto do monitor serial enviado
-no chat em 26/10/2026, antes da implementacao de MONITOR_TASK/Wi-Fi.
+`CUSTOM_PRE_240MHz_sem_monitor.txt` preserva o registro do monitor serial do teste
+que realizei em 26/10/2026, antes da implementação de MONITOR_TASK/Wi-Fi.
 
 - ESP32, CUSTOM, UNICORE, 240 MHz, preemptivo, slicing ON, GPTimer ISR;
 - roteiro `CBCABCBCBCBCDC`, 14 eventos, nenhum descarte;

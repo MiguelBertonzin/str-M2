@@ -1,121 +1,127 @@
-# Metodologia de testes M2 — roteiro de preparação
+﻿# Metodologia de testes M2
 
-> Registro histórico da preparação. Para o estado atual, consulte o README da raiz
-> e ensaios_M2/README.md: 20 coletas planejadas, R01 como piloto incluído, sem P01 extra.
-> Já há M_UDP/R01_T02 completa com ressalva de agenda; os demais cenários aguardam validação.
+Baseei a metodologia nos itens 1 a 9 da página 4 e nos requisitos da página 5 do
+[enunciado](../Trabalho%20M2%20-%20STR%20.pdf), considerando a temática Drone.
+O roteiro de comandos e a organização dos resultados estão em
+[ensaios_M2](../ensaios_M2/README.md).
 
-Base: seção “Metodologia de teste”, página 4, e itens importantes da página 5
-de `Trabalho M2 - STR .pdf`. A preparação foi implementada em 27/10/2026 como
-M2-METRICS-2; as baterias ainda não foram executadas. O passo a passo atualizado
-está em [ensaios_M2](../ensaios_M2/README.md), com a matriz individual e comandos.
+## Seleção das configurações
 
-## Estado confirmado
+Usei as perdas de deadlines hard como primeiro critério, seguidas das perdas
+soft. Entre configurações sem perdas, adotei CUSTOM a 240 MHz como referência.
+Os cenários 02 e 07 estão registrados em
+`referencias/m1/tabelas_graficos/dados/resumo_cenarios.csv`.
+A M1 contém uma execução por combinação: são referências experimentais, não
+extremos garantidos para qualquer carga ou condição de rede.
 
-- Teste funcional UDP: HELLO/PING, NAV, FS e bloqueio de NAV após FS funcionaram.
-- TIME_TASK: dois logs fornecidos pelo usuário confirmaram duas sincronizações
-  separadas por aproximadamente 60,029 s, reinício do contador e envio ao PC.
-  No resumo de 120 s: 119 jobs TIME, zero misses e Rmax observado de 40,217 ms.
-- TCP compila; o teste funcional na placa ainda está pendente.
-- Os ensaios de desenvolvimento atuais não substituem a matriz abaixo.
-
-## Matriz exigida
-
-Critério de seleção da M1: perdas de deadlines hard, seguido das soft. Entre
-configurações sem perdas, escolher CUSTOM/240 MHz. Referência: cenários 02 e 07
-de `referencias/m1/tabelas_graficos/dados/resumo_cenarios.csv`. A M1 tinha apenas
-um ensaio por combinação: são referências históricas, não extremos garantidos.
-
-| Cenário | Referência M1 | Política | Escalonador | CPU | Slicing configurado | Rede |
+| Cenário | Referência M1 | Política | Escalonador | CPU | Slicing | Rede |
 |---|---|---|---|---|---|---|
-| Melhor–UDP | 02 | CUSTOM | Preemptivo | 240 MHz | ON | UDP |
-| Melhor–TCP | 02 | CUSTOM | Preemptivo | 240 MHz | ON | TCP |
-| Pior–UDP | 07 | DM | Cooperativo | 80 MHz | ON | UDP |
-| Pior–TCP | 07 | DM | Cooperativo | 80 MHz | ON | TCP |
+| M_UDP | 02 | CUSTOM | Preemptivo | 240 MHz | ON | UDP |
+| M_TCP | 02 | CUSTOM | Preemptivo | 240 MHz | ON | TCP |
+| P_UDP | 07 | DM | Cooperativo | 80 MHz | ON | UDP |
+| P_TCP | 07 | DM | Cooperativo | 80 MHz | ON | TCP |
 
-Todos em UNICORE, com MONITOR e TIME habilitadas. Slicing ON no modo cooperativo
-é o valor configurado na M1, não a afirmação de alternância preemptiva por tick.
-Manter/documentar os yields explícitos herdados. Registrar também as prioridades
-das novas tarefas (atualmente ambas 1); o empate precisa constar da análise.
+Todos usam UNICORE, tick de 1 ms, MONITOR e TIME habilitadas. As duas tarefas novas
+têm prioridade 1. No cooperativo, slicing ON é o valor configurado na M1; não
+significa alternância preemptiva por tick. Os yields explícitos permanecem.
 
-TIME OFF versus ON é diagnóstico adicional de impacto, não substitui os quatro
-cenários pedidos. Não é necessário repetir toda a matriz de frequências da M1.
+## Quantidade e condições dos ensaios
 
-## Checklist de preparação e situação atual
+Planejei **20 coletas: cinco repetições de 180 s para cada um dos quatro cenários**.
+R01 serve como piloto do próprio cenário e pode contar na bateria após a revisão.
+O PDF pede vários testes, mas não fixa duração nem número de repetições.
+Não incluí TIME OFF, RM, 160 MHz ou pilotos extras nesta matriz.
 
-Os itens 1 a 6 abaixo descrevem os problemas que motivaram a preparação. Agora:
-FUS usa esp_timer com liberações nominais; perdas de FUS/CTRL/filas são contadas;
-FS tem timestamp de ação segura; estatísticas completas são calculadas localmente
-(HWM99 limitado por bins de 100 us); o PC consulta SNTP e registra cada envio;
-BEGIN coordena a janela e o roteiro. Os testes físicos da nova revisão permanecem
-pendentes. O checklist original está mantido abaixo como histórico dos critérios.
+Antes de multiplicar as repetições, é necessário conferir R01 dos quatro cenários.
+A ordem planejada alterna UDP/TCP entre rodadas para reduzir efeitos de variação
+da rede. Entre repetições, a placa deve ser reiniciada, pois o fail-safe fica
+travado e a janela BEGIN só pode começar uma vez por boot.
 
-1. **Referência temporal:** corrigir a liberação nominal de FUS, que atualmente
-   pode aparecer depois do início real. Documentar exatamente o que evento,
-   início e fim significam em cada tarefa. Separar a ação segura do fim de FS.
-2. **Eventos perdidos:** contar amostras sobrescritas na fila FUS→CTRL e distinguir
-   um job executado com atraso de uma ativação perdida. Registrar a política
-   usada para ambas na análise; não esconder perdas por excluir jobs inexistentes.
-3. **Coleta por job:** obter sequência e evento/início/fim suficientes para cada
-   distribuição e janela (m,k). A configuração atual envia 1 de cada 100 jobs
-   FUS/CTRL e tem filas limitadas. Apenas mudar N para 1 pode saturar o monitor;
-   é necessário dimensionar/compactar o registro ou calcular estatísticas locais
-   verificáveis e registrar todos os descartes. Medir o custo da instrumentação.
-4. **Comunicação:** registrar identificador do ensaio, sequência, protocolo,
-   tamanho em bytes e timestamps nas chamadas de envio/recepção da aplicação
-   no PC e na ESP32. A data atual `queued_unix_ms` marca a montagem do ACK;
-   não é um timestamp do rádio. Falta timestamp de calendário no envio do PC
-   e documentação/verificação da sincronização desse relógio.
-5. **RTT:** conservar o cálculo monotônico no PC. Explicitar que inclui espera
-   pelo ciclo de 500 ms do monitor, escalonamento e retransmissões. Não tratar
-   diferenças entre relógios dos dispositivos como latência exata sem avaliar
-   o erro de sincronização. Separar ACK de conclusão da tarefa acionada.
-6. **Roteiro controlado:** automatizar comandos e coleta. Definir um início comum
-   após conexão do cliente e primeira sincronização; registrar aquecimento
-   separadamente. Hoje o roteiro GPTimer começa no boot e termina aos 26 s,
-   possivelmente antes de o PC conectar. Isso precisa ser coordenado na bateria.
-7. **Piloto TCP:** repetir HELLO/PING/NAV/FS/NAV, verificando QUEUED/JOB/SAFE_ACTIVE.
-   Executar um piloto de coleta também no cenário lento antes de repetir em lote.
+Mantenho constantes rede/AP, posição da placa e notebook, UNICORE, tick, duração,
+amostragem de logs, intervalo SNTP e roteiro. Cada ensaio registra a configuração
+efetiva, protocolo, versão das fontes e condições disponíveis da conexão.
+Resultados de outras placas/redes precisam ser identificados separadamente.
 
-## Proposta de execução (escolhas experimentais, não números impostos pelo PDF)
+## Estímulos e janela de medição
 
-- Começar com um piloto por cenário. Após validar a coleta, adotar inicialmente
-  **5 repetições de 180 s de medição por cenário**, além do aquecimento.
-- Reiniciar a placa entre repetições. O fail-safe fica travado; planejar FS no
-  final da fase de navegação e observar o estado seguro depois. A duração/agenda
-  final do roteiro deve ser fixada no piloto, incluindo quantidade suficiente de
-  NAV e FS para a análise desejada; cinco FS isolados não estimam bem percentis.
-- Registrar condições equivalentes: rede/AP, localização, sinal, tamanho/cadência
-  de mensagens, estímulos, CPU, prioridades e fases de carga. Alternar a ordem
-  UDP/TCP entre repetições para reduzir o efeito de mudanças da rede.
-- Registrar se as novas atualizações SNTP ocorreram dentro da janela medida.
-  Em falhas de sincronização, conservar o log e marcar a condição; não inventar UTC.
-- Guardar log serial bruto, JSONL do PC e configuração efetiva por ensaio.
-  Perdas de eventos/logs são resultados a reportar. Coleta incompleta não autoriza
-  apresentar percentis ou janelas como se representassem todos os jobs.
+Optei por automatizar A/B/C/D por GPTimer. O firmware mantém o caminho ISR → filas
+→ tarefas, mas não reproduz o sensor capacitivo. O PDF exige touch físico;
+esta campanha não demonstra esse requisito nem mede latência de toque.
+A substituição depende do aceite do professor.
 
-## Resultados e relatório
+O coletor espera conexão e primeira sincronização SNTP antes de enviar BEGIN.
+A janela de 180 s é definida pelo relógio monotônico da ESP32. Aquecimento fica
+registrado no serial, fora dos acumuladores. Jobs são incluídos pelo instante
+do evento; a coleta final aguarda uma margem para conclusão dos jobs.
 
-- Por tarefa e cenário: jobs, ativações perdidas, misses, WCRT observado (máximo
-  de fim−evento), distribuição/HWM e definição explícita do percentil adotado,
-  latência ISR→início e ocupação de CPU.
-- Para tarefas soft: justificar a classificação e escolher (m,k) antes de analisar
-  resultados. Sugestão inicial: (9,10), que é exemplo do enunciado, não imposição.
-  Aplicar janelas deslizantes por tarefa e por ensaio; não atravessar reinicializações.
-- Comparar RTT, perdas, tentativas e falhas UDP/TCP junto ao efeito nos deadlines.
-  O protocolo preferido depende desses resultados, não apenas da média de RTT.
-- Descrever interferência por prioridades, tarefas Wi-Fi/lwIP/temporizadores e
-  seções críticas. Distinguir espera por mensagem de bloqueio por inversão de
-  prioridade; não presumir PIP/PCP onde só existem filas e portMUX.
-- O critério de sucesso do PDF pede todos os deadlines atendidos em vários testes.
-  Havendo misses, reportar descumprimento e suas condições. A tabela ilustrativa
-  do PDF não serve de justificativa para rotular perdas hard como “OK hard”.
+O roteiro GPTimer dura 26 s, com 13 alarmes e 14 eventos: A=1, B=5, C=7, D=1.
+B+C ocorrem no mesmo alarme aos 22 s; D aciona fail-safe aos 24 s. A instrumentação
+atual conta 13 jobs NAV do roteiro, incluindo A/STRESS. O PC também envia NAV,
+PING e FS conforme a agenda registrada. FS remotos após D reafirmam o estado
+seguro; não representam novos pousos independentes.
 
-O PDF exige touch físico para interrupções. O GPTimer preserva a lógica e ajuda
-na repetibilidade, mas seus tempos devem ser identificados como sintéticos.
-Manter a verificação física separada; qualquer substituição para a avaliação
-depende do aceite do professor. O ponto extra do LED continua opcional e pendente.
+O instante de envio de BEGIN no PC e o início do GPTimer na ESP32 são diferentes.
+Essa diferença e os atrasos de envio dos comandos são registrados, não presumidos nulos.
 
-**Próximo passo de execução:** rodar M_UDP_P01 com o coletor e conferir o resultado.
-Depois, executar os demais pilotos e a matriz, gerar tabelas/gráficos e
-redigir a análise. O firmware é C; o cliente Python segue os exemplos de PC
-fornecidos pelo professor, cuja utilização é expressamente permitida no item 2.
+## Métricas e interpretação
+
+- **Evento/início/fim:** a FUS usa liberações nominais por esp_timer; tarefas por
+  evento usam a origem registrada. O instante da ação segura é separado do fim de FS.
+- **Perdas:** liberações descartadas, sobrescritas e saltos de sequência são
+  contabilizados. Ativação perdida não é ocultada por não produzir um job concluído.
+- **WCRT/HWM:** maior resposta observada por tarefa e HWM100 exato dos jobs
+  registrados. HWM99 é um intervalo do histograma de 100 us, com overflow acima
+  de 102,4 ms. Não representam uma prova formal de WCET.
+- **(m,k)-firm:** adotei (9,10) nas tarefas soft, por janelas de execuções
+  consecutivas. Perdas ou timestamps inválidos impedem concluir atendimento
+  sobre todas as ativações. Janelas não atravessam reinicializações.
+- **Latência ISR:** separada das ativações do PC. No modo AUTO, começa no callback
+  GPTimer; no modo TOUCH, no callback do sensor, não no primeiro contato do dedo.
+- **CPU e execução:** ocupação de CPU vem das janelas completas do serial dentro
+  do ensaio. Tempo decorrido do corpo da tarefa pode incluir preempções e esperas.
+- **Comunicação:** sequência, protocolo, bytes de aplicação e timestamps de envio/
+  recepção no PC e na ESP32. Não são timestamps do rádio nem tamanho total no enlace.
+- **RTT e SNTP:** RTT usa o relógio monotônico do PC e inclui espera pelo monitor
+  de 500 ms, escalonamento e retries. SNTP fornece referência UTC estimada; para
+  diferenças entre dispositivos, considerar offset, deriva e assimetria da rede.
+
+Os acumuladores locais consideram todos os jobs válidos, independentemente da
+amostragem de logs individuais FUS/CTRL. A instrumentação tem custo de CPU,
+memória e seções críticas; a revisão usada deve ser a mesma nos quatro cenários.
+
+## Estado das coletas
+
+M_UDP/R01_T02 concluiu a janela de 180 s, com zero misses, perdas de ativações ou
+timestamps inválidos nas seis tarefas. Houve três novas sincronizações SNTP.
+A tentativa anterior R01 foi interrompida pela retirada do cabo USB e não conta
+como repetição completa.
+
+A coleta completa permanece **REVISAR**, pois 34 comandos saíram mais de 500 ms
+após a agenda prevista. O cliente espera o ACK antes de enviar o próximo comando;
+RTT maior que o espaçamento previsto pode acumular atrasos. Preciso revisar esse
+efeito na carga oferecida e na comparação UDP/TCP antes de fechar a metodologia.
+Se a agenda ou o comportamento do coletor mudar, pode ser necessário repetir R01.
+
+Faltam 19 coletas completas no plano. Isso não significa que a primeira já tenha
+sido aprovada em todos os critérios. TCP e os cenários lentos compilam, mas ainda
+precisam de validação na placa com a coleta atual.
+
+## Análise e relatório
+
+Vou consolidar os resultados por tarefa e cenário, incluindo WCRT/HWM, misses,
+perdas, CPU, latência ISR e (9,10)-firm das soft. A comparação dos protocolos deve
+considerar RTT, tentativas, perdas e efeitos nos deadlines, não apenas a média.
+
+A análise de interferência e bloqueio depende das prioridades, das tarefas
+Wi-Fi/lwIP/temporizadores e das seções críticas. Espera por mensagem não é, por si
+só, inversão de prioridade. A aplicação não implementa mutex com PIP/PCP.
+
+O critério de sucesso do PDF pede atendimento de todos os deadlines em vários
+testes. Havendo perdas hard, elas devem constar como descumprimento nas condições
+medidas. A tabela ilustrativa do enunciado não justifica concluir “OK hard” com
+misses. COLETADO indica finalização do processo; não é um certificado de sucesso.
+
+O relatório ainda precisa justificar hard/soft, consolidar tabelas/gráficos e
+explicar as limitações. O ponto extra de acender o LED por FS remoto não foi
+implementado. A documentação de reprodução está no README da raiz e o roteiro
+presencial está em [APRESENTACAO.md](APRESENTACAO.md).

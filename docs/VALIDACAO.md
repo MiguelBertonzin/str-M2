@@ -1,7 +1,11 @@
 # Validação da base M2 — 26/10/2026
 
+> Registro histórico da etapa indicada no título. O estado atual e as coletas
+> posteriores estão no [README do projeto](../README.md). As pendências abaixo
+> descrevem o momento dessa validação, não necessariamente a versão atual.
+
 Este registro e `validacao_builds.json` são da base anterior à MONITOR_TASK.
-O teste físico dessa base foi posteriormente enviado pelo usuário e preservado em
+O registro do teste dessa base na placa foi posteriormente arquivado em
 `resultados/base_automatica/`. A etapa de rede tem documentação própria em
 [MONITOR_TASK](MONITOR_TASK.md).
 

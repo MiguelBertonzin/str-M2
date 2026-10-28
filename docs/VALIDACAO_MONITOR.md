@@ -1,5 +1,9 @@
 # Validacao da implementacao MONITOR_TASK — 26/10/2026
 
+> Registro histórico da etapa indicada no título. O estado atual e as coletas
+> posteriores estão no [README do projeto](../README.md). As pendências abaixo
+> descrevem o momento dessa validação, não necessariamente a versão atual.
+
 Registro historico anterior a TIME_TASK. O estado atual e os novos builds estao
 em [VALIDACAO_TIME](VALIDACAO_TIME.md); as pastas de build foram reutilizadas.
 
@@ -15,7 +19,7 @@ O build TCP usa somente `M2_BUILD_TEST_ONLY` / `test-only-password` para validar
 compilacao e tamanho, sem executar conexao ou gravar a placa. Os dois firmwares
 cabem na particao de 1 MiB. Os logs locais sao `build_monitor_udp.log` e
 `build_monitor_tcp.log`, ignorados no Git. O projeto padrao continua com SSID
-vazio para que o usuario configure suas credenciais reais pelo menuconfig.
+vazio; as credenciais da rede devem ser configuradas pelo menuconfig.
 
 Tambem foi conferida a sintaxe de `main.c` e `monitor.c` com MONITOR desabilitada,
 usando o compilador Xtensa e as flags/include paths gerados pelo build.

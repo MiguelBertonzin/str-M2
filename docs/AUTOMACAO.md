@@ -49,8 +49,8 @@ nem à origem de `tempo_s` das métricas. Os dois relógios são identificados n
 | 26 | C: observar estado seguro |
 
 São 13 alarmes e 14 eventos: sequência `CBCABCBCBCBCDC`, A=1, B=5, C=7, D=1.
-Há 12 jobs NAV instrumentados (5 B + 7 C); A solicita carga, mas não é contado
-como job NAV no acumulador herdado. Mesmo B+C no mesmo alarme passa por operações
+Na revisão atual, há 13 jobs NAV instrumentados (5 B + 7 C + 1 A/STRESS).
+Na base anterior, A não era contabilizado, resultando em 12 jobs. Mesmo B+C no mesmo alarme passa por operações
 sequenciais de software; não significa duas tarefas executando simultaneamente.
 
 O próximo alarme usa instante absoluto desde o início do timer, evitando acumular
@@ -83,11 +83,12 @@ acelera desenvolvimento e ensaios controlados; não comprova sozinha esse item.
 Preserve uma demonstração física ou confirme com o professor se ele aceita a
 substituição na avaliação. Não misture os dois conjuntos de resultados.
 
-## Limites preservados da base M1
+## Instrumentação atual e limites
 
-Ainda é necessário corrigir/medir a referência de liberação da FUS, a ação segura
-separada do término de FS e a perda de amostras da fila FUS→CTRL. Detalhes estão na
-auditoria importada. Não são gerados HWM(99%) ou (m,k)-firm nesta etapa.
+A revisão M2-METRICS-2 usa liberações nominais da FUS por esp_timer, registra a ação
+segura separadamente do término de FS e contabiliza perdas na fila FUS→CTRL.
+Também calcula HWM(99%) por histograma e (9,10)-firm localmente. A auditoria
+importada descreve as limitações históricas que motivaram essas mudanças.
 O modo cooperativo conserva yields explícitos na saída da ISR, como na M1.
 Não execute gravações de flash durante ensaios: o modo GPTimer atual usa o padrão
 sem callback cache-safe. Repetições e fases distintas são necessárias para ampliar

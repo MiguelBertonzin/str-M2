@@ -141,7 +141,7 @@ pelo PC sao identificados pela origem e tambem contam nas metricas das tarefas.
 
 O registro de compilacao desta etapa esta em [VALIDACAO_MONITOR](VALIDACAO_MONITOR.md).
 
-O log fornecido pelo usuario antes desta etapa foi preservado em
+O registro do teste anterior a esta etapa está preservado em
 `resultados/base_automatica/CUSTOM_PRE_240MHz_sem_monitor.txt`: 14 eventos,
 12 jobs NAV, 1 FS, sem descartes e sem misses reportados. Mantem-se a ressalva
 da referencia temporal da FUS registrada na auditoria M1.

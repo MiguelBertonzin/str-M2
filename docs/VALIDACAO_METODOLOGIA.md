@@ -1,5 +1,9 @@
 # Validação M2-METRICS-2 — 27/10/2026
 
+> Registro histórico da etapa indicada no título. O estado atual e as coletas
+> posteriores estão no [README do projeto](../README.md). As pendências abaixo
+> descrevem o momento dessa validação, não necessariamente a versão atual.
+
 Implementação preparada para os pilotos da metodologia. **Não foi gravada na
 placa nem validada fisicamente nesta etapa.** Os logs antigos foram preservados
 em `ensaios_M2/03_anexos_chat/H01...H05` e pertencem à instrumentação anterior.
@@ -20,7 +24,7 @@ após as últimas alterações C, sem warnings/errors do compilador nos logs fin
 Os diretórios isolados usam credenciais fictícias apenas para compilar o caminho
 Wi-Fi completo. Para os testes, usar os comandos do guia que configuram e gravam
 **build**, preservando as credenciais reais do sdkconfig local. Não gravar os
-binários isolados de validação esperando que conectem à rede do usuário.
+binários isolados de validação esperando que conectem à rede de teste.
 
 ## Conferências
 
@@ -34,8 +38,10 @@ binários isolados de validação esperando que conectem à rede do usuário.
 - `tools/verificar_base.py`: 30 referências M1 íntegras, 18 logs históricos,
   sequência de eventos preservada e overrides de preempção/slicing corretos
   na aplicação e kernel dos cenários base/melhor, pior e touch.
-- Seis anexos enviados pelo usuário arquivados com origem, bytes e SHA256.
-- Matriz/índice com 27 testes planejados, todos inicialmente AGUARDANDO.
+- Seis registros de validação arquivados com origem, bytes e SHA256.
+- O planejamento inicial continha 27 testes. Posteriormente, defini a matriz
+  atual de 20 coletas automáticas, com R01 incluída como piloto. Os testes extras
+  não fazem parte dessa campanha.
 
 Os testes de rede Python usam pares locais simulados e não executam o firmware.
 Compilar não prova o comportamento do rádio, reset USB, disponibilidade do SNTP,
