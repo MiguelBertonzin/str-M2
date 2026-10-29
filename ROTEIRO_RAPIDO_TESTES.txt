@@ -1,0 +1,39 @@
+﻿CONSULTA RAPIDA - M2 / AGENDA_60S_R2
+
+As 20 coletas R01 a R05 dos quatro cenarios estao concluidas.
+Para apresentacao, usar P01/P02 no automatico e T01/T02 no fisico.
+Nao sobrescrever R01 a R05 para uma demonstracao.
+
+AUTO (padrao; --automatizado pode ser omitido):
+python tools/configurar_teste.py --cenario M_UDP --automatizado
+idf.py -p COM7 flash
+python pc/executar_ensaio.py --cenario M_UDP --repeticao P01 --automatizado --host auto --serial COM7
+
+FISICO (mesmo codigo C, outra configuracao compilada):
+python tools/configurar_teste.py --cenario M_UDP --fisico
+idf.py -p COM7 flash
+python pc/executar_ensaio.py --cenario M_UDP --repeticao T01 --fisico --host auto --serial COM7
+
+Esperar MEDICAO INICIADA antes de tocar. Seguir GUIA no terminal.
+A=GPIO4; B=GPIO27; C=GPIO13; D=GPIO32.
+Roteiro: C B C A B C B C B C B+C D C.
+Soltar contatos entre ativacoes; concluir dentro de 60 segundos.
+
+CENARIOS
+M_UDP: CUSTOM / preemptivo / 240 MHz / UDP
+M_TCP: CUSTOM / preemptivo / 240 MHz / TCP
+P_UDP: DM / cooperativo / 80 MHz / UDP
+P_TCP: DM / cooperativo / 80 MHz / TCP
+Todos: unicore, slicing configurado ON, MONITOR/TIME habilitadas.
+
+Trocar cenario ou fonte: configurar + flash + coletar.
+Repetir sem mudar configuracao: somente coletar com novo identificador.
+Fechar idf.py monitor antes da coleta. Porta serial exclusiva.
+PC e ESP32 na mesma rede. --host auto obtem IP pela serial.
+Aguardar Arquivos salvos em: e retorno ao terminal antes de desconectar.
+Se o nome ja existir, escolher outro ou --tentativa 2.
+
+Wi-Fi: idf.py menuconfig > M2 - Drone e experimentos; salvar e gravar.
+Parametros livres (RM/160 MHz etc.): docs/APRESENTACAO.md.
+Modos e limitacoes: docs/MODOS_ENTRADA.md.
+Resultados, tabelas e graficos: analise_final/README.md.

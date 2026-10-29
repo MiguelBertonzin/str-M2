@@ -38,7 +38,7 @@ Substitua o IP pelo MONITOR_IP e use `tcp` se esse for o protocolo gravado. HELL
 - `BEGIN`: inicia a janela e, no modo AUTO com espera pelo PC, o roteiro. Aguarde a primeira sincronização SNTP; WAIT_SYNC indica que é necessário tentar novamente após a sincronização.
 - `NAV`: solicita navegação. Após o fail-safe, recebe SAFE_ACTIVE.
 - `FS`: ativa estado seguro até reiniciar. O LED do ponto extra ainda não é acionado.
-- `REPORT`: solicita estatísticas; para resultados finais, aguarde a duração configurada (180 s por padrão), mais cerca de 7 s.
+- `REPORT`: solicita estatísticas; para resultados finais, aguarde a duração configurada (60 s por padrão), mais cerca de 7 s.
 - `SAIR`: fecha o cliente.
 
 No modo AUTO, D ativa fail-safe aos 24 s. Para controlar apenas pelo PC, selecione essa origem no menuconfig; BEGIN mede, mas não produz o roteiro automático. Reinicie a placa para outra janela ou para liberar o fail-safe.
@@ -50,10 +50,14 @@ No modo AUTO, D ativa fail-safe aos 24 s. Para controlar apenas pelo PC, selecio
 ```powershell
 python tools/configurar_teste.py --cenario M_TCP
 idf.py -p COM7 flash
-python pc/executar_ensaio.py --cenario M_TCP --repeticao R01 --host 192.168.15.23 --serial COM7
+python pc/executar_ensaio.py --cenario M_TCP --repeticao R01 --host auto --serial COM7
 ```
 
 Escolhas: M_UDP, M_TCP, P_UDP e P_TCP. Use repetição/tentativa livre. Feche o monitor serial com Ctrl+] antes do coletor, que precisa da mesma porta. Aguarde “Arquivos salvos em:” e retorno ao prompt antes de desconectar.
+
+O coletor usa a campanha AGENDA_60S_R2 e lê o IP da placa pela serial. O cliente
+interativo continua exigindo o IP numérico. Arquivos das coletas antigas ficam
+preservados; os novos são criados em `02_coletas/AGENDA_60S_R2/CENARIO/Rxx/`.
 
 O coletor valida os quatro cenários fixos e rejeita diferenças. RM/160 MHz, por exemplo, é demonstração fora da matriz: use o cliente interativo, sem rotular como um cenário padrão.
 

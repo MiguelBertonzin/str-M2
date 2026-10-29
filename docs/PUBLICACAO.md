@@ -1,13 +1,24 @@
-# Publicação para reprodução
+﻿# Publicacao e rastreabilidade
 
-Snapshot de 27/10/2026. Inclui fontes, configurações de exemplo sem credenciais, enunciado M2, referências M1/professor, testes e evidências disponíveis. Não inclui builds, ambientes Python, configurações pessoais do editor nem sdkconfig local.
+O repositorio publica firmware, ferramentas, enunciado, documentacao atual,
+20 coletas da campanha final, fontes da campanha e analises reproduziveis.
+Compilacoes, caches, tentativas interrompidas e documentos de desenvolvimento
+nao integram a arvore principal publicada.
 
-O firmware não foi alterado nesta preparação. A agenda com espera por ACK permanece como na coleta publicada: a ressalva dos 34 comandos atrasados não foi corrigida silenciosamente.
+As duas primeiras R01 substituidas sao evidencias complementares pertinentes
+a selecao da amostra. A primeira P_TCP ja era valida; sua substituicao deve
+ser explicitada, sem selecionar resultados pela menor quantidade de falhas.
 
-Credenciais Wi-Fi conhecidas são substituídas por placeholders nas cópias publicadas de textos/logs. Originais locais são preservados. O manifesto `PUBLICACAO_MANIFESTO.json` na raiz publicada identifica arquivos modificados na sanitização e SHA-256 das cópias publicadas. Hashes anteriores nos manifests de coleta/importação continuam sendo os dos originais; uma cópia sanitizada pode legitimamente diferir deles. Não modificar retroativamente os hashes históricos para aparentar identidade.
+As credenciais locais nao sao publicadas. Quando um log contem SSID, a copia
+publica usa placeholder. PUBLICACAO_MANIFESTO.json registra SHA256 original,
+SHA256 publicado e a indicacao de sanitizacao. Os originais locais permanecem
+preservados. A sanitizacao nao altera tempos, contadores ou metricas.
 
-Arquivos de evidência mantêm métricas e a indicação de falhas/ressalvas. Endereços IP locais, características da placa/rede e caminhos históricos podem aparecer como contexto de coleta; não são instruções para reutilizar a configuração de outra máquina.
+A analise e regenerada sobre as copias publicadas para que o inventario
+integridade_dados.csv corresponda aos arquivos disponiveis no repositorio.
+O snapshot fontes_campanha corresponde aos hashes registrados nos manifestos.
+Os scripts atuais acrescentam aliases de entrada para apresentacao; o codigo
+C do firmware medido nao foi alterado por essa parametrizacao.
 
-Cada colega deve configurar Wi-Fi, porta serial e IP próprios. Recomenda-se manter a mesma versão de firmware/ESP-IDF e condições equivalentes entre os quatro cenários, registrando qualquer diferença. Resultados de redes/placas diferentes devem ser identificados separadamente.
-
-Publicar resultados de desenvolvimento não equivale a declarar aprovação do trabalho. A coleta completa atual continua REVISAR; faltam os outros cenários, consolidação, análise de interferência/bloqueio, relatório e resolução da diferença entre GPTimer e touch físico exigido. O LED extra não foi implementado.
+A ferramenta preparar_publicacao_final.py e de manutencao do checkout local
+.publication; nao e necessaria para compilar, coletar ou reproduzir analises.

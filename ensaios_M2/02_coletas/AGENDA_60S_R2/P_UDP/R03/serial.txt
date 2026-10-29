@@ -1,0 +1,396 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6268
+ho 0 tail 12 room 4
+load:0x40078000,len:15740
+load:0x40080400,len:3768
+entry 0x4008061c
+I (29) boot: ESP-IDF v6.1-dirty 2nd stage bootloader
+I (29) boot: compile time Oct 28 2026 21:13:25
+W (29) boot: Unicore bootloader
+I (31) boot: chip revision: v3.1
+I (34) boot.esp32: SPI Speed      : 40MHz
+I (37) boot.esp32: SPI Mode       : DIO
+I (41) boot.esp32: SPI Flash Size : 4MB
+I (44) boot: Enabling RNG early entropy source...
+I (49) boot: Partition Table:
+I (51) boot: ## Label            Usage          Type ST Offset   Length
+I (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (71) boot:  2 factory          factory app      00 00 00010000 00100000
+I (77) boot: End of partition table
+I (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1ccb4h (117940) map
+I (130) esp_image: segment 1: paddr=0002ccdc vaddr=3ffb0000 size=0333ch ( 13116) load
+I (136) esp_image: segment 2: paddr=00030020 vaddr=400d0020 size=948fch (608508) map
+I (353) esp_image: segment 3: paddr=000c4924 vaddr=3ffb333c size=008f0h (  2288) load
+I (354) esp_image: segment 4: paddr=000c521c vaddr=40080000 size=14aa4h ( 84644) load
+I (391) esp_image: segment 5: paddr=000d9cc8 vaddr=50000000 size=00028h (    40) load
+I (402) boot: Loaded app from partition at offset 0x10000
+I (402) boot: Disabling RNG early entropy source...
+I (412) cpu_start: Unicore app
+I (412) cpu_start: Single core mode
+I (420) cpu_start: GPIO 3 and 1 are used as console UART I/O pins
+I (420) cpu_start: Pro cpu start user code
+I (420) cpu_start: cpu freq: 80000000 Hz
+I (424) app_init: Application information:
+I (428) app_init: Project name:     STR_M2_Drone
+I (432) app_init: App version:      1
+I (436) app_init: Compile time:     Oct 28 2026 21:13:15
+I (441) app_init: ELF file SHA256:  d27663235...
+I (445) app_init: ESP-IDF:          v6.1-dirty
+I (449) efuse_init: Min chip rev:     v0.0
+I (453) efuse_init: Max chip rev:     v3.99 
+I (457) efuse_init: Chip rev:         v3.1
+I (461) heap_init: Initializing. RAM available for dynamic allocation:
+I (467) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM
+I (472) heap_init: At 3FFC5030 len 0001AFD0 (107 KiB): DRAM
+I (477) heap_init: At 3FFE0440 len 0001FBC0 (126 KiB): D/IRAM
+I (483) heap_init: At 40078000 len 00008000 (32 KiB): IRAM
+I (488) heap_init: At 40094AA4 len 0000B55C (45 KiB): IRAM
+I (493) heap_init: At 3FF80000 len 00002000 (8 KiB): RTCRAM
+I (501) spi_flash: detected chip: generic
+I (502) spi_flash: flash io: dio
+I (507) main_task: Started on CPU0
+I (508) main_task: Calling app_main()
+MEASUREMENT_ORIGIN_US=13294
+AUTO_READY | aguardando BEGIN do PC
+POLITICA | DM | FS=4 | FUS=5 | CTRL=5 | NAV=3
+CONFIG | escalonamento=COOPERATIVO | nucleos=1 | cpu=80 MHz | preemption=0 | slicing=1 | tick_hz=1000
+INPUT | fonte=GPTIMER_ISR | eventos sinteticos A/B/C/D | nao mede contato fisico
+AUTO_EVENT;fonte;passo;mascara;planejado_timer_us;observado_timer_us;evento_isr_us;atraso_alarme_us
+METRIC;tempo_s;politica;tarefa;jobs;misses;miss_pct;exec_min_us;exec_avg_us;exec_max_us;resp_min_us;resp_avg_us;resp_max_us;lat_inicio_max_us;jitter_avg_us;jitter_max_us;cpu_pct;evento_us;inicio_us;fim_us
+DRONE | simulacao iniciada | FUS_IMU=5 ms | metricas=5000 ms
+I (569) main_task: Returned from app_main()
+GUIA_AUTO | 0/14 eventos | aguardando roteiro do timer
+MONITOR_CONFIG | protocolo=UDP | periodo_us=500000 | deadline_us=500000 | prioridade=1 | sample_n=100 | core=0
+TIME_CONFIG | periodo_us=1000000 | deadline_us=1000000 | prioridade=1 | servidor=pool.ntp.org | sntp_intervalo_s=20 | UTC
+I (667) wifi:wifi driver task: 3ffd6450, prio:23, stack:6656, core=0
+I (683) wifi:wifi firmware version: e12a754
+I (684) wifi:wifi certification version: v7.0
+I (684) wifi:config NVS flash: enabled
+I (684) wifi:config nano formatting: disabled
+I (688) wifi:Init data frame dynamic rx buffer num: 32
+I (693) wifi:Init static rx mgmt buffer num: 5
+I (697) wifi:Init management short buffer num: 32
+I (701) wifi:Init dynamic tx buffer num: 32
+I (706) wifi:Init static rx buffer size: 1600
+I (710) wifi:Init static rx buffer num: 10
+I (713) wifi:Init dynamic rx buffer num: 32
+I (773) wifi_init: rx ba win: 6
+I (777) wifi_init: accept mbox: 6
+I (777) wifi_init: tcpip mbox: 32
+I (778) wifi_init: udp mbox: 6
+I (778) wifi_init: tcp mbox: 6
+I (782) wifi_init: tcp tx win: 5760
+I (782) wifi_init: tcp rx win: 5760
+I (787) wifi_init: tcp mss: 1440
+I (788) wifi_init: WiFi IRAM OP enabled
+I (792) wifi_init: WiFi RX IRAM OP enabled
+W (798) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2
+I (818) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06
+I (909) wifi:mode : sta (1c:69:20:31:5e:e8)
+I (910) wifi:enable tsf
+I (973) wifi:Set ps type: 0, coexist: 0
+
+TIME | ciclo=1 | hora=AGUARDANDO_SNTP | wifi=OFF | sync=0 | ciclos_desde_sync=-1 | idade_sync_ms=-1 | release_dropped=0
+I (2100) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0
+I (2102) wifi:state: init -> auth (0xb0)
+I (2124) wifi:state: auth -> assoc (0x0)
+I (2154) wifi:state: assoc -> run (0x10)
+I (2198) wifi:connected with REDE_DE_TESTE, aid = 1, channel 6, BW20, bssid = 62:f1:a4:d9:8f:3a
+I (2199) wifi:security: WPA2-PSK, phy: bgn, rssi: -71, cipher(pairwise:0x3, group:0x3), pmf:0
+I (2204) wifi:pm start, type: 0
+
+I (2207) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us
+I (2216) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us
+I (2223) wifi:AP's beacon interval = 102400 us, DTIM period = 2
+I (2279) wifi:<ba-add>idx:0 (ifx:0, 62:f1:a4:d9:8f:3a), tid:0, ssn:1, winSize:64
+TIME | ciclo=2 | hora=AGUARDANDO_SNTP | wifi=OFF | sync=0 | ciclos_desde_sync=-1 | idade_sync_ms=-1 | release_dropped=0
+I (3286) esp_netif_handlers: sta ip: 10.123.121.28, mask: 255.255.255.0, gw: 10.123.121.90
+MONITOR_IP | 10.123.121.28 | UDP | porta=5000
+I (3483) MONITOR: Servidor UDP na porta 5000
+TIME | ciclo=3 | hora=AGUARDANDO_SNTP | wifi=ON | sync=0 | ciclos_desde_sync=-1 | idade_sync_ms=-1 | release_dropped=0
+TIME | ciclo=4 | hora=AGUARDANDO_SNTP | wifi=ON | sync=0 | ciclos_desde_sync=-1 | idade_sync_ms=-1 | release_dropped=0
+QUEUE_LOSS | ctrl_overwritten=36 | ctrl_sequence_gaps=36
+METRIC;5.066;DM;FUS_IMU;984;83;8.435;2026;2226.0;41710;2094;4265.8;98290;96119;2039.8;96119;40.798;5075342;5075410;5077442
+METRIC;5.066;DM;CTRL_ATT;948;52;5.485;1357;1535.2;42401;3438;3840.9;47792;41239;300.6;38772;26.754;5075410;5077502;5078863
+METRIC;5.066;DM;NAV_PLAN;0;0;0.000;0;0.0;0;0;0.0;0;0;0.0;0;0.001;0;0;0
+METRIC;5.066;DM;FAIL_SAFE;0;0;0.000;0;0.0;0;0;0.0;0;0;0.0;0;0.001;0;0;0
+METRIC;5.066;DM;MONITOR_TASK;9;0;0.000;26;4573.6;20261;126;4668.2;20362;108;94.7;108;0.830;4979775;4979876;5000137
+METRIC;5.066;DM;TIME_TASK;4;0;0.000;829;2855.2;5279;938;3083.8;5380;603;228.5;603;0.103;4159296;4159899;4164371
+TIME | ciclo=5 | hora=AGUARDANDO_SNTP | wifi=ON | sync=0 | ciclos_desde_sync=-1 | idade_sync_ms=-1 | release_dropped=0
+MONITOR_METRIC;UDP;jobs=10;misses=0;rmax_us=24962;evento_us=5479775;inicio_us=5479867;fim_us=5504737;log_dropped=0;tx_dropped=2;release_dropped=0;rx=1;tx=1
+TIME_SYNC | atualizacoes=1 | mono_us=6092302
+TIME | ciclo=6 | hora=2026-10-29T00:17:50.760Z | wifi=ON | sync=1 | ciclos_desde_sync=1 | idade_sync_ms=67 | release_dropped=0
+TIME | ciclo=7 | hora=2026-10-29T00:17:51.760Z | wifi=ON | sync=1 | ciclos_desde_sync=2 | idade_sync_ms=1067 | release_dropped=0
+TIME | ciclo=8 | hora=2026-10-29T00:17:52.764Z | wifi=ON | sync=1 | ciclos_desde_sync=3 | idade_sync_ms=2071 | release_dropped=0
+RUN_BEGIN | mono_us=8984408 | duration_s=60
+TIME | ciclo=9 | hora=2026-10-29T00:17:53.760Z | wifi=ON | sync=1 | ciclos_desde_sync=4 | idade_sync_ms=3067 | release_dropped=0
+QUEUE_LOSS | ctrl_overwritten=40 | ctrl_sequence_gaps=40
+METRIC;10.066;DM;FUS_IMU;1984;88;4.435;2026;2168.5;41710;2094;3239.2;98290;96119;1070.7;96119;42.184;10075342;10075426;10077462
+METRIC;10.066;DM;CTRL_ATT;1944;97;4.990;1357;1516.8;42401;3438;3776.4;47792;41239;218.6;38772;28.439;10075426;10077536;10078908
+METRIC;10.066;DM;NAV_PLAN;0;0;0.000;0;0.0;0;0;0.0;0;0;0.0;0;0.000;0;0;0
+METRIC;10.066;DM;FAIL_SAFE;0;0;0.000;0;0.0;0;0;0.0;0;0;0.0;0;0.000;0;0;0
+METRIC;10.066;DM;MONITOR_TASK;19;0;0.000;26;17002.8;44506;126;17117.1;44595;470;114.2;470;0.554;9979775;9979872;10010092
+METRIC;10.066;DM;TIME_TASK;9;0;0.000;524;3639.8;9601;633;4311.2;9698;4717;671.4;4717;0.144;9159296;9159401;9164439
+TIME | ciclo=10 | hora=2026-10-29T00:17:54.760Z | wifi=ON | sync=1 | ciclos_desde_sync=5 | idade_sync_ms=4067 | release_dropped=0
+MONITOR_METRIC;UDP;jobs=20;misses=0;rmax_us=44595;evento_us=10479775;inicio_us=10479879;fim_us=10514601;log_dropped=33;tx_dropped=4;release_dropped=0;rx=2;tx=16
+TEL | seq=2165 | waypoint=0 | rpy=[-5.03, 2.71, 86.60] | motores=[100.0, 0.0, 100.0, 6.7] | fail-safe=OFF | stress_evento=OFF | stress_restante=0 | latencia=171 us | descartados=0
+GUIA_AUTO | 1/14 eventos | aguardando roteiro do timer
+TIME | ciclo=11 | hora=2026-10-29T00:17:55.760Z | wifi=ON | sync=1 | ciclos_desde_sync=6 | idade_sync_ms=5067 | release_dropped=0
+TIME | ciclo=12 | hora=2026-10-29T00:17:56.760Z | wifi=ON | sync=1 | ciclos_desde_sync=7 | idade_sync_ms=6067 | release_dropped=0
+NAV | waypoint=1 | ref=[5.0, 0.0, 30.0] | stress_evento=OFF | latencia=159 us
+GUIA_AUTO | 2/14 eventos | aguardando roteiro do timer
+TIME | ciclo=13 | hora=2026-10-29T00:17:57.760Z | wifi=ON | sync=1 | ciclos_desde_sync=8 | idade_sync_ms=7067 | release_dropped=0
+NAV | waypoint=2 | ref=[0.0, 5.0, 60.0] | stress_evento=OFF | latencia=5033 us
+TIME | ciclo=14 | hora=2026-10-29T00:17:58.760Z | wifi=ON | sync=1 | ciclos_desde_sync=9 | idade_sync_ms=8067 | release_dropped=0
+TEL | seq=2965 | waypoint=2 | rpy=[-5.03, -4.45, 118.60] | motores=[100.0, 18.8, 67.9, 8.7] | fail-safe=OFF | stress_evento=OFF | stress_restante=0 | latencia=159 us | descartados=0
+GUIA_AUTO | 3/14 eventos | aguardando roteiro do timer
+QUEUE_LOSS | ctrl_overwritten=40 | ctrl_sequence_gaps=40
+METRIC;15.066;DM;FUS_IMU;2984;88;2.949;2026;2144.4;41710;2094;2892.2;98290;96119;747.8;96119;42.433;15075342;15075418;15077454
+METRIC;15.066;DM;CTRL_ATT;2944;131;4.450;1357;1501.0;42401;3438;3739.7;47792;41239;182.2;38772;28.836;15075418;15077527;15078892
+METRIC;15.066;DM;NAV_PLAN;4;2;50.000;26;31273.2;65725;186;32653.8;70758;5033;2440.0;4874;0.802;14984559;14984718;14984745
+METRIC;15.066;DM;FAIL_SAFE;0;0;0.000;0;0.0;0;0;0.0;0;0;0.0;0;0.000;0;0;0
+METRIC;15.066;DM;MONITOR_TASK;29;0;0.000;26;24996.0;94154;126;25105.2;94251;470;109.2;470;0.543;14979775;14979868;15014803
+METRIC;15.066;DM;TIME_TASK;14;0;0.000;524;4102.4;9601;633;4570.4;9698;4717;468.0;4717;0.131;14159296;14159401;14164441
+AUTO_EVENT;GPTIMER_ISR;1;0x10;2000000;2000004;10984559;4
+AUTO_EVENT;GPTIMER_ISR;2;0x80;4000000;4000004;12984559;4
+AUTO_EVENT;GPTIMER_ISR;3;0x10;6000000;6000005;14984559;5
+TOUCH_SEQ;15.066;CBC;A=0;B=1;C=2;D=0;descartados=0
+TIME | ciclo=15 | hora=2026-10-29T00:17:59.760Z | wifi=ON | sync=1 | ciclos_desde_sync=10 | idade_sync_ms=9067 | release_dropped=0
+MONITOR_METRIC;UDP;jobs=30;misses=0;rmax_us=94251;evento_us=15479775;inicio_us=15479879;fim_us=15514071;log_dropped=67;tx_dropped=16;release_dropped=0;rx=6;tx=28
+NAV | waypoint=0 | ref=[0.0, 0.0, 0.0] | stress_evento=OFF | latencia=5016 us
+TIME | ciclo=16 | hora=2026-10-29T00:18:00.760Z | wifi=ON | sync=1 | ciclos_desde_sync=11 | idade_sync_ms=10067 | release_dropped=0
+STRESS | perturbacao e carga extras iniciadas por 10000 ms | restantes=0 amostras | latencia=160 us
+GUIA_AUTO | 4/14 eventos | aguardando roteiro do timer
+TIME | ciclo=17 | hora=2026-10-29T00:18:01.760Z | wifi=ON | sync=1 | ciclos_desde_sync=12 | idade_sync_ms=11067 | release_dropped=0
+NAV | waypoint=1 | ref=[5.0, 0.0, 30.0] | stress_evento=ON | latencia=9516 us
+TIME | ciclo=18 | hora=2026-10-29T00:18:02.760Z | wifi=ON | sync=1 | ciclos_desde_sync=13 | idade_sync_ms=12067 | release_dropped=0
+NAV | waypoint=2 | ref=[0.0, 5.0, 60.0] | stress_evento=ON | latencia=167 us
+GUIA_AUTO | 5/14 eventos | aguardando roteiro do timer
+TIME | ciclo=19 | hora=2026-10-29T00:18:03.760Z | wifi=ON | sync=1 | ciclos_desde_sync=14 | idade_sync_ms=13067 | release_dropped=0
+NAV | waypoint=0 | ref=[0.0, 0.0, 0.0] | stress_evento=ON | latencia=5035 us
+QUEUE_LOSS | ctrl_overwritten=41 | ctrl_sequence_gaps=41
+METRIC;20.066;DM;FUS_IMU;3984;90;2.259;2026;2144.5;41710;2094;2730.6;98290;96119;586.2;96119;43.422;20075342;20075414;20077793
+METRIC;20.066;DM;CTRL_ATT;3943;159;4.032;1357;1491.1;42401;3438;3729.2;47792;41239;184.6;38772;28.798;20075414;20077858;20079223
+METRIC;20.066;DM;NAV_PLAN;9;6;66.667;25;43513.7;70396;185;46337.7;75431;9516;4782.9;9356;1.399;19984067;19989102;20059498
+METRIC;20.066;DM;FAIL_SAFE;0;0;0.000;0;0.0;0;0;0.0;0;0;0.0;0;0.000;0;0;0
+METRIC;20.066;DM;MONITOR_TASK;39;0;0.000;26;31991.1;94754;126;32208.3;94851;4430;217.2;4430;0.493;19979775;19979872;20074626
+METRIC;20.066;DM;TIME_TASK;19;0;0.000;524;4876.6;14687;633;5250.2;14808;4717;373.6;4717;0.186;19159296;19159403;19164330
+AUTO_EVENT;GPTIMER_ISR;4;0x1;8000000;8000005;16984559;5
+AUTO_EVENT;GPTIMER_ISR;5;0x80;10000000;10000004;18984559;4
+TOUCH_SEQ;20.066;CBCAB;A=1;B=2;C=2;D=0;descartados=0
+TIME | ciclo=20 | hora=2026-10-29T00:18:04.760Z | wifi=ON | sync=1 | ciclos_desde_sync=15 | idade_sync_ms=14067 | release_dropped=0
+MONITOR_METRIC;UDP;jobs=40;misses=0;rmax_us=94851;evento_us=20479775;inicio_us=20479871;fim_us=20504437;log_dropped=102;tx_dropped=31;release_dropped=0;rx=11;tx=36
+TEL | seq=4165 | waypoint=0 | rpy=[17.99, -21.03, -93.40] | motores=[0.0, 100.0, 0.0, 56.2] | fail-safe=OFF | stress_evento=ON | stress_restante=1200 | latencia=155 us | descartados=0
+GUIA_AUTO | 6/14 eventos | aguardando roteiro do timer
+TIME | ciclo=21 | hora=2026-10-29T00:18:05.760Z | wifi=ON | sync=1 | ciclos_desde_sync=16 | idade_sync_ms=15067 | release_dropped=0
+NAV | waypoint=1 | ref=[5.0, 0.0, 30.0] | stress_evento=ON | latencia=4862 us
+TIME | ciclo=22 | hora=2026-10-29T00:18:06.760Z | wifi=ON | sync=1 | ciclos_desde_sync=17 | idade_sync_ms=16067 | release_dropped=0
+NAV | waypoint=2 | ref=[0.0, 5.0, 60.0] | stress_evento=ON | latencia=167 us
+GUIA_AUTO | 7/14 eventos | aguardando roteiro do timer
+TIME | ciclo=23 | hora=2026-10-29T00:18:07.760Z | wifi=ON | sync=1 | ciclos_desde_sync=18 | idade_sync_ms=17067 | release_dropped=0
+NAV | waypoint=0 | ref=[0.0, 0.0, 0.0] | stress_evento=ON | latencia=5042 us
+TIME | ciclo=24 | hora=2026-10-29T00:18:08.760Z | wifi=ON | sync=1 | ciclos_desde_sync=19 | idade_sync_ms=18067 | release_dropped=0
+TEL | seq=4965 | waypoint=0 | rpy=[17.99, -14.50, 38.60] | motores=[70.3, 69.7, 76.8, 0.0] | fail-safe=OFF | stress_evento=ON | stress_restante=400 | latencia=159 us | descartados=0
+GUIA_AUTO | 8/14 eventos | aguardando roteiro do timer
+QUEUE_LOSS | ctrl_overwritten=42 | ctrl_sequence_gaps=42
+METRIC;25.066;DM;FUS_IMU;4984;90;1.806;2026;2150.9;41710;2094;2640.1;98290;96119;489.1;96119;44.071;25075342;25075414;25077793
+METRIC;25.066;DM;CTRL_ATT;4942;200;4.047;1357;1492.2;42401;3438;3737.8;47792;41239;197.1;38772;28.794;25075414;25077854;25079219
+METRIC;25.066;DM;NAV_PLAN;14;9;64.286;25;42332.9;70396;181;44890.1;75431;9516;4791.9;9356;1.150;24984559;24984718;24984744
+METRIC;25.066;DM;FAIL_SAFE;0;0;0.000;0;0.0;0;0;0.0;0;0;0.0;0;0.000;0;0;0
+METRIC;25.066;DM;MONITOR_TASK;49;0;0.000;26;34815.4;94754;126;35010.6;94929;4430;195.2;4430;0.495;24979775;24979872;25000029
+METRIC;25.066;DM;TIME_TASK;24;0;0.000;524;5169.3;14687;633;5510.3;14808;4717;341.0;4717;0.164;24159296;24159397;24164598
+AUTO_EVENT;GPTIMER_ISR;6;0x10;12000000;12000004;20984559;4
+AUTO_EVENT;GPTIMER_ISR;7;0x80;14000000;14000004;22984559;4
+AUTO_EVENT;GPTIMER_ISR;8;0x10;16000000;16000004;24984559;4
+TOUCH_SEQ;25.066;CBCABCBC;A=1;B=3;C=4;D=0;descartados=0
+TIME | ciclo=25 | hora=2026-10-29T00:18:09.765Z | wifi=ON | sync=1 | ciclos_desde_sync=20 | idade_sync_ms=19072 | release_dropped=0
+MONITOR_METRIC;UDP;jobs=50;misses=0;rmax_us=94929;evento_us=25479775;inicio_us=25479871;fim_us=25504380;log_dropped=137;tx_dropped=46;release_dropped=0;rx=16;tx=44
+NAV | waypoint=1 | ref=[5.0, 0.0, 30.0] | stress_evento=ON | latencia=4239 us
+TIME_SYNC | atualizacoes=2 | mono_us=26119819
+TIME | ciclo=26 | hora=2026-10-29T00:18:10.761Z | wifi=ON | sync=2 | ciclos_desde_sync=1 | idade_sync_ms=39 | release_dropped=0
+NAV | waypoint=2 | ref=[0.0, 5.0, 60.0] | stress_evento=OFF | latencia=167 us
+GUIA_AUTO | 9/14 eventos | aguardando roteiro do timer
+TIME | ciclo=27 | hora=2026-10-29T00:18:11.761Z | wifi=ON | sync=2 | ciclos_desde_sync=2 | idade_sync_ms=1039 | release_dropped=0
+NAV | waypoint=0 | ref=[0.0, 0.0, 0.0] | stress_evento=OFF | latencia=4989 us
+TIME | ciclo=28 | hora=2026-10-29T00:18:12.761Z | wifi=ON | sync=2 | ciclos_desde_sync=3 | idade_sync_ms=2039 | release_dropped=0
+TEL | seq=5765 | waypoint=0 | rpy=[-5.02, 2.70, 120.60] | motores=[100.0, 0.0, 100.0, 0.0] | fail-safe=OFF | stress_evento=OFF | stress_restante=0 | latencia=163 us | descartados=0
+GUIA_AUTO | 10/14 eventos | aguardando roteiro do timer
+TIME | ciclo=29 | hora=2026-10-29T00:18:13.761Z | wifi=ON | sync=2 | ciclos_desde_sync=4 | idade_sync_ms=3039 | release_dropped=0
+NAV | waypoint=1 | ref=[5.0, 0.0, 30.0] | stress_evento=OFF | latencia=5039 us
+QUEUE_LOSS | ctrl_overwritten=43 | ctrl_sequence_gaps=43
+METRIC;30.066;DM;FUS_IMU;5984;93;1.554;2026;2146.2;41710;2094;2571.0;98290;96119;424.8;96119;43.028;30075342;30075456;30077534
+METRIC;30.066;DM;CTRL_ATT;5941;230;3.871;1357;1487.1;42401;3438;3729.5;47792;41239;191.4;38772;28.802;30075456;30078023;30079384
+METRIC;30.066;DM;NAV_PLAN;19;13;68.421;25;44205.1;70396;181;46857.6;75431;9516;4724.3;9356;1.442;29984060;29989099;30044741
+METRIC;30.066;DM;FAIL_SAFE;0;0;0.000;0;0.0;0;0;0.0;0;0;0.0;0;0.000;0;0;0
+METRIC;30.066;DM;MONITOR_TASK;59;0;0.000;26;37297.8;94754;126;37550.7;94929;4484;252.8;4484;0.479;29979775;29979872;30064442
+METRIC;30.066;DM;TIME_TASK;29;0;0.000;524;5445.4;14687;633;5931.1;14836;5443;485.7;5443;0.164;29159296;29159401;29164407
+AUTO_EVENT;GPTIMER_ISR;9;0x80;18000000;18000004;26984559;4
+AUTO_EVENT;GPTIMER_ISR;10;0x10;20000000;20000004;28984559;4
+TOUCH_SEQ;30.066;CBCABCBCBC;A=1;B=4;C=5;D=0;descartados=0
+TIME | ciclo=30 | hora=2026-10-29T00:18:14.761Z | wifi=ON | sync=2 | ciclos_desde_sync=5 | idade_sync_ms=4039 | release_dropped=0
+MONITOR_METRIC;UDP;jobs=60;misses=0;rmax_us=94929;evento_us=30479775;inicio_us=30479883;fim_us=30504807;log_dropped=172;tx_dropped=61;release_dropped=0;rx=21;tx=53
+NAV | waypoint=2 | ref=[0.0, 5.0, 60.0] | stress_evento=OFF | latencia=163 us
+TEL | seq=6179 | waypoint=2 | rpy=[-6.11, 0.22, 137.16] | motores=[51.5, 100.0, 23.2, 20.9] | fail-safe=OFF | stress_evento=OFF | stress_restante=0 | latencia=70383 us | descartados=0
+GUIA_AUTO | 12/14 eventos | aguardando roteiro do timer
+TIME | ciclo=31 | hora=2026-10-29T00:18:15.761Z | wifi=ON | sync=2 | ciclos_desde_sync=6 | idade_sync_ms=5039 | release_dropped=0
+TIME | ciclo=32 | hora=2026-10-29T00:18:16.761Z | wifi=ON | sync=2 | ciclos_desde_sync=7 | idade_sync_ms=6039 | release_dropped=0
+FAIL-SAFE | motores zerados | modo seguro ativado | latencia_inicio=151 us | resposta=15045 us | acao_segura_us=32984720 | acao_desde_evento_us=161
+GUIA_AUTO | 13/14 eventos | aguardando roteiro do timer
+TIME | ciclo=33 | hora=2026-10-29T00:18:17.761Z | wifi=ON | sync=2 | ciclos_desde_sync=8 | idade_sync_ms=7039 | release_dropped=0
+TIME | ciclo=34 | hora=2026-10-29T00:18:18.761Z | wifi=ON | sync=2 | ciclos_desde_sync=9 | idade_sync_ms=8039 | release_dropped=0
+TEL | seq=6965 | waypoint=2 | rpy=[-5.03, 2.71, 168.59] | motores=[0.0, 0.0, 0.0, 0.0] | fail-safe=ON | stress_evento=OFF | stress_restante=0 | latencia=162 us | descartados=0
+GUIA | sequencia concluida em 35.0 s | aguarde uma linha METRIC com tempo_s >= 30 e a sintese final
+QUEUE_LOSS | ctrl_overwritten=44 | ctrl_sequence_gaps=44
+METRIC;35.066;DM;FUS_IMU;6984;94;1.346;2026;2137.2;41710;2094;2517.1;98290;96119;379.9;96119;42.427;35075342;35075414;35077450
+METRIC;35.066;DM;CTRL_ATT;6940;250;3.602;1357;1481.0;42401;3438;3713.6;47792;41239;176.8;38772;28.808;35075414;35077523;35078888
+METRIC;35.066;DM;NAV_PLAN;22;15;68.182;16;41152.9;70396;181;46657.7;75431;70383;10685.4;70221;0.452;34984564;34984726;34984752
+METRIC;35.066;DM;FAIL_SAFE;1;1;100.000;14894;14894.0;14894;15045;15045.0;15045;151;0.0;0;0.099;32984559;32984710;32999604
+METRIC;35.066;DM;MONITOR_TASK;69;0;0.000;26;37134.1;94807;126;37371.0;94929;4484;236.9;4484;0.512;34979775;34979876;35009406
+METRIC;35.066;DM;TIME_TASK;34;0;0.000;524;5385.7;14687;633;5815.3;14836;5443;429.6;5443;0.134;34159296;34159393;34164941
+AUTO_EVENT;GPTIMER_ISR;11;0x90;22000000;22000004;30984559;4
+AUTO_EVENT;GPTIMER_ISR;12;0x200;24000000;24000004;32984559;4
+AUTO_EVENT;GPTIMER_ISR;13;0x10;26000000;26000009;34984564;9
+TIME | ciclo=35 | hora=2026-10-29T00:18:19.761Z | wifi=ON | sync=2 | ciclos_desde_sync=10 | idade_sync_ms=9039 | release_dropped=0
+TOUCH_SEQ;35.066;CBCABCBCBCBCDC;A=1;B=5;C=7;D=1;descartados=0
+
++=============================================================+
+|                     SINTESE DO ENSAIO                       |
++=============================================================+
+| CONFIG | politica=DM | COOPERATIVO | cpu=80 MHz | nucleos=1
+| ROTEIRO | CONCLUIDO | tempo=35.1 s | eventos=14/14 | descartados=0
+| ESTADO | fail-safe=ATIVO | waypoint=2
++-------------+------+----------+----------+----------+----------+
+| TAREFA      | TIPO |     JOBS |   MISSES | EMAX(ms) | RMAX(ms) |
++-------------+------+----------+----------+----------+----------+
+| FUS_IMU     | HARD |     6984 |       94 |   41.710 |   98.290 |
+| CTRL_ATT    | HARD |     6940 |      250 |   42.401 |   47.792 |
+| NAV_PLAN    | SOFT |       22 |       15 |   70.396 |   75.431 |
+| FAIL_SAFE   | HARD |        1 |        1 |   14.894 |   15.045 |
+| MONITOR_TASK | SOFT |       69 |        0 |   94.807 |   94.929 |
+| TIME_TASK   | SOFT |       34 |        0 |   14.687 |   14.836 |
++-------------+------+----------+----------+----------+----------+
+| TOTAL | jobs=14050 | misses=360 | hard=345 | soft=15
+| DEADLINES HARD | HOUVE PERDAS
+| DEADLINE SOFT  | HOUVE PERDAS
+| NOTA | EMAX e RMAX sao maximos observados, nao WCET garantido.
++=============================================================+
+
+MONITOR_METRIC;UDP;jobs=70;misses=0;rmax_us=94929;evento_us=35479775;inicio_us=35479875;fim_us=35509077;log_dropped=207;tx_dropped=75;release_dropped=0;rx=24;tx=65
+TIME | ciclo=36 | hora=2026-10-29T00:18:20.761Z | wifi=ON | sync=2 | ciclos_desde_sync=11 | idade_sync_ms=10039 | release_dropped=0
+TIME | ciclo=37 | hora=2026-10-29T00:18:21.761Z | wifi=ON | sync=2 | ciclos_desde_sync=12 | idade_sync_ms=11039 | release_dropped=0
+TIME | ciclo=38 | hora=2026-10-29T00:18:22.761Z | wifi=ON | sync=2 | ciclos_desde_sync=13 | idade_sync_ms=12039 | release_dropped=0
+TIME | ciclo=39 | hora=2026-10-29T00:18:23.761Z | wifi=ON | sync=2 | ciclos_desde_sync=14 | idade_sync_ms=13039 | release_dropped=0
+FAIL-SAFE | motores zerados | modo seguro ativado | latencia_inicio=5713 us | resposta=25712 us | acao_segura_us=39489806 | acao_desde_evento_us=5719
+QUEUE_LOSS | ctrl_overwritten=47 | ctrl_sequence_gaps=47
+METRIC;40.066;DM;FUS_IMU;7984;96;1.202;2026;2131.3;41710;2094;2478.1;98290;96119;346.7;96119;42.439;40075342;40075414;40077450
+METRIC;40.066;DM;CTRL_ATT;7937;279;3.515;1357;1480.2;42401;3438;3706.8;47792;41239;168.1;38772;28.752;40075414;40077523;40078888
+METRIC;40.066;DM;NAV_PLAN;22;15;68.182;16;41152.9;70396;181;46657.7;75431;70383;10685.4;70221;0.000;34984564;34984726;34984752
+METRIC;40.066;DM;FAIL_SAFE;2;2;100.000;14894;17446.5;19999;15045;20378.5;25712;5713;2781.0;5562;0.099;39484087;39489800;39509799
+METRIC;40.066;DM;MONITOR_TASK;79;0;0.000;26;36329.8;94807;126;36549.9;94929;4484;220.1;4484;0.583;39979775;39979872;40014426
+METRIC;40.066;DM;TIME_TASK;39;0;0.000;524;5730.0;14687;633;6123.2;14836;5443;393.3;5443;0.202;39159296;39159401;39164591
+TIME | ciclo=40 | hora=2026-10-29T00:18:24.761Z | wifi=ON | sync=2 | ciclos_desde_sync=15 | idade_sync_ms=14039 | release_dropped=0
+MONITOR_METRIC;UDP;jobs=80;misses=0;rmax_us=94929;evento_us=40479775;inicio_us=40479871;fim_us=40504077;log_dropped=241;tx_dropped=82;release_dropped=0;rx=28;tx=80
+TIME | ciclo=41 | hora=2026-10-29T00:18:25.761Z | wifi=ON | sync=2 | ciclos_desde_sync=16 | idade_sync_ms=15039 | release_dropped=0
+TIME | ciclo=42 | hora=2026-10-29T00:18:26.766Z | wifi=ON | sync=2 | ciclos_desde_sync=17 | idade_sync_ms=16044 | release_dropped=0
+TIME | ciclo=43 | hora=2026-10-29T00:18:27.761Z | wifi=ON | sync=2 | ciclos_desde_sync=18 | idade_sync_ms=17039 | release_dropped=0
+TIME | ciclo=44 | hora=2026-10-29T00:18:28.761Z | wifi=ON | sync=2 | ciclos_desde_sync=19 | idade_sync_ms=18039 | release_dropped=0
+QUEUE_LOSS | ctrl_overwritten=47 | ctrl_sequence_gaps=47
+METRIC;45.066;DM;FUS_IMU;8984;96;1.069;2026;2126.2;41710;2094;2446.8;98290;96119;320.6;96119;42.415;45075342;45075410;45077446
+METRIC;45.066;DM;CTRL_ATT;8937;307;3.435;1354;1478.1;42401;3438;3700.4;47792;41239;160.8;38772;28.828;45075410;45077515;45078876
+METRIC;45.066;DM;NAV_PLAN;22;15;68.182;16;41152.9;70396;181;46657.7;75431;70383;10685.4;70221;0.000;34984564;34984726;34984752
+METRIC;45.066;DM;FAIL_SAFE;2;2;100.000;14894;17446.5;19999;15045;20378.5;25712;5713;2781.0;5562;0.000;39484087;39489800;39509799
+METRIC;45.066;DM;MONITOR_TASK;89;0;0.000;26;35438.7;94807;126;35645.0;94929;4484;206.3;4484;0.577;44979775;44979872;45000315
+METRIC;45.066;DM;TIME_TASK;44;0;0.000;524;5657.3;14687;633;6121.9;14836;5443;464.5;5443;0.147;44159296;44159393;44164548
+TIME | ciclo=45 | hora=2026-10-29T00:18:29.761Z | wifi=ON | sync=2 | ciclos_desde_sync=20 | idade_sync_ms=19039 | release_dropped=0
+MONITOR_METRIC;UDP;jobs=90;misses=0;rmax_us=94929;evento_us=45479775;inicio_us=45479871;fim_us=45505088;log_dropped=275;tx_dropped=86;release_dropped=0;rx=31;tx=96
+TIME | ciclo=46 | hora=2026-10-29T00:18:30.761Z | wifi=ON | sync=2 | ciclos_desde_sync=21 | idade_sync_ms=20039 | release_dropped=0
+TIME_SYNC | atualizacoes=3 | mono_us=46173011
+TIME | ciclo=47 | hora=2026-10-29T00:18:31.761Z | wifi=ON | sync=3 | ciclos_desde_sync=1 | idade_sync_ms=986 | release_dropped=0
+TIME | ciclo=48 | hora=2026-10-29T00:18:32.761Z | wifi=ON | sync=3 | ciclos_desde_sync=2 | idade_sync_ms=1986 | release_dropped=0
+TIME | ciclo=49 | hora=2026-10-29T00:18:33.761Z | wifi=ON | sync=3 | ciclos_desde_sync=3 | idade_sync_ms=2986 | release_dropped=0
+FAIL-SAFE | motores zerados | modo seguro ativado | latencia_inicio=5037 us | resposta=16254 us | acao_segura_us=49489126 | acao_desde_evento_us=5043
+QUEUE_LOSS | ctrl_overwritten=48 | ctrl_sequence_gaps=48
+METRIC;50.066;DM;FUS_IMU;9984;97;0.972;2026;2122.9;41710;2094;2422.3;98290;96119;299.4;96119;42.448;50075342;50075414;50077450
+METRIC;50.066;DM;CTRL_ATT;9936;334;3.362;1354;1476.2;42401;3438;3695.6;47792;41239;155.6;38772;28.805;50075414;50077523;50078888
+METRIC;50.066;DM;NAV_PLAN;22;15;68.182;16;41152.9;70396;181;46657.7;75431;70383;10685.4;70221;0.000;34984564;34984726;34984752
+METRIC;50.066;DM;FAIL_SAFE;3;3;100.000;11217;15370.0;19999;15045;19003.7;25712;5713;2079.3;5562;0.112;49484083;49489120;49500337
+METRIC;50.066;DM;MONITOR_TASK;99;0;0.000;26;34620.0;94807;126;34815.2;94929;4484;195.2;4484;0.517;49979775;49979864;50005124
+METRIC;50.066;DM;TIME_TASK;49;0;0.000;524;5698.7;14687;633;6126.5;14836;5443;427.9;5443;0.162;49159296;49159401;49164407
+TIME | ciclo=50 | hora=2026-10-29T00:18:34.761Z | wifi=ON | sync=3 | ciclos_desde_sync=4 | idade_sync_ms=3986 | release_dropped=0
+MONITOR_METRIC;UDP;jobs=100;misses=0;rmax_us=94929;evento_us=50479775;inicio_us=50479871;fim_us=50509706;log_dropped=309;tx_dropped=93;release_dropped=0;rx=34;tx=109
+TIME | ciclo=51 | hora=2026-10-29T00:18:35.761Z | wifi=ON | sync=3 | ciclos_desde_sync=5 | idade_sync_ms=4986 | release_dropped=0
+TIME | ciclo=52 | hora=2026-10-29T00:18:36.761Z | wifi=ON | sync=3 | ciclos_desde_sync=6 | idade_sync_ms=5986 | release_dropped=0
+TIME | ciclo=53 | hora=2026-10-29T00:18:37.761Z | wifi=ON | sync=3 | ciclos_desde_sync=7 | idade_sync_ms=6986 | release_dropped=0
+TIME | ciclo=54 | hora=2026-10-29T00:18:38.761Z | wifi=ON | sync=3 | ciclos_desde_sync=8 | idade_sync_ms=7986 | release_dropped=0
+QUEUE_LOSS | ctrl_overwritten=50 | ctrl_sequence_gaps=50
+METRIC;55.066;DM;FUS_IMU;10984;100;0.910;2026;2120.5;41710;2094;2402.9;98290;96119;282.3;96119;42.438;55075342;55075410;55077446
+METRIC;55.066;DM;CTRL_ATT;10934;363;3.320;1354;1475.3;42401;3438;3691.7;47792;41239;151.1;38772;28.790;55075410;55077515;55078876
+METRIC;55.066;DM;NAV_PLAN;22;15;68.182;16;41152.9;70396;181;46657.7;75431;70383;10685.4;70221;0.000;34984564;34984726;34984752
+METRIC;55.066;DM;FAIL_SAFE;3;3;100.000;11217;15370.0;19999;15045;19003.7;25712;5713;2079.3;5562;0.000;49484083;49489120;49500337
+METRIC;55.066;DM;MONITOR_TASK;109;0;0.000;26;34090.4;94807;126;34276.7;94929;4484;186.3;4484;0.597;54979775;54979876;54999973
+METRIC;55.066;DM;TIME_TASK;54;0;0.000;524;5643.1;14687;633;6040.7;14836;5443;397.7;5443;0.139;54159296;54159393;54164369
+TIME | ciclo=55 | hora=2026-10-29T00:18:39.761Z | wifi=ON | sync=3 | ciclos_desde_sync=9 | idade_sync_ms=8986 | release_dropped=0
+MONITOR_METRIC;UDP;jobs=110;misses=0;rmax_us=94929;evento_us=55479775;inicio_us=55479871;fim_us=55509195;log_dropped=342;tx_dropped=97;release_dropped=0;rx=37;tx=125
+TIME | ciclo=56 | hora=2026-10-29T00:18:40.761Z | wifi=ON | sync=3 | ciclos_desde_sync=10 | idade_sync_ms=9986 | release_dropped=0
+TIME | ciclo=57 | hora=2026-10-29T00:18:41.761Z | wifi=ON | sync=3 | ciclos_desde_sync=11 | idade_sync_ms=10986 | release_dropped=0
+TIME | ciclo=58 | hora=2026-10-29T00:18:42.761Z | wifi=ON | sync=3 | ciclos_desde_sync=12 | idade_sync_ms=11986 | release_dropped=0
+TIME | ciclo=59 | hora=2026-10-29T00:18:43.761Z | wifi=ON | sync=3 | ciclos_desde_sync=13 | idade_sync_ms=12986 | release_dropped=0
+FAIL-SAFE | motores zerados | modo seguro ativado | latencia_inicio=5050 us | resposta=19865 us | acao_segura_us=59489151 | acao_desde_evento_us=5056
+QUEUE_LOSS | ctrl_overwritten=51 | ctrl_sequence_gaps=51
+METRIC;60.071;DM;FUS_IMU;11985;101;0.843;2026;2117.3;41710;2094;2385.7;98290;96119;268.3;96119;42.420;60080342;60080460;60082531
+METRIC;60.071;DM;CTRL_ATT;11934;386;3.234;1354;1473.5;42401;3438;3686.4;47792;41239;146.2;38772;28.809;60080460;60083055;60084417
+METRIC;60.071;DM;NAV_PLAN;22;15;68.182;16;41152.9;70396;181;46657.7;75431;70383;10685.4;70221;0.000;34984564;34984726;34984752
+METRIC;60.071;DM;FAIL_SAFE;4;4;100.000;11217;15231.2;19999;15045;19219.0;25712;5713;1562.8;5562;0.112;59484095;59489145;59503960
+METRIC;60.071;DM;MONITOR_TASK;119;0;0.000;26;33523.4;94807;126;33742.2;94929;4858;218.8;4858;0.565;59979775;59979868;60004923
+METRIC;60.071;DM;TIME_TASK;59;0;0.000;524;5684.8;14687;633;6064.5;14836;5443;379.6;5443;0.148;59159296;59159409;59164563
+TIME | ciclo=60 | hora=2026-10-29T00:18:44.761Z | wifi=ON | sync=3 | ciclos_desde_sync=14 | idade_sync_ms=13986 | release_dropped=0
+MONITOR_METRIC;UDP;jobs=120;misses=0;rmax_us=94929;evento_us=60479775;inicio_us=60479875;fim_us=60508979;log_dropped=375;tx_dropped=103;release_dropped=0;rx=40;tx=139
+TIME | ciclo=61 | hora=2026-10-29T00:18:45.761Z | wifi=ON | sync=3 | ciclos_desde_sync=15 | idade_sync_ms=14986 | release_dropped=0
+TIME | ciclo=62 | hora=2026-10-29T00:18:46.761Z | wifi=ON | sync=3 | ciclos_desde_sync=16 | idade_sync_ms=15986 | release_dropped=0
+TIME | ciclo=63 | hora=2026-10-29T00:18:47.761Z | wifi=ON | sync=3 | ciclos_desde_sync=17 | idade_sync_ms=16986 | release_dropped=0
+TIME | ciclo=64 | hora=2026-10-29T00:18:48.761Z | wifi=ON | sync=3 | ciclos_desde_sync=18 | idade_sync_ms=17986 | release_dropped=0
+QUEUE_LOSS | ctrl_overwritten=54 | ctrl_sequence_gaps=54
+METRIC;65.066;DM;FUS_IMU;12984;105;0.809;2026;2115.4;41710;2094;2371.9;98290;96119;256.5;96119;42.437;65075342;65075414;65077450
+METRIC;65.066;DM;CTRL_ATT;12930;416;3.217;1354;1473.1;42401;3438;3684.0;47792;41239;142.4;38772;28.764;65075414;65077523;65078888
+METRIC;65.066;DM;NAV_PLAN;22;15;68.182;16;41152.9;70396;181;46657.7;75431;70383;10685.4;70221;0.000;34984564;34984726;34984752
+METRIC;65.066;DM;FAIL_SAFE;4;4;100.000;11217;15231.2;19999;15045;19219.0;25712;5713;1562.8;5562;0.000;59484095;59489145;59503960
+METRIC;65.066;DM;MONITOR_TASK;129;0;0.000;26;33157.5;94807;126;33370.1;94929;4858;212.6;4858;0.577;64979775;64979880;65004619
+METRIC;65.066;DM;TIME_TASK;64;0;0.000;524;5637.5;14687;633;5995.6;14836;5443;358.1;5443;0.148;64159296;64159393;64164551
+TIME | ciclo=65 | hora=2026-10-29T00:18:49.761Z | wifi=ON | sync=3 | ciclos_desde_sync=19 | idade_sync_ms=18986 | release_dropped=0
+MONITOR_METRIC;UDP;jobs=130;misses=0;rmax_us=94929;evento_us=65479775;inicio_us=65479871;fim_us=65515150;log_dropped=408;tx_dropped=108;release_dropped=0;rx=43;tx=155
+TIME | ciclo=66 | hora=2026-10-29T00:18:50.761Z | wifi=ON | sync=3 | ciclos_desde_sync=20 | idade_sync_ms=19986 | release_dropped=0
+TIME_SYNC | atualizacoes=4 | mono_us=66206773
+TIME | ciclo=67 | hora=2026-10-29T00:18:51.760Z | wifi=ON | sync=4 | ciclos_desde_sync=1 | idade_sync_ms=952 | release_dropped=0
+TIME | ciclo=68 | hora=2026-10-29T00:18:52.760Z | wifi=ON | sync=4 | ciclos_desde_sync=2 | idade_sync_ms=1952 | release_dropped=0
+TIME | ciclo=69 | hora=2026-10-29T00:18:53.760Z | wifi=ON | sync=4 | ciclos_desde_sync=3 | idade_sync_ms=2952 | release_dropped=0
+QUEUE_LOSS | ctrl_overwritten=54 | ctrl_sequence_gaps=54
+METRIC;70.066;DM;FUS_IMU;13984;106;0.758;2026;2113.0;41710;2094;2358.8;98290;96119;245.8;96119;42.353;70075342;70075414;70077446
+METRIC;70.066;DM;CTRL_ATT;13930;444;3.187;1354;1472.2;42401;3438;3680.9;47792;41239;139.6;38772;28.782;70075414;70077506;70078868
+METRIC;70.066;DM;NAV_PLAN;22;15;68.182;16;41152.9;70396;181;46657.7;75431;70383;10685.4;70221;0.000;34984564;34984726;34984752
+METRIC;70.066;DM;FAIL_SAFE;4;4;100.000;11217;15231.2;19999;15045;19219.0;25712;5713;1562.8;5562;0.000;59484095;59489145;59503960
+METRIC;70.066;DM;MONITOR_TASK;139;0;0.000;26;32703.7;94807;126;32910.2;94929;4858;206.6;4858;0.566;69979775;69979864;70005323
+METRIC;70.066;DM;TIME_TASK;69;0;0.000;524;5665.6;14687;633;6004.9;14836;5443;339.3;5443;0.160;69159296;69159389;69164338
+TIME | ciclo=70 | hora=2026-10-29T00:18:54.760Z | wifi=ON | sync=4 | ciclos_desde_sync=4 | idade_sync_ms=3952 | release_dropped=0
+MONITOR_METRIC;UDP;jobs=140;misses=0;rmax_us=94929;evento_us=70479775;inicio_us=70479867;fim_us=70504873;log_dropped=440;tx_dropped=111;release_dropped=0;rx=44;tx=171
+TIME | ciclo=71 | hora=2026-10-29T00:18:55.760Z | wifi=ON | sync=4 | ciclos_desde_sync=5 | idade_sync_ms=4952 | release_dropped=0
+TIME | ciclo=72 | hora=2026-10-29T00:18:56.765Z | wifi=ON | sync=4 | ciclos_desde_sync=6 | idade_sync_ms=5957 | release_dropped=0
+TIME | ciclo=73 | hora=2026-10-29T00:18:57.760Z | wifi=ON | sync=4 | ciclos_desde_sync=7 | idade_sync_ms=6952 | release_dropped=0
+TIME | ciclo=74 | hora=2026-10-29T00:18:58.760Z | wifi=ON | sync=4 | ciclos_desde_sync=8 | idade_sync_ms=7952 | release_dropped=0
+QUEUE_LOSS | ctrl_overwritten=55 | ctrl_sequence_gaps=55
+METRIC;75.066;DM;FUS_IMU;14984;106;0.707;2026;2110.9;41710;2094;2347.8;98290;96119;236.9;96119;42.108;75075342;75075410;75077442
+METRIC;75.066;DM;CTRL_ATT;14929;470;3.148;1354;1471.1;42401;3438;3677.0;47792;41239;136.8;38772;28.469;75075410;75077502;75078863
+METRIC;75.066;DM;NAV_PLAN;22;15;68.182;16;41152.9;70396;181;46657.7;75431;70383;10685.4;70221;0.000;34984564;34984726;34984752
+METRIC;75.066;DM;FAIL_SAFE;4;4;100.000;11217;15231.2;19999;15045;19219.0;25712;5713;1562.8;5562;0.000;59484095;59489145;59503960
+METRIC;75.066;DM;MONITOR_TASK;149;0;0.000;26;32308.2;94807;126;32510.3;94929;4858;202.0;4858;0.567;74979775;74979876;75010215
+METRIC;75.066;DM;TIME_TASK;74;0;0.000;524;5564.1;14687;633;5950.8;14836;5443;386.7;5443;0.131;74159296;74159389;74164360
+TIME | ciclo=75 | hora=2026-10-29T00:18:59.760Z | wifi=ON | sync=4 | ciclos_desde_sync=9 | idade_sync_ms=8952 | release_dropped=0
+MONITOR_METRIC;UDP;jobs=150;misses=0;rmax_us=94929;evento_us=75479775;inicio_us=75479867;fim_us=75514380;log_dropped=472;tx_dropped=112;release_dropped=0;rx=44;tx=188
+TIME | ciclo=76 | hora=2026-10-29T00:19:00.760Z | wifi=ON | sync=4 | ciclos_desde_sync=10 | idade_sync_ms=9952 | release_dropped=0
+TIME | ciclo=77 | hora=2026-10-29T00:19:01.760Z | wifi=ON | sync=4 | ciclos_desde_sync=11 | idade_sync_ms=10952 | release_dropped=0
+TIME | ciclo=78 | hora=2026-10-29T00:19:02.760Z | wifi=ON | sync=4 | ciclos_desde_sync=12 | idade_sync_ms=11952 | release_dropped=0

@@ -1,26 +1,45 @@
-﻿# M2 — Drone ESP32: código, testes e evidências
+# M2 — Análise temporal de um drone didático em ESP32
 
-Neste trabalho, continuo a implementação do drone da M1 em C/FreeRTOS, acrescentando MONITOR_TASK (Wi-Fi UDP/TCP) e TIME_TASK (SNTP). O cliente e o coletor do PC são escritos em Python. **O projeto está em validação; ainda não concluí a bateria de testes nem demonstrei o atendimento de todos os requisitos.**
+Implementação em C/FreeRTOS de fusão sensorial, controle de atitude, navegação,
+fail-safe, comunicação Wi-Fi UDP/TCP e sincronização SNTP. O projeto dá
+continuidade à M1 e investiga a resposta temporal das seis tarefas em quatro
+configurações. As ferramentas de coleta e análise no PC são escritas em Python.
 
-[Enunciado M2 em PDF](Trabalho%20M2%20-%20STR%20.pdf). Estado publicado em 27/10/2026, instrumentação `M2-METRICS-2`.
+[Enunciado](Trabalho%20M2%20-%20STR%20.pdf) ·
+[Análise dos resultados](analise_final/README.md) ·
+[Arquitetura](docs/ARQUITETURA_FINAL.md) ·
+[Metodologia](docs/METODOLOGIA_FINAL.md) ·
+[Modos de entrada](docs/MODOS_ENTRADA.md)
 
-## O que já funciona e foi observado
+## Resultados da campanha
 
-- Seis tarefas implementadas: FUS_IMU, CTRL_ATT, NAV_PLAN, FAIL_SAFE, MONITOR_TASK e TIME_TASK.
-- Eventos A/B/C/D automáticos por ISR de GPTimer; BEGIN coordena o início; estatísticas locais consideram todos os jobs válidos.
-- UDP, NAV/FS, bloqueio de NAV após fail-safe e sincronização SNTP observados na placa.
-- Compilação registrada dos quatro cenários e variante touch; 16 testes Python registrados. Compilar não comprova funcionamento na placa.
-- **Uma coleta completa:** [M_UDP/R01_T02](ensaios_M2/02_coletas/M_UDP/R01_T02/RESUMO.md), 180 s, zero misses, perdas de ativações ou timestamps inválidos nas seis tarefas; três novas sincronizações SNTP.
-- **Ressalva REVISAR:** 34 comandos atrasaram mais de 500 ms em relação à agenda. O cliente aguarda ACK antes do próximo envio. Isso afeta a carga oferecida e precisa de revisão antes da comparação final; não significa deadline perdido na ESP32.
-- A [tentativa R01](ensaios_M2/02_coletas/M_UDP/R01/manifesto.json) foi interrompida por desconexão USB e está preservada como falha.
+Campanha `AGENDA_60S_R2`: cinco repetições de 60 segundos por cenário,
+firmware `M2-METRICS-4` e coletor de medição `M2-AGENDA-60S-2`.
+As 20 coletas têm comandos confirmados, registros NAV/FS completos e
+estatísticas das seis tarefas. Os acumuladores incluem os jobs válidos da
+janela, mesmo quando os logs periódicos individuais são amostrados ou descartados.
 
-Veja a [revisão da coleta](ensaios_M2/03_anexos_chat/M_UDP_R01_T02/REVISAO.md), o [índice](ensaios_M2/INDICE.csv) e a [validação técnica histórica](docs/VALIDACAO_METODOLOGIA.md). Documentos antigos podem mencionar planos substituídos: **o plano atual tem 20 coletas, não 27**. Hashes históricos identificam a versão validada naquele momento.
+| Cenário | Política | Escalonamento | CPU | Rede | Repetições | Falhas hard¹ | Falhas soft |
+|---|---|---|---:|---|---:|---:|---:|
+| M_UDP | CUSTOM | Preemptivo | 240 MHz | UDP | 5 | 0 | 0 |
+| M_TCP | CUSTOM | Preemptivo | 240 MHz | TCP | 5 | 20 | 0 |
+| P_UDP | DM | Cooperativo | 80 MHz | UDP | 5 | 1911 | 75 |
+| P_TCP | DM | Cooperativo | 80 MHz | TCP | 5 | 3081 | 75 |
 
-## Preparar outra máquina
+¹ Violações de prazo e ativações perdidas, discriminadas na análise.
+Todos usam unicore e slicing configurado como ON. No modo cooperativo esse
+valor não implica preempção pelo tick.
 
-Necessário: ESP32 clássico com touch, cabo USB de dados, Git, **ESP-IDF 6.1** e Python do ambiente ESP-IDF. Rede Wi-Fi **2,4 GHz** com comunicação entre PC e placa, DNS e SNTP (UDP 123). Aplicação usa porta 5000. Projeto configurado UNICORE.
+M_UDP atendeu todos os prazos nas cinco janelas observadas. Os demais
+cenários apresentaram descumprimentos que integram os resultados. Esses
+ensaios não demonstram garantia formal para todas as cargas. A comparação
+M/P altera simultaneamente prioridade, frequência e preempção.
 
-Abra um **terminal ESP-IDF** na extensão do VS Code ou ative o ambiente instalado. PowerShell comum sem ativação não reconhece idf.py. Confira `idf.py --version`.
+## Reproduzir o projeto
+
+Ambiente de referência: ESP32 clássico, ESP-IDF 6.1, Python 3.11 e terminal
+ESP-IDF. A ESP32 e o PC devem ter comunicação na mesma rede Wi-Fi 2,4 GHz;
+SNTP requer acesso à rede externa. Porta da aplicação: 5000.
 
 ```powershell
 git clone https://github.com/MiguelBertonzin/str-M2.git
@@ -30,87 +49,93 @@ idf.py set-target esp32
 idf.py menuconfig
 ```
 
-Em **M2 - Drone e experimentos**, preencha SSID e senha da sua rede. Os padrões são vazios; [sdkconfig.wifi.example](sdkconfig.wifi.example) contém apenas placeholders. O arquivo sdkconfig é local, ignorado pelo Git. Não publique configurações/binários com suas credenciais. sdkconfig.defaults só inicializa configurações novas.
+Em **M2 - Drone e experimentos**, definir SSID e senha. As credenciais são
+locais em `sdkconfig`, ignorado pelo Git. `sdkconfig.wifi.example` contém
+placeholders. O adaptador em `cmake/` configura preempção e slicing no build
+do projeto sem modificar o SDK global.
 
-O CMake gera um FreeRTOSConfig.h local ao build para preempção/slicing no kernel e aplicação. **Não altere o SDK global.** Se outro SDK não for compatível, use a versão validada ou revise explicitamente o adaptador.
-
-## Rodar uma coleta automática
-
-Troque COM7 pela porta da sua placa e o IP abaixo pelo **MONITOR_IP** exibido no serial (não o IP do notebook).
-
-```powershell
-python tools/configurar_teste.py --cenario M_UDP
-idf.py -p COM7 flash monitor
-```
-
-Anote o IP, feche o monitor com **Ctrl+]** e execute:
+### Modo automatizado — padrão
 
 ```powershell
-python pc/executar_ensaio.py --cenario M_UDP --repeticao R02 --host 192.168.15.23 --serial COM7
+python tools/configurar_teste.py --cenario M_UDP --automatizado
+idf.py -p COM7 flash
+python pc/executar_ensaio.py --cenario M_UDP --repeticao P01 --automatizado --host auto --serial COM7
 ```
 
-R02 está livre; R01 e R01_T02 são evidências já incluídas. Para começar uma campanha independente dos colegas em R01, mova `ensaios_M2/02_coletas` para uma pasta de arquivo fora da execução, preservando as evidências originais. O coletor recria as pastas necessárias. Identifique a origem de cada campanha; placas/redes diferentes não devem ser misturadas como condições equivalentes.
+Substituir COM7 pela porta local. `P01` identifica uma demonstração e evita
+colisão com R01–R05 já publicadas. Omitir `--automatizado` mantém o padrão.
+O coletor ocupa a serial, reinicia a placa, aguarda rede/SNTP, envia BEGIN,
+executa a agenda e recebe as estatísticas. Aguardar **Arquivos salvos em:**
+e retorno ao terminal. Não abrir outro monitor na mesma porta.
 
-O coletor reinicia a placa, aguarda rede/SNTP, valida configuração e executa BEGIN/agenda/coleta. **Sem tocar nos sensores nem digitar NAV/FS.** Mantenha cabo e rede até **Arquivos salvos em:** e retorno ao prompt. São 180 s medidos mais preparação e finalização; normalmente 3–4 minutos, podendo demorar mais na conexão.
+Para repetir o mesmo cenário, alterar apenas `--repeticao P02`, P03 etc.
+Para mudar cenário, executar o configurador e gravar novamente. Os quatro
+nomes válidos são M_UDP, M_TCP, P_UDP e P_TCP. Resultados publicados não
+devem ser sobrescritos para uma apresentação.
 
-Para refazer uma tentativa falha, adicione `--tentativa 2` (ou próximo número livre), sem apagar a anterior. Entre repetições do mesmo cenário basta mudar `--repeticao`. Para mudar cenário, execute o configurador e grave novamente. Ele preserva Wi-Fi, mas redefine os parâmetros experimentais.
-
-## Matriz e coletas pendentes
-
-| Cenário | Política | Preempção | CPU | Slicing | Rede | Repetições |
-|---|---|---|---|---|---|---|
-| M_UDP | CUSTOM | ON | 240 MHz | ON | UDP | R01–R05 |
-| M_TCP | CUSTOM | ON | 240 MHz | ON | TCP | R01–R05 |
-| P_UDP | DM | OFF/cooperativo | 80 MHz | ON | UDP | R01–R05 |
-| P_TCP | DM | OFF/cooperativo | 80 MHz | ON | TCP | R01–R05 |
-
-Adotei os cenários 02/07 da M1 como referências de melhor/pior atendimento, sem considerar que sejam extremos garantidos. Planejei cinco repetições de 180 s por cenário; o PDF pede vários testes sem fixar esses números. Slicing ON no cooperativo não implica preempção por tick; há yields explícitos.
-
-**Faltam 19 coletas completas no plano**, com aceitação da R01 atual ainda sujeita à revisão da agenda. Se mudar a carga/metodologia, pode ser necessário repetir R01. Primeiro validar R01 dos outros três cenários; depois multiplicar repetições. [Matriz](ensaios_M2/01_planejamento/MATRIZ.csv) e [guia operacional](ensaios_M2/README.md).
-
-## Cobertura do PDF e o que falta
-
-| Item | Situação |
-|---|---|
-| 1 — Melhor/pior M1 | Configurações prontas, referências históricas preservadas |
-| 2 — UDP/TCP | Implementados; validar cenários restantes e revisar agenda antes da comparação |
-| 3 — SNTP/RTT | Referência no PC/ESP, timestamps, sequência e bytes; RTT monotônico no PC |
-| 4 — WCRT/HWM | Máximo observado, HWM100 e HWM99 por histograma |
-| 5 — (m,k)-firm | (9,10) nas soft; perdas tornam a conclusão sobre todas as ativações inconclusiva |
-| 6 — Interferência/bloqueio | Dados/código disponíveis; análise fundamentada ainda pendente |
-| 7 — Deadlines em vários testes | Misses contados; atendimento nos quatro cenários ainda não demonstrado |
-| 8 — Logs/latência/CPU | Instrumentados; logs individuais FUS/CTRL amostrados, acumuladores completos |
-| 9 — Tabela comparativa | CSV por ensaio pronto; consolidar, gerar gráficos e escrever conclusões |
-| Extra — FS remoto acender LED | **Não implementado** |
-
-**Touch físico:** por escolha desta campanha, eventos são automáticos por GPTimer. O PDF exige sensores touch; a automação não comprova esse requisito. Existe modo TOUCH, mas validação separada/aceite da substituição permanecem pendentes. Não chamar latência GPTimer de latência touch.
-
-Outras limitações: SNTP não garante precisão de 1 ms. Timestamps são da aplicação, não do rádio. RTT inclui monitor de 500 ms, escalonamento e retries. WCRT observado não é garantia formal de WCET. HWM99 tem intervalos de 100 us e overflow acima de 102,4 ms. FS fica travado até reiniciar; FS posteriores reafirmam o estado seguro. Tempo decorrido da tarefa pode incluir preempção; CPU é medida separadamente. Instrumentação também custa CPU/memória.
-
-## Configuração durante a apresentação
-
-**Sim: pode mudar os parâmetros pelo menuconfig, recompilar e gravar.** Veja [APRESENTACAO.md](docs/APRESENTACAO.md), com parâmetros, comandos e diagnóstico.
-
-O coletor automático aceita apenas os quatro cenários padronizados. Para RM, 160 MHz, slicing OFF ou outra combinação pedida na hora, use o cliente interativo e identifique como demonstração fora da matriz. Não rode o configurador de cenário depois das mudanças manuais: ele as substituiria.
-
-## Organização e análises
-
-- `main/`: firmware, tarefas, ISR, rede, SNTP e métricas.
-- `cmake/`: configuração de escalonador local ao build.
-- `pc/`: cliente interativo, coleta automática e referência SNTP.
-- `tools/`: configuração, análise, índice e arquivamento.
-- `tests/`: testes do cliente e ferramentas.
-- `ensaios_M2/`: planejamento, dados brutos, estatísticas, revisões e relatório futuro.
-- `referencias/m1/`: código, PDFs e resultados usados como referência histórica.
-- `referencias/professor/`: exemplos originais e procedência.
-- `docs/`: arquitetura, metodologia, validações e guia de apresentação.
-
-Cada coleta guarda manifesto, serial, rede JSONL, agenda/comandos, estatísticas, CSV e resumo quando a finalização foi possível. COLETADO significa que o processo terminou; REVISAR indica ressalvas. Nenhum deles significa automaticamente atendimento ao PDF. Falhas são preservadas.
+### Modo físico — demonstração com touch
 
 ```powershell
-python -m unittest discover -s tests -p "test_*.py"
-python tools/analisar_ensaio.py --help
-python tools/atualizar_indice.py
+python tools/configurar_teste.py --cenario M_UDP --fisico
+idf.py -p COM7 flash
+python pc/executar_ensaio.py --cenario M_UDP --repeticao T01 --fisico --host auto --serial COM7
 ```
 
-[Plano do relatório](ensaios_M2/04_relatorio/README.md). Enviem a pasta completa do ensaio, identificando placa, rede, revisão do código e alterações. A publicação usa cópias sanitizadas; veja [PUBLICACAO.md](docs/PUBLICACAO.md). Nunca compartilhem credenciais nos resultados.
+O modo de entrada é selecionado na compilação: trocar a opção do coletor
+sem gravar o firmware correspondente produz diagnóstico de incompatibilidade.
+O guia físico, pinos e limites dessa demonstração estão em
+[MODOS_ENTRADA.md](docs/MODOS_ENTRADA.md). As coletas analisadas neste repositório
+são automáticas; a opção física não transforma essas evidências em medições
+do sensor capacitivo.
+
+Para RM, 160 MHz e configurações fora da matriz, usar `idf.py menuconfig`
+e o cliente interativo conforme [APRESENTACAO.md](docs/APRESENTACAO.md).
+
+## Dados, análise e rastreabilidade
+
+- `ensaios_M2/02_coletas/AGENDA_60S_R2/`: 20 conjuntos de dados brutos,
+  manifestos, comandos, estatísticas e resumos.
+- `analise_final/`: discussão, tabelas CSV e gráficos exportáveis.
+- `evidencias_complementares/`: primeiras R01 de P_UDP e P_TCP, identificadas
+  na análise de seleção e sensibilidade; não são cinco novas repetições.
+- `fontes_campanha/`: snapshot das fontes registradas nos manifestos da
+  campanha, anterior aos aliases de linha de comando para apresentação.
+- `main/`, `cmake/`, `pc/`, `tools/`, `tests/`: implementação atual e ferramentas.
+- `referencias/`: evidências M1 da escolha de configurações e exemplos do
+  professor com atribuição de origem.
+
+As opções de apresentação foram acrescentadas aos scripts depois da coleta.
+O firmware medido permanece preservado. O manifesto de publicação identifica
+os hashes das cópias públicas e eventuais remoções de credenciais dos logs;
+os originais de medição permanecem preservados localmente.
+
+```powershell
+python -m unittest discover -s tests -v
+python -m pip install -r analise_final/requirements.txt
+python tools/gerar_analise_final.py
+```
+
+Os detalhes de reprodução, agregação e dependências estão no README da análise.
+
+## Limitações e atendimento ao enunciado
+
+A matriz corresponde às configurações de melhor/pior atendimento selecionadas
+na M1, cruzadas com UDP/TCP. WCRT é o máximo observado; HWM99 usa intervalos
+de histograma, sem equivaler a WCET formal. O modelo soft adotado é (9,10),
+sem formar janelas entre reinicializações.
+
+RTT inclui o atendimento periódico do monitor de 500 ms, filas e transporte.
+UTC via SNTP não garante precisão de 1 ms. Os cenários P descartam logs
+secundários; isso deve ser distinguido de perdas de comandos e de pacotes
+no rádio. As execuções em blocos e a variação de RSSI limitam a atribuição
+causal das diferenças somente ao protocolo.
+
+O PDF exige sensores touch. Nesta campanha, os estímulos foram gerados por
+GPTimer; a latência apresentada é ISR → tarefa, não contato físico → tarefa.
+A conformidade física depende de demonstração específica ou aceite da
+substituição. O extra de acender LED por FS remoto não está implementado.
+O fail-safe permanece ativo até reiniciar; os FS remotos da agenda reafirmam
+um estado já seguro.
+
+Este material reúne implementação, evidências e análise técnica para a
+elaboração do relatório final em PDF e para a defesa presencial.

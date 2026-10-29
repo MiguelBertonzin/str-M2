@@ -1,650 +1,2186 @@
 {
-  "note": "Hashes das copias publicadas; originais locais preservados.",
+  "note": "Material final. Hash original e hash publicado distinguem sanitizacao de credenciais; originais preservados localmente.",
   "files": [
     {
       "path": ".gitattributes",
       "sha256": "a62e1285a74126dab9cd2d82e45d6a2bfed4a212d128382c63b0cd24fa086a55",
+      "original_sha256": "a62e1285a74126dab9cd2d82e45d6a2bfed4a212d128382c63b0cd24fa086a55",
       "sanitized": false
     },
     {
       "path": ".gitignore",
       "sha256": "18dd38f8502cfc99d97949dbf98700e47ad262a61e8ac4e6bf857f8acfdcc200",
-      "sanitized": false
-    },
-    {
-      "path": "cmake/m2_scheduler.cmake",
-      "sha256": "74ec5b2b56e3ce051c5acd01816db2e2f2b5f9019aa39623efd7020ae6f6d35f",
+      "original_sha256": "18dd38f8502cfc99d97949dbf98700e47ad262a61e8ac4e6bf857f8acfdcc200",
       "sanitized": false
     },
     {
       "path": "CMakeLists.txt",
       "sha256": "1edde559a15762955a62220873caefae5beeb6fd8950a4c47f325a68c62c72eb",
-      "sanitized": false
-    },
-    {
-      "path": "configs/sdkconfig.monitor_tcp",
-      "sha256": "221a5c6756867fbbb004a6d2be6c11c22feb2d4e0df5eb619d9f506c281b76e5",
-      "sanitized": false
-    },
-    {
-      "path": "configs/sdkconfig.monitor_udp",
-      "sha256": "cf789fa9587f1fd9f110e71a4e39a0d7f3beb4d2c4540b047b3109412c4eb078",
-      "sanitized": false
-    },
-    {
-      "path": "configs/sdkconfig.pior_m1",
-      "sha256": "d3cb07d34b241b676b9a20248d0aa10967d92437ba78d977ba9304ea9cf48da0",
-      "sanitized": false
-    },
-    {
-      "path": "configs/sdkconfig.touch",
-      "sha256": "1c9566a62e69cdd4e40cc946a7f404db2d7247cc5bb88279eaa23bf32a79d376",
-      "sanitized": false
-    },
-    {
-      "path": "docs/APRESENTACAO.md",
-      "sha256": "a24cc1efd8f29152bb457806281133e0c090cd879d51d31c3a63029988c7c110",
-      "sanitized": false
-    },
-    {
-      "path": "docs/AUTOMACAO.md",
-      "sha256": "165fb2b4658ede0f06c3535f0f3a35dd9e67cbb7c8586ab3957e28d2134adfd1",
-      "sanitized": false
-    },
-    {
-      "path": "docs/INICIO_M2.md",
-      "sha256": "3907781189d74bcbdb653e3cfc787d8e2962d0890d63daf986f1801cee192bb9",
-      "sanitized": false
-    },
-    {
-      "path": "docs/METODOLOGIA_TESTES.md",
-      "sha256": "d39ba4377443bec4acce1eb22ec8d41984793971d7133e115e693c70f84c3841",
-      "sanitized": false
-    },
-    {
-      "path": "docs/MONITOR_TASK.md",
-      "sha256": "da06ebd68c6bf2775eab697fb7e7ff907cdb74954b9b293b1d76721207e6a2f2",
-      "sanitized": false
-    },
-    {
-      "path": "docs/PUBLICACAO.md",
-      "sha256": "f6553fd17372539c5cfaafaf2a23388e85ac02b1b2e6dd46496428a7e84d3e39",
-      "sanitized": false
-    },
-    {
-      "path": "docs/TIME_TASK.md",
-      "sha256": "4ca39e78bfd4a6a37851deab049c44093c6af94650f8bc3f9cba69efe49c0e12",
-      "sanitized": false
-    },
-    {
-      "path": "docs/VALIDACAO.md",
-      "sha256": "ea0be42a89fe361ffb135b143ccfbe3331ec3400ada84b1ce4b8624714c06287",
-      "sanitized": false
-    },
-    {
-      "path": "docs/validacao_builds.json",
-      "sha256": "6ef868e7d71992399d930298f7ffdff83d0f369ea43f970fb7bdc7f0f074c6a3",
-      "sanitized": false
-    },
-    {
-      "path": "docs/VALIDACAO_METODOLOGIA.md",
-      "sha256": "1a52540dadb0c8b6cac7a11ff061c7754d09aa361ed66b0729298fa4003f8458",
-      "sanitized": false
-    },
-    {
-      "path": "docs/validacao_metodologia_builds.json",
-      "sha256": "5faf24dacf07822e48602cd84d7e98d7557b2c18a78923e32eed6a174f297710",
-      "sanitized": false
-    },
-    {
-      "path": "docs/VALIDACAO_MONITOR.md",
-      "sha256": "da4b92cfd39d4200892e7f923be5ebc3cae614455ce0b8aed35c2906ede1d0fd",
-      "sanitized": false
-    },
-    {
-      "path": "docs/validacao_monitor_builds.json",
-      "sha256": "2556d257195d96792c56d7128c9087d1436c1cb9961764e8e0d38878fa1453fb",
-      "sanitized": false
-    },
-    {
-      "path": "docs/VALIDACAO_TIME.md",
-      "sha256": "15d7a3f570fca5e88a92680ac472cad73ba050bb956e91ef6a860e5f218261f5",
-      "sanitized": false
-    },
-    {
-      "path": "docs/validacao_time_builds.json",
-      "sha256": "f715fb2552906db43404fe57790a6b8a622ac155a11e08eddfc93947a9bce674",
-      "sanitized": false
-    },
-    {
-      "path": "ensaios_M2/01_planejamento/MATRIZ.csv",
-      "sha256": "465e5200e66169e6afb5f9327a794af4ec4350f9ecb58a688b0379b659305f3f",
-      "sanitized": false
-    },
-    {
-      "path": "ensaios_M2/02_coletas/M_UDP/R01/comandos.jsonl",
-      "sha256": "dc3b4fceb3aae8839ed90c39116fcd2c6ea8967a3aa8f126fc27549fc0805894",
-      "sanitized": false
-    },
-    {
-      "path": "ensaios_M2/02_coletas/M_UDP/R01/manifesto.json",
-      "sha256": "155ecb6aaf045653cef20479dede199c66296f6bf89774e483290334fcca3dc8",
-      "sanitized": false
-    },
-    {
-      "path": "ensaios_M2/02_coletas/M_UDP/R01/rede.jsonl",
-      "sha256": "4285b8bfac0cf5f226359322446a0cddf02d06651b7a1c1fbf651a329497a6cb",
-      "sanitized": false
-    },
-    {
-      "path": "ensaios_M2/02_coletas/M_UDP/R01/roteiro.json",
-      "sha256": "040a00e7b11d82ad6b982b71a6aeb2928f686b793b65016e40931c2edff616ea",
-      "sanitized": false
-    },
-    {
-      "path": "ensaios_M2/02_coletas/M_UDP/R01/serial.txt",
-      "sha256": "2c30c3c0bb66869bf77a84ec6b14c87e4a744ca5ec545bba83c29ebf02c062c7",
-      "sanitized": true
-    },
-    {
-      "path": "ensaios_M2/02_coletas/M_UDP/R01_T02/comandos.jsonl",
-      "sha256": "227155b85a214b4abb469a1745f84a6f2756defb75d99c5a5002b167b5d4cdd9",
-      "sanitized": false
-    },
-    {
-      "path": "ensaios_M2/02_coletas/M_UDP/R01_T02/estatisticas.json",
-      "sha256": "68f16111c31e77919db9748756bb8502600554de60cf3d67c5e8f6856a65e7c3",
-      "sanitized": false
-    },
-    {
-      "path": "ensaios_M2/02_coletas/M_UDP/R01_T02/manifesto.json",
-      "sha256": "72fcbed799ac067f9d64831b8b9515a7158204e689918175c45caf8c981ca2d2",
-      "sanitized": false
-    },
-    {
-      "path": "ensaios_M2/02_coletas/M_UDP/R01_T02/rede.jsonl",
-      "sha256": "7b2a2cb871c2722d0d618aa22027287f6097910e5c4c8be75b937c9cc35cbf2a",
-      "sanitized": false
-    },
-    {
-      "path": "ensaios_M2/02_coletas/M_UDP/R01_T02/resumo.json",
-      "sha256": "bff46655a12bec5dd662c5074cfaa05e2746ed06000e1c1362d747a051160a55",
-      "sanitized": false
-    },
-    {
-      "path": "ensaios_M2/02_coletas/M_UDP/R01_T02/RESUMO.md",
-      "sha256": "b8e52343d227d7aa6f26b0aa01a530a29cc2bb9c75550c0282cb4c22775aaf9a",
-      "sanitized": false
-    },
-    {
-      "path": "ensaios_M2/02_coletas/M_UDP/R01_T02/roteiro.json",
-      "sha256": "040a00e7b11d82ad6b982b71a6aeb2928f686b793b65016e40931c2edff616ea",
-      "sanitized": false
-    },
-    {
-      "path": "ensaios_M2/02_coletas/M_UDP/R01_T02/serial.txt",
-      "sha256": "0cfcfaaeba04d2906f9a5cc864b4d745d9d57d36c738ac778d0b7492e19563f9",
-      "sanitized": true
-    },
-    {
-      "path": "ensaios_M2/02_coletas/M_UDP/R01_T02/tarefas.csv",
-      "sha256": "5e323c2a0eea5ee9cdf0c7a32e890589ae3a6f9e10cacafff09f77c124e5216d",
-      "sanitized": false
-    },
-    {
-      "path": "ensaios_M2/03_anexos_chat/H01_BASE_AUTO/origens.json",
-      "sha256": "050711977557312e6aedf03e2308547c34f7127b35085d423a1085ac6ef656fe",
-      "sanitized": false
-    },
-    {
-      "path": "ensaios_M2/03_anexos_chat/H01_BASE_AUTO/serial_base_automatica.txt",
-      "sha256": "a891c856419013ced7e510afe2510b38103c2efd972ed942e3fd6d2dcca6ccd4",
-      "sanitized": false
-    },
-    {
-      "path": "ensaios_M2/03_anexos_chat/H02_UDP_SEM_CLIENTE/origens.json",
-      "sha256": "3ab64027a084a3720966dcee1d4b823dc22c16f48a80a5cca88f6bc7f0e7fe16",
-      "sanitized": false
-    },
-    {
-      "path": "ensaios_M2/03_anexos_chat/H02_UDP_SEM_CLIENTE/serial_ip_incorreto_no_cliente.txt",
-      "sha256": "99d79d70e3248ff7f3201286f9d508d39d219ce6bce8f6490a32e2a3f702229f",
-      "sanitized": true
-    },
-    {
-      "path": "ensaios_M2/03_anexos_chat/H03_UDP_NAV/origens.json",
-      "sha256": "8f26466bbfbe0770dea2e6308c6e4956d4e86b2c15450c443aaeba2fb2ab1a1b",
-      "sanitized": false
-    },
-    {
-      "path": "ensaios_M2/03_anexos_chat/H03_UDP_NAV/serial_nav.txt",
-      "sha256": "932e6ad919b3743aed4bd846f97c51cc901c0c2e90bd1401378f06950539b7dc",
-      "sanitized": false
-    },
-    {
-      "path": "ensaios_M2/03_anexos_chat/H04_UDP_FS/origens.json",
-      "sha256": "29c8245de2c935826a6bf0ef7eb2ddb344e08dbf6de0821c6d2506ce65e7ca22",
-      "sanitized": false
-    },
-    {
-      "path": "ensaios_M2/03_anexos_chat/H04_UDP_FS/serial_nav_failsafe.txt",
-      "sha256": "ea18e16cf4ec588eb4e432b52299e1fc9e42029714cd38dc2ff6add665234ad7",
-      "sanitized": true
-    },
-    {
-      "path": "ensaios_M2/03_anexos_chat/H05_TIME_SNTP/origens.json",
-      "sha256": "3a26ac68400b78d164736fbf2a24f66cbe3e9ac8067b5603fe16f8c4a6c3e81d",
-      "sanitized": false
-    },
-    {
-      "path": "ensaios_M2/03_anexos_chat/H05_TIME_SNTP/serial_time.txt",
-      "sha256": "8a5f0c8984e2855d8a1c6d659e99a92015c7f96ecf81b54b0a1193158b020898",
-      "sanitized": false
-    },
-    {
-      "path": "ensaios_M2/03_anexos_chat/H05_TIME_SNTP/terminal_pc_time.txt",
-      "sha256": "ee85c95fa6d4ebf5a578c02422a02b040e779abc60b160af742ca21d9cae180a",
-      "sanitized": false
-    },
-    {
-      "path": "ensaios_M2/03_anexos_chat/M_UDP_R01/origens.json",
-      "sha256": "31b9fce07e80cb1f3eacbea9f1742b327e2b45b047f84078a1234369f751cef4",
-      "sanitized": false
-    },
-    {
-      "path": "ensaios_M2/03_anexos_chat/M_UDP_R01/REVISAO.md",
-      "sha256": "b266b7b30d665adb436e32be786ae7c1528f9f7941b445e9a6707901b31a657f",
-      "sanitized": false
-    },
-    {
-      "path": "ensaios_M2/03_anexos_chat/M_UDP_R01/terminal_interrupcao_usb.txt",
-      "sha256": "7127d4260388ad56dcfd7e9909296e5e4d732169d960ae77fda36ad91b404dee",
-      "sanitized": false
-    },
-    {
-      "path": "ensaios_M2/03_anexos_chat/M_UDP_R01_T02/origens.json",
-      "sha256": "20e7fe8372e68d86ca7f299bf96ec6a62afe39b621319633fb1762f9d45c1b42",
-      "sanitized": false
-    },
-    {
-      "path": "ensaios_M2/03_anexos_chat/M_UDP_R01_T02/REVISAO.md",
-      "sha256": "c859355f7a94ffad4d4266ade37ea1d53df49f083cf9fc1bb21acd501337cec0",
-      "sanitized": false
-    },
-    {
-      "path": "ensaios_M2/03_anexos_chat/M_UDP_R01_T02/terminal_coleta_completa.txt",
-      "sha256": "39816aa7d150daed5010f1c8cdf0381d9cd94cf4a636bfb14f73b8535e5a3cb1",
-      "sanitized": false
-    },
-    {
-      "path": "ensaios_M2/03_anexos_chat/README.md",
-      "sha256": "07e13ac2db9397000b110fbc0d153e200c4c726115385fd7d7e2f01fdf27df67",
-      "sanitized": false
-    },
-    {
-      "path": "ensaios_M2/04_relatorio/README.md",
-      "sha256": "2deea0520a29011849fadb7b0e62cd7e66eaae88a4825e5525cd1898f6c42ed0",
-      "sanitized": false
-    },
-    {
-      "path": "ensaios_M2/INDICE.csv",
-      "sha256": "c2b1d99bde1bddebabcb7e4ba2cf1224abf2e34d92c92a544db88ec85a3027ac",
-      "sanitized": false
-    },
-    {
-      "path": "ensaios_M2/README.md",
-      "sha256": "05e4829649d27ab4e244462107a052a0c5fbf4d6d41602d7087eabd3bb1799ae",
-      "sanitized": false
-    },
-    {
-      "path": "main/CMakeLists.txt",
-      "sha256": "fc414827d0f28945b5d19021e675498c0d487f3e21fb1ecb023e135d9fc3e6f2",
-      "sanitized": false
-    },
-    {
-      "path": "main/event_auto.c",
-      "sha256": "09f7d79d742581e3cbdcdf75015393423ec6461318badd8f9403c5e423aaa1e9",
-      "sanitized": false
-    },
-    {
-      "path": "main/event_auto.h",
-      "sha256": "4ae5c76da1d134d4388cde5631a30e5f64c636b0a0ee9d0e20660e8c0ed8632d",
-      "sanitized": false
-    },
-    {
-      "path": "main/event_script.c",
-      "sha256": "d2213dc24f91c7f1f409011a887e46fbf4f6a2cc00b5c08446d3ee63cb952745",
-      "sanitized": false
-    },
-    {
-      "path": "main/event_script.h",
-      "sha256": "93cae184dfd9b283dc325e1765c0e1cf9a019c9ef671fbfe9beabfcbf0c2fd36",
-      "sanitized": false
-    },
-    {
-      "path": "main/experiment.c",
-      "sha256": "5bcd22a62db27c5d121ff38b3fc6f4e8c428d2fe88433303b3d292cdf1b763c5",
-      "sanitized": false
-    },
-    {
-      "path": "main/experiment.h",
-      "sha256": "90b33f11d17af21d8cac87b5272b050d0899bcfe7b11c2ff8599311022e92e77",
-      "sanitized": false
-    },
-    {
-      "path": "main/Kconfig.projbuild",
-      "sha256": "d5ee1c17dfd1b9141556f0a149b48fdd0de6062a576a4d990acada09cefd8636",
-      "sanitized": false
-    },
-    {
-      "path": "main/main.c",
-      "sha256": "608f4a838ff1e61a5273467b0884089ec589365cf81d62fb4a8cb56174e04714",
-      "sanitized": false
-    },
-    {
-      "path": "main/monitor.c",
-      "sha256": "68c318b04d6eacae27f64670a1cf186a899c1a9806b6c79d17d91745e83fbaa5",
-      "sanitized": false
-    },
-    {
-      "path": "main/monitor.h",
-      "sha256": "369ef2d303251db538d44296f3eb357adc23296c188a95527baa291d93c4648d",
-      "sanitized": false
-    },
-    {
-      "path": "main/monitor_protocol.c",
-      "sha256": "e8a1f89404cbb588abbd45bd2e60140d140b39ebf33c7be4cb2c3ea85bb51122",
-      "sanitized": false
-    },
-    {
-      "path": "main/monitor_protocol.h",
-      "sha256": "56625a5f50c27f27a8e340f60ae5c86a09fdfac5cafaa2c7a7b07d7888239cb3",
-      "sanitized": false
-    },
-    {
-      "path": "main/time_task.c",
-      "sha256": "3c7673ad7f4a0dc0c5926e86cbe18d82f3425368867e84b3d8d29b4845094773",
-      "sanitized": false
-    },
-    {
-      "path": "main/time_task.h",
-      "sha256": "04bd04a3545784be7e1a5cf40063487d8bb771e5754a5901cfcde162f86f8c6f",
-      "sanitized": false
-    },
-    {
-      "path": "pc/executar_ensaio.py",
-      "sha256": "08c5a7064dc334b8ccb1b3ddf8c8f29a526ff72183210b216275990ae8b81026",
-      "sanitized": false
-    },
-    {
-      "path": "pc/monitor_pc.py",
-      "sha256": "cb44dce907055a4690921d177bb10070a73d0c0fd730bed76351b06b70555da6",
-      "sanitized": false
-    },
-    {
-      "path": "pc/relogio_sntp.py",
-      "sha256": "3a885d8d2c7d4f1605e034564e72dcd2f4e1e29d20c11bacf91487a4554c9265",
-      "sanitized": false
-    },
-    {
-      "path": "pc/requirements.txt",
-      "sha256": "95fdad543f34e4a191cd17219e1a73b4ab4b0b5ad9806a25c3b49e7b48ab8ca0",
+      "original_sha256": "1edde559a15762955a62220873caefae5beeb6fd8950a4c47f325a68c62c72eb",
       "sanitized": false
     },
     {
       "path": "README.md",
-      "sha256": "347e69a4c15685f2b650867188ec94c4d625445e536326837c07089e22e2fc59",
+      "sha256": "8d472f2b41232e30426d273ec5da557ea664d20059efb1a6cacc4d16c0f53b1a",
+      "original_sha256": "8d472f2b41232e30426d273ec5da557ea664d20059efb1a6cacc4d16c0f53b1a",
       "sanitized": false
     },
     {
-      "path": "referencias/m1/CMakeLists.txt",
-      "sha256": "ac480c1ec5ffc58d14a7f26fd1e038bdd0e41228bdb79cd4475916d0fbe7ebbd",
-      "sanitized": false
-    },
-    {
-      "path": "referencias/m1/IMPORTACAO.json",
-      "sha256": "446c47817e999a304aca2aaafea54028934952365fcd2953b7ace044e20a97fb",
-      "sanitized": false
-    },
-    {
-      "path": "referencias/m1/main/CMakeLists.txt",
-      "sha256": "27d6d39ef0cb6a9097984b41e080b09f7ff972339a0bb4ddf771db4001cb9782",
-      "sanitized": false
-    },
-    {
-      "path": "referencias/m1/main/main.c",
-      "sha256": "2901e73687563eb09849909f4e53daec394b23b9ca25fb7dd438bfa1363035cd",
-      "sanitized": false
-    },
-    {
-      "path": "referencias/m1/main/Trabalho M1 - STR.pdf",
-      "sha256": "8a81e7d80c54814c07c974566173863100d93e5b22c89086cea0b541f29e4e4b",
-      "sanitized": false
-    },
-    {
-      "path": "referencias/m1/overleaf12/Relatorio_M1_Drone.pdf",
-      "sha256": "01c71d80716e8da3fc157800dc071b11549ddb813034e956c36b7aa9f70a1c1a",
-      "sanitized": false
-    },
-    {
-      "path": "referencias/m1/sdkconfig",
-      "sha256": "33e8f7a9193fb9858cf287b9fd859e1a8f545f5f8287e7a991a1cbf11e640051",
-      "sanitized": false
-    },
-    {
-      "path": "referencias/m1/sdkconfig.defaults",
-      "sha256": "e69e8cb712b230725d0774683661e2deceb82de6a79bd73a620bdf7f9fd64c1e",
-      "sanitized": false
-    },
-    {
-      "path": "referencias/m1/tabelas_graficos/AUDITORIA_MEDICOES.md",
-      "sha256": "2e26a89f4d5b8af075b7a0ec545f7f5aa7240d4377706923584d41b5e9b419ba",
-      "sanitized": false
-    },
-    {
-      "path": "referencias/m1/tabelas_graficos/dados/metricas_finais_por_tarefa.csv",
-      "sha256": "2ab44461f099e0859cb75157fd04a461e260920e58cb28bc269368cf06113dd9",
-      "sanitized": false
-    },
-    {
-      "path": "referencias/m1/tabelas_graficos/dados/resumo_cenarios.csv",
-      "sha256": "9e97d7033e3bfa2738b0a61421c73fd5f2458143e85427b42449ae045ab0d22a",
-      "sanitized": false
-    },
-    {
-      "path": "referencias/m1/tabelas_graficos/METODOLOGIA.md",
-      "sha256": "88926cb560c2c59614a0077ca1ef2ee9993adbcd9ca43b99c81f988b53622b21",
-      "sanitized": false
-    },
-    {
-      "path": "referencias/m1/Tarefas_Trabalho_M1.txt",
-      "sha256": "5459fc98549ead8a4c04c804fa59020702b1f40b3b82bcd8bc63461018991160",
-      "sanitized": false
-    },
-    {
-      "path": "referencias/m1/Validos/01_CUSTOM_PREEMPTIVO_80MHz_UNICORE.txt",
-      "sha256": "7162629e6056293bec2dd3719654f4f2eafcdcdc6c059fee0aba587f5359e54d",
-      "sanitized": false
-    },
-    {
-      "path": "referencias/m1/Validos/02_CUSTOM_PREEMPTIVO_240MHz_UNICORE.txt",
-      "sha256": "a38c06063250e7aa238b1f9922b0225bfff9fe3e0dd36510d3cd2aa9de1ff20b",
-      "sanitized": false
-    },
-    {
-      "path": "referencias/m1/Validos/03_CUSTOM_COOPERATIVO_80MHz_UNICORE.txt",
-      "sha256": "e6b1de57783a417f151f1cf6690bd4ffbbde536725c2a8d5f9ebbb986ee59398",
-      "sanitized": false
-    },
-    {
-      "path": "referencias/m1/Validos/04_CUSTOM_COOPERATIVO_240MHz_UNICORE.txt",
-      "sha256": "81df5e8b21a8dced6d3cb62e414185614a7f13017ce59f98fa955da7ad816bd9",
-      "sanitized": false
-    },
-    {
-      "path": "referencias/m1/Validos/05_DM_PREEMPTIVO_80MHz_UNICORE.txt",
-      "sha256": "b43e0d23b44f7e86c3ecd6882ba123a23ab19b3952c326b0e873b2073b5b77d8",
-      "sanitized": false
-    },
-    {
-      "path": "referencias/m1/Validos/06_DM_PREEMPTIVO_240MHz_UNICORE.txt",
-      "sha256": "ffbb5db0ca2c309b94465ee1c8b25089c92d9101fcb0c5a3056652a7eab23a5d",
-      "sanitized": false
-    },
-    {
-      "path": "referencias/m1/Validos/07_DM_COOPERATIVO_80MHz_UNICORE.txt",
-      "sha256": "279bd639da9efe770b56c09024e344e7e579e0256054cb2850fabc3ee542f109",
-      "sanitized": false
-    },
-    {
-      "path": "referencias/m1/Validos/08_DM_COOPERATIVO_240MHz_UNICORE.txt",
-      "sha256": "d23514e9d8d578bd67f9cd018f2715a712fa9fc3b2a89cac0f155acf1e3e2482",
-      "sanitized": false
-    },
-    {
-      "path": "referencias/m1/Validos/EXTRA_01_CUSTOM_PREEMPTIVO_160MHz_UNICORE.txt",
-      "sha256": "7eff2fe6d547cfe289e765192d0a90b693f021ceaa8fcb594c46b271ce5af201",
-      "sanitized": false
-    },
-    {
-      "path": "referencias/m1/Validos/EXTRA_02_CUSTOM_COOPERATIVO_160MHz_UNICORE.txt",
-      "sha256": "1551578e8af681e205f4fedec4df27d33ff62e8e001a3a752bb2557c5d68e94a",
-      "sanitized": false
-    },
-    {
-      "path": "referencias/m1/Validos/EXTRA_03_DM_PREEMPTIVO_160MHz_UNICORE.txt",
-      "sha256": "e0a491fcb8b9670ec950437628988bcab6a163bece86682033ed69051673e0d9",
-      "sanitized": false
-    },
-    {
-      "path": "referencias/m1/Validos/EXTRA_04_DM_COOPERATIVO_160MHz_UNICORE.txt",
-      "sha256": "a31ce6700f0376585aab2b28e71ec1fb66451109903c6a4414ada4a2591e7e4f",
-      "sanitized": false
-    },
-    {
-      "path": "referencias/m1/Validos/EXTRA_05_DM_PREEMPTIVO_80MHz_UNICORE_SLICING_OFF.txt",
-      "sha256": "e4b5ee8a15b78051eea13f7a76e97d6dde2879351d294c87afd765a64da3b524",
-      "sanitized": false
-    },
-    {
-      "path": "referencias/m1/Validos/EXTRA_06_DM_PREEMPTIVO_240MHz_UNICORE_SLICING_OFF.txt",
-      "sha256": "497797f3e61f7502cbbb9c2b7b5f972881f4d65965edafe0697fa1c919ebe042",
-      "sanitized": false
-    },
-    {
-      "path": "referencias/m1/Validos/EXTRA_07_RM_PREEMPTIVO_240MHz_UNICORE_SLICING_ON.txt",
-      "sha256": "fb7a40656bac53ee6553670d043eb16f8afbd061ce4941ecf68fea5f76a79fa3",
-      "sanitized": false
-    },
-    {
-      "path": "referencias/m1/Validos/EXTRA_08_RM_PREEMPTIVO_80MHz_UNICORE_SLICING_ON.txt",
-      "sha256": "d6ff42dc793a6041d191e8f71a362cc1f6196fde1f940f8605464d2a1a5df441",
-      "sanitized": false
-    },
-    {
-      "path": "referencias/m1/Validos/EXTRA_09_RM_COOPERATIVO_80MHz_UNICORE.txt",
-      "sha256": "cea670f26b2542016ba08586e64247d9184909929fc3e68e38a03d2c9ac8a612",
-      "sanitized": false
-    },
-    {
-      "path": "referencias/m1/Validos/EXTRA_10_RM_COOPERATIVO_240MHz_UNICORE.txt",
-      "sha256": "9737368fb201a7bb6e52cd6a9d98891cd182cb8cfa6ce2b086eeabdb3885df76",
-      "sanitized": false
-    },
-    {
-      "path": "referencias/professor/IMPORTACAO_NETWORK_ESP32.json",
-      "sha256": "b7bcb42afbf7f8b2a18912c4b6b8875895f6131d303d83a236ee88669e15d1da",
-      "sanitized": false
-    },
-    {
-      "path": "referencias/professor/Network_ESP32/esp32_sntp_con.c",
-      "sha256": "ae51694b292a62089cb931460695817fb1c4acf1b5f37ca7ea1c0d10b3be54fd",
-      "sanitized": false
-    },
-    {
-      "path": "referencias/professor/Network_ESP32/README.md",
-      "sha256": "a0ae134ecb9fa5bd1014531541eb361e24ae1be3c2a3e19c1d766b78cb418d7e",
-      "sanitized": false
-    },
-    {
-      "path": "referencias/professor/Network_ESP32/tcp_client.py",
-      "sha256": "4daf34776a3f484cfce2e4cb4171c03fba96c43d7c007e2e393f6706046b301a",
-      "sanitized": false
-    },
-    {
-      "path": "referencias/professor/Network_ESP32/tcp_udp_esp32_wifi_con.c",
-      "sha256": "3053f6378aae2b7f292c593f75b1af06862be61f9dc58b509ce808deefb1c508",
-      "sanitized": false
-    },
-    {
-      "path": "referencias/professor/Network_ESP32/udp_server.py",
-      "sha256": "220f3e14f8c9e21f555b8becc2597e994630cddea345cde5016d18ef593c0496",
-      "sanitized": false
-    },
-    {
-      "path": "referencias/professor/README.md",
-      "sha256": "1ca8118f8ffe2d1a13293641144f917b43e1f84562a770179396a32e29ff6069",
-      "sanitized": false
-    },
-    {
-      "path": "resultados/base_automatica/CUSTOM_PRE_240MHz_sem_monitor.txt",
-      "sha256": "a891c856419013ced7e510afe2510b38103c2efd972ed942e3fd6d2dcca6ccd4",
-      "sanitized": false
-    },
-    {
-      "path": "resultados/base_automatica/README.md",
-      "sha256": "41e4cfbc3e7beabdec1844512ecdd7af3d06c5f391a1dee748b297b2aa2d144c",
-      "sanitized": false
-    },
-    {
-      "path": "sdkconfig.defaults",
-      "sha256": "64c5d617f624b2363dffca977126ab7386262a778a96f157addc3cc6adde258f",
-      "sanitized": false
-    },
-    {
-      "path": "sdkconfig.wifi.example",
-      "sha256": "c9366e06c6d5ddec4e2f5518478b8c0013c9d85067960ecc31ac2d3244b737a5",
-      "sanitized": false
-    },
-    {
-      "path": "tests/test_ensaios.py",
-      "sha256": "8b6d50b4266e3b1e1eac80005376a15a471d2aabc36ff8e63066b61d20d2cedd",
-      "sanitized": false
-    },
-    {
-      "path": "tests/test_monitor_pc.py",
-      "sha256": "0fc4f194409f76e197bb3d52a4bb956c3c0d85ba6ab228d2f0cf03283f2baf04",
-      "sanitized": false
-    },
-    {
-      "path": "tools/analisar_ensaio.py",
-      "sha256": "2b94056f695ea3460070b1df614a061993771b443b36624e0df68b5dbc9a036d",
-      "sanitized": false
-    },
-    {
-      "path": "tools/arquivar_anexo.py",
-      "sha256": "b3ecbcb438e232b82ae59c8e77e94d3710cc6f6a58e4d4d9f3ab09b72ee04dde",
-      "sanitized": false
-    },
-    {
-      "path": "tools/atualizar_indice.py",
-      "sha256": "1578cba2273aacb239dbe327fd12bc9715599b4ecc4b15925711d39dfc535b72",
-      "sanitized": false
-    },
-    {
-      "path": "tools/configurar_teste.py",
-      "sha256": "a99c890e4a3349fc8188c80a82818bd733e95ed8548060123ecf195e4a867a8d",
-      "sanitized": false
-    },
-    {
-      "path": "tools/verificar_base.py",
-      "sha256": "a83fb5de57d748f57715518c5a0a93951ef3b026e7ebdf672887f85e15f7a7d2",
+      "path": "ROTEIRO_RAPIDO_TESTES.txt",
+      "sha256": "a69502684eacd4c3f6b3d814cfbe7185f733bb0d8400fc7450bf16630575b01e",
+      "original_sha256": "a69502684eacd4c3f6b3d814cfbe7185f733bb0d8400fc7450bf16630575b01e",
       "sanitized": false
     },
     {
       "path": "Trabalho M2 - STR .pdf",
       "sha256": "2fdb6a672784df63dbbebee1d261c68c5d1049616057c2a93e68a864f5ee7faf",
+      "original_sha256": "2fdb6a672784df63dbbebee1d261c68c5d1049616057c2a93e68a864f5ee7faf",
       "sanitized": false
+    },
+    {
+      "path": "analise_final/DISCUSSAO.md",
+      "sha256": "f1cb754cf1d4e7a0678c702898a3d66d890ae70e7f47cfb288b1b1feda0c7980",
+      "original_sha256": "f1cb754cf1d4e7a0678c702898a3d66d890ae70e7f47cfb288b1b1feda0c7980",
+      "sanitized": false
+    },
+    {
+      "path": "analise_final/METODOLOGIA.md",
+      "sha256": "4db4b08aa616517d85cf3174d251eb26883d1b83192740f659c64182272e1447",
+      "original_sha256": "4db4b08aa616517d85cf3174d251eb26883d1b83192740f659c64182272e1447",
+      "sanitized": false
+    },
+    {
+      "path": "analise_final/README.md",
+      "sha256": "9a51c2ce80fecff43d5edf45a4a6aab5224f7e007bab10f21d96d8f8fcece790",
+      "original_sha256": "9a51c2ce80fecff43d5edf45a4a6aab5224f7e007bab10f21d96d8f8fcece790",
+      "sanitized": false
+    },
+    {
+      "path": "analise_final/REQUISITOS.md",
+      "sha256": "e25a0be6833cb939684642b517078e4e334a1f997c868523a1da003008a922b0",
+      "original_sha256": "e25a0be6833cb939684642b517078e4e334a1f997c868523a1da003008a922b0",
+      "sanitized": false
+    },
+    {
+      "path": "analise_final/TABELAS.md",
+      "sha256": "260c0d6bc88a8be82bd19f2b1f4fd4a6a828d9fdd9e6ad64b0b7cf02a51f13ed",
+      "original_sha256": "260c0d6bc88a8be82bd19f2b1f4fd4a6a828d9fdd9e6ad64b0b7cf02a51f13ed",
+      "sanitized": false
+    },
+    {
+      "path": "analise_final/figuras/01_falhas_hard.pdf",
+      "sha256": "6da26b57b912ea88b2351f6edbbfeef63c4b3a55c8194ace0abbf48c0d7a4bd5",
+      "original_sha256": "a1ebb8fa87567c2c11bc859828f7ad578f64a8c6f633839c62ba953a440387e2",
+      "sanitized": false,
+      "regenerated_from_public_data": true
+    },
+    {
+      "path": "analise_final/figuras/01_falhas_hard.png",
+      "sha256": "021e926809a1658994b37bda626be3fc9d55acd9f390f513112243b92b3aecd3",
+      "original_sha256": "021e926809a1658994b37bda626be3fc9d55acd9f390f513112243b92b3aecd3",
+      "sanitized": false
+    },
+    {
+      "path": "analise_final/figuras/02_wcrt_deadlines.pdf",
+      "sha256": "24dc0ffea8aca434f809de6e4180c597d248983de5cd5696225d5008810c3032",
+      "original_sha256": "dbee315a01c979a083af8e93acf9f4679fa4885e1a14ba5a8ff4529cda3920dc",
+      "sanitized": false,
+      "regenerated_from_public_data": true
+    },
+    {
+      "path": "analise_final/figuras/02_wcrt_deadlines.png",
+      "sha256": "87a021defd0b92ee9a5e2266d0e698983265218c2b35c7714fa5f00b61d20dcc",
+      "original_sha256": "87a021defd0b92ee9a5e2266d0e698983265218c2b35c7714fa5f00b61d20dcc",
+      "sanitized": false
+    },
+    {
+      "path": "analise_final/figuras/03_ping_ecdf.pdf",
+      "sha256": "68d7d499c18fc64df09d9695a5235ee9883aa5dba98dcb53912b3a0ef500e7a9",
+      "original_sha256": "f4390215cb01dbaa19530cc8e81d717ec39022fdc1497a2ce4af46c41468ddac",
+      "sanitized": false,
+      "regenerated_from_public_data": true
+    },
+    {
+      "path": "analise_final/figuras/03_ping_ecdf.png",
+      "sha256": "f22a6c5eda3c83aa126f6a75f4b535e01bda154a18bd6c8bda081aa7e23ee0e0",
+      "original_sha256": "f22a6c5eda3c83aa126f6a75f4b535e01bda154a18bd6c8bda081aa7e23ee0e0",
+      "sanitized": false
+    },
+    {
+      "path": "analise_final/figuras/04_ping_repeticoes.pdf",
+      "sha256": "3dc5acf1c2f351206c0205489d48f02e393f230beb68d4f7d6fb3c933c4027bf",
+      "original_sha256": "180c230ff090880a50985767408ac3e82a4daa74aff9c10fb726737641b6c74e",
+      "sanitized": false,
+      "regenerated_from_public_data": true
+    },
+    {
+      "path": "analise_final/figuras/04_ping_repeticoes.png",
+      "sha256": "5c360dde64f07bbb7bd65bf43c371a0e3ee4677e82b0cfe482559cdf771ee5af",
+      "original_sha256": "5c360dde64f07bbb7bd65bf43c371a0e3ee4677e82b0cfe482559cdf771ee5af",
+      "sanitized": false
+    },
+    {
+      "path": "analise_final/figuras/05_cpu_aplicacao.pdf",
+      "sha256": "411d5301d9049d5c218b4ddeceeed8c27da415b33507af977374fbcf86a70276",
+      "original_sha256": "e0ca430b32f21735249de232818fa2e16fb994871058672efdcbee3ae0bae837",
+      "sanitized": false,
+      "regenerated_from_public_data": true
+    },
+    {
+      "path": "analise_final/figuras/05_cpu_aplicacao.png",
+      "sha256": "29505b27cc306608c7ecc331ac5bf78043bb50dc3a309465a208222b3e7685a3",
+      "original_sha256": "29505b27cc306608c7ecc331ac5bf78043bb50dc3a309465a208222b3e7685a3",
+      "sanitized": false
+    },
+    {
+      "path": "analise_final/figuras/06_latencia_isr.pdf",
+      "sha256": "084fa7705113fe8e8ec2ac52659693bad2f00e55c891971f41e88df5f56de84a",
+      "original_sha256": "97aaaab958ff4c28b1e352ec675307e03775002aee5369c8000cf12063fc6075",
+      "sanitized": false,
+      "regenerated_from_public_data": true
+    },
+    {
+      "path": "analise_final/figuras/06_latencia_isr.png",
+      "sha256": "e77cd9487e0aba7d2e982834f16cd62b0e7205af36e865061e15437840258f81",
+      "original_sha256": "e77cd9487e0aba7d2e982834f16cd62b0e7205af36e865061e15437840258f81",
+      "sanitized": false
+    },
+    {
+      "path": "analise_final/figuras/07_mk_firm.pdf",
+      "sha256": "1ffb37acb887e913f07c2254a446ab61211f0a4343af862d2434661b4923356e",
+      "original_sha256": "0892f15349c6bed8dc583ce1ae54a53882653ee2c86038eef29ba681c7fd4827",
+      "sanitized": false,
+      "regenerated_from_public_data": true
+    },
+    {
+      "path": "analise_final/figuras/07_mk_firm.png",
+      "sha256": "a944b661780bcfb0f6a1887516d6018faffed62a30a144095603151581dc03f1",
+      "original_sha256": "a944b661780bcfb0f6a1887516d6018faffed62a30a144095603151581dc03f1",
+      "sanitized": false
+    },
+    {
+      "path": "analise_final/figuras/08_descartes_observados.pdf",
+      "sha256": "09003695972aabfc881ff5c327dcfe56cdfd529256d4514d3d4797c0b38fccf1",
+      "original_sha256": "088315bad68cf0ec5d47c906198a3b7b4b7332953886fa99c62f63ede3b3ce78",
+      "sanitized": false,
+      "regenerated_from_public_data": true
+    },
+    {
+      "path": "analise_final/figuras/08_descartes_observados.png",
+      "sha256": "a4b619cdc46b3ee4695029be828b9bb0b09aa034c20efed352eee08d4aac79e8",
+      "original_sha256": "a4b619cdc46b3ee4695029be828b9bb0b09aa034c20efed352eee08d4aac79e8",
+      "sanitized": false
+    },
+    {
+      "path": "analise_final/figuras/09_fail_safe_acao_conclusao.pdf",
+      "sha256": "5c44bbf4a0dbb54a5943632990bd969b00174ce197240cf55c710e82d2dd0320",
+      "original_sha256": "4063db48032acd22ad70a755987e7af9e5b984ef75d7ea038db48cdfddac4b12",
+      "sanitized": false,
+      "regenerated_from_public_data": true
+    },
+    {
+      "path": "analise_final/figuras/09_fail_safe_acao_conclusao.png",
+      "sha256": "31c20df8cee5387bbf9669842e0b67b09a991b3dfd49bcb9d8508c00e714541c",
+      "original_sha256": "31c20df8cee5387bbf9669842e0b67b09a991b3dfd49bcb9d8508c00e714541c",
+      "sanitized": false
+    },
+    {
+      "path": "analise_final/requirements.txt",
+      "sha256": "be923c642695914a2c78b1fe8cd465496994e45d41c89ae86b5962883f01eb27",
+      "original_sha256": "be923c642695914a2c78b1fe8cd465496994e45d41c89ae86b5962883f01eb27",
+      "sanitized": false
+    },
+    {
+      "path": "analise_final/resultados.json",
+      "sha256": "7955ee7b1c04bea562308bf07367c5dada1db3c8c2fa702b58eb3c6c974f2dc3",
+      "original_sha256": "7955ee7b1c04bea562308bf07367c5dada1db3c8c2fa702b58eb3c6c974f2dc3",
+      "sanitized": false
+    },
+    {
+      "path": "analise_final/tabelas/cenarios.csv",
+      "sha256": "e5a0446a009aff0566a4266251b7bf21bbc7ae669ac624864ddbc76f6d28eb6d",
+      "original_sha256": "e5a0446a009aff0566a4266251b7bf21bbc7ae669ac624864ddbc76f6d28eb6d",
+      "sanitized": false
+    },
+    {
+      "path": "analise_final/tabelas/integridade_dados.csv",
+      "sha256": "0d407f7aa38cf941145077398b63b90fff79aa7f5ab8ada09341f8e08b5ccb50",
+      "original_sha256": "0ff722a92d76890dae34a9fc09af11fb58b3656031e33a1fed4e0ef92060f944",
+      "sanitized": false,
+      "regenerated_from_public_data": true
+    },
+    {
+      "path": "analise_final/tabelas/ping_amostras.csv",
+      "sha256": "576212022976485325d334f0a427fa3bea2f1333522d15e47669423d5e3bf247",
+      "original_sha256": "576212022976485325d334f0a427fa3bea2f1333522d15e47669423d5e3bf247",
+      "sanitized": false
+    },
+    {
+      "path": "analise_final/tabelas/repeticoes.csv",
+      "sha256": "26149b6dcc65dc84e4d3e5e171ed67f2bbe56adaf65b7369664a883da88ac4e7",
+      "original_sha256": "26149b6dcc65dc84e4d3e5e171ed67f2bbe56adaf65b7369664a883da88ac4e7",
+      "sanitized": false
+    },
+    {
+      "path": "analise_final/tabelas/sntp_por_repeticao.csv",
+      "sha256": "dccf7e0b2d1ec703617d81f78930b5c800989e29678a674ad3cef71f1850d50e",
+      "original_sha256": "dccf7e0b2d1ec703617d81f78930b5c800989e29678a674ad3cef71f1850d50e",
+      "sanitized": false
+    },
+    {
+      "path": "analise_final/tabelas/tarefas_por_cenario.csv",
+      "sha256": "77c73ed8b8f515e18a672e5393fc1bfbbbf8de1abd6d5be9b3cd952f11ad7a2b",
+      "original_sha256": "77c73ed8b8f515e18a672e5393fc1bfbbbf8de1abd6d5be9b3cd952f11ad7a2b",
+      "sanitized": false
+    },
+    {
+      "path": "analise_final/tabelas/tarefas_por_repeticao.csv",
+      "sha256": "493a5df9f24d89517d6195a3f1c394ddc7763f5a47b24b9ae0b38394718e4bdc",
+      "original_sha256": "493a5df9f24d89517d6195a3f1c394ddc7763f5a47b24b9ae0b38394718e4bdc",
+      "sanitized": false
+    },
+    {
+      "path": "analise_final/tabelas/timestamps_comunicacao.csv",
+      "sha256": "75fd4cc73a6a18a6a46327556f01ff2af7ea13705ce938c76eb335f34dfae3b5",
+      "original_sha256": "75fd4cc73a6a18a6a46327556f01ff2af7ea13705ce938c76eb335f34dfae3b5",
+      "sanitized": false
+    },
+    {
+      "path": "cmake/m2_scheduler.cmake",
+      "sha256": "74ec5b2b56e3ce051c5acd01816db2e2f2b5f9019aa39623efd7020ae6f6d35f",
+      "original_sha256": "74ec5b2b56e3ce051c5acd01816db2e2f2b5f9019aa39623efd7020ae6f6d35f",
+      "sanitized": false
+    },
+    {
+      "path": "configs/sdkconfig.monitor_tcp",
+      "sha256": "221a5c6756867fbbb004a6d2be6c11c22feb2d4e0df5eb619d9f506c281b76e5",
+      "original_sha256": "221a5c6756867fbbb004a6d2be6c11c22feb2d4e0df5eb619d9f506c281b76e5",
+      "sanitized": false
+    },
+    {
+      "path": "configs/sdkconfig.monitor_udp",
+      "sha256": "cf789fa9587f1fd9f110e71a4e39a0d7f3beb4d2c4540b047b3109412c4eb078",
+      "original_sha256": "cf789fa9587f1fd9f110e71a4e39a0d7f3beb4d2c4540b047b3109412c4eb078",
+      "sanitized": false
+    },
+    {
+      "path": "configs/sdkconfig.pior_m1",
+      "sha256": "d3cb07d34b241b676b9a20248d0aa10967d92437ba78d977ba9304ea9cf48da0",
+      "original_sha256": "d3cb07d34b241b676b9a20248d0aa10967d92437ba78d977ba9304ea9cf48da0",
+      "sanitized": false
+    },
+    {
+      "path": "configs/sdkconfig.touch",
+      "sha256": "1c9566a62e69cdd4e40cc946a7f404db2d7247cc5bb88279eaa23bf32a79d376",
+      "original_sha256": "1c9566a62e69cdd4e40cc946a7f404db2d7247cc5bb88279eaa23bf32a79d376",
+      "sanitized": false
+    },
+    {
+      "path": "docs/APRESENTACAO.md",
+      "sha256": "e1c18d773b7b3890b5514830fe58862e147409a4f51aa24a646b4409aaa0a9ae",
+      "original_sha256": "e1c18d773b7b3890b5514830fe58862e147409a4f51aa24a646b4409aaa0a9ae",
+      "sanitized": false
+    },
+    {
+      "path": "docs/ARQUITETURA_FINAL.md",
+      "sha256": "7080bac2bbd692bbdc2206d859aa8eb03e34f18a6748e21b57a4d2715605a0f6",
+      "original_sha256": "7080bac2bbd692bbdc2206d859aa8eb03e34f18a6748e21b57a4d2715605a0f6",
+      "sanitized": false
+    },
+    {
+      "path": "docs/METODOLOGIA_FINAL.md",
+      "sha256": "624c99465a5b0a7d988507abc67635c2065713e0fdcffdf3acec9700613fde58",
+      "original_sha256": "624c99465a5b0a7d988507abc67635c2065713e0fdcffdf3acec9700613fde58",
+      "sanitized": false
+    },
+    {
+      "path": "docs/MODOS_ENTRADA.md",
+      "sha256": "34046bef9473680d714d4a7d9beb6983b4ae3c127d89a02fc70ed11d8e33f65e",
+      "original_sha256": "34046bef9473680d714d4a7d9beb6983b4ae3c127d89a02fc70ed11d8e33f65e",
+      "sanitized": false
+    },
+    {
+      "path": "docs/PUBLICACAO.md",
+      "sha256": "246de37aa001dfa438c9eadd08ab2b2007b2c7d09d23c037fbadd166534a0c31",
+      "original_sha256": "246de37aa001dfa438c9eadd08ab2b2007b2c7d09d23c037fbadd166534a0c31",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/01_planejamento/MATRIZ.csv",
+      "sha256": "c92eee559257ad18a68965c55ac72282e548ae3178f1834e12472f57ae67c562",
+      "original_sha256": "c92eee559257ad18a68965c55ac72282e548ae3178f1834e12472f57ae67c562",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R01/RESUMO.md",
+      "sha256": "e4a8c8a66f2530ef198a0be60fb8cd6b8772aa1df55a4072004cb6d004efedb7",
+      "original_sha256": "e4a8c8a66f2530ef198a0be60fb8cd6b8772aa1df55a4072004cb6d004efedb7",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R01/comandos.jsonl",
+      "sha256": "c5e44daa66b8d54c5326ad9cf6a61e31646567a452d7e1362d82e3db5982181a",
+      "original_sha256": "c5e44daa66b8d54c5326ad9cf6a61e31646567a452d7e1362d82e3db5982181a",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R01/envios.jsonl",
+      "sha256": "0b65cceeb5f6226745b8297a8a25413adeaf3978426189cbf73199bb61e627c8",
+      "original_sha256": "0b65cceeb5f6226745b8297a8a25413adeaf3978426189cbf73199bb61e627c8",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R01/estatisticas.json",
+      "sha256": "32b14ae74dd3e52d77b3b0beb88936f40511431480a52d42fbbafc574db97440",
+      "original_sha256": "32b14ae74dd3e52d77b3b0beb88936f40511431480a52d42fbbafc574db97440",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R01/estatisticas_recebidas.json",
+      "sha256": "32b14ae74dd3e52d77b3b0beb88936f40511431480a52d42fbbafc574db97440",
+      "original_sha256": "32b14ae74dd3e52d77b3b0beb88936f40511431480a52d42fbbafc574db97440",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R01/manifesto.json",
+      "sha256": "4039cb0efcaa92ff58dd2d06126ab20a79fe1a78be4df89a9968e16e6e00cf11",
+      "original_sha256": "4039cb0efcaa92ff58dd2d06126ab20a79fe1a78be4df89a9968e16e6e00cf11",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R01/rede.jsonl",
+      "sha256": "a38f829f9738afb287ff6473b52963900a6848c0dd9cb85eeb5b3c33be7a6b6d",
+      "original_sha256": "a38f829f9738afb287ff6473b52963900a6848c0dd9cb85eeb5b3c33be7a6b6d",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R01/resumo.json",
+      "sha256": "b16300a92ef203071b94c5632035f6b778a0f5649ec1e01f93e47b7398826291",
+      "original_sha256": "b16300a92ef203071b94c5632035f6b778a0f5649ec1e01f93e47b7398826291",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R01/roteiro.json",
+      "sha256": "1d3a82ac8bd67b29191724e70b7fd899a98ec2d375807b5682341cc445dcde65",
+      "original_sha256": "1d3a82ac8bd67b29191724e70b7fd899a98ec2d375807b5682341cc445dcde65",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R01/serial.txt",
+      "sha256": "44a9fd516f6fd06c583fdc7a16cd3bc648c309ae38d5e0e3953823d611684ee1",
+      "original_sha256": "1b6b478b286ca7f515ec9ae7104a2a6307e8052cb7a08827e3b6c9b65d932daf",
+      "sanitized": true
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R01/tarefas.csv",
+      "sha256": "6f3b7bfb5af77f2b06d16b9d553bc3cbf73f1a09c71e4ff2a04da28bbe838ebe",
+      "original_sha256": "6f3b7bfb5af77f2b06d16b9d553bc3cbf73f1a09c71e4ff2a04da28bbe838ebe",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R02/RESUMO.md",
+      "sha256": "cf21c6e7103a54ef95383ecf3c2824473e673b581a284bb2a215b5e8dc4d743c",
+      "original_sha256": "cf21c6e7103a54ef95383ecf3c2824473e673b581a284bb2a215b5e8dc4d743c",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R02/comandos.jsonl",
+      "sha256": "769f3aaf305e00953a386563366803b3a45d1043524ef615c0a7d7f17d5dca30",
+      "original_sha256": "769f3aaf305e00953a386563366803b3a45d1043524ef615c0a7d7f17d5dca30",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R02/envios.jsonl",
+      "sha256": "303dc27cb6c10c11abcc0a8524dec6cc9e98ebed5e0b8dfe36e47e548e5df73c",
+      "original_sha256": "303dc27cb6c10c11abcc0a8524dec6cc9e98ebed5e0b8dfe36e47e548e5df73c",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R02/estatisticas.json",
+      "sha256": "8ac17bd5c826e6466c149f560aa9036dd732edef109dee44ca5d60c1b6a13ca8",
+      "original_sha256": "8ac17bd5c826e6466c149f560aa9036dd732edef109dee44ca5d60c1b6a13ca8",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R02/estatisticas_recebidas.json",
+      "sha256": "8ac17bd5c826e6466c149f560aa9036dd732edef109dee44ca5d60c1b6a13ca8",
+      "original_sha256": "8ac17bd5c826e6466c149f560aa9036dd732edef109dee44ca5d60c1b6a13ca8",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R02/manifesto.json",
+      "sha256": "a81e05f000ac179f8a92e59d0bdf4df348460746d35313b8687ddc3406e75354",
+      "original_sha256": "a81e05f000ac179f8a92e59d0bdf4df348460746d35313b8687ddc3406e75354",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R02/rede.jsonl",
+      "sha256": "c2e972550d724c8f4e9ecef321b145f0383607f4829d764ab0f5eb064bec7d76",
+      "original_sha256": "c2e972550d724c8f4e9ecef321b145f0383607f4829d764ab0f5eb064bec7d76",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R02/resumo.json",
+      "sha256": "ed024148dc3a8c146a2d00c2df750dc1c10d217b2798b243d15d057b40a2c078",
+      "original_sha256": "ed024148dc3a8c146a2d00c2df750dc1c10d217b2798b243d15d057b40a2c078",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R02/roteiro.json",
+      "sha256": "1d3a82ac8bd67b29191724e70b7fd899a98ec2d375807b5682341cc445dcde65",
+      "original_sha256": "1d3a82ac8bd67b29191724e70b7fd899a98ec2d375807b5682341cc445dcde65",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R02/serial.txt",
+      "sha256": "4ce6bcc963df48662f272bcf6847cb2e42fcc67974a833112a52c9894051fdbd",
+      "original_sha256": "2a638f0d3fe544a11684faf29b7222a509663273c7596461ecda6cac2e607cb2",
+      "sanitized": true
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R02/tarefas.csv",
+      "sha256": "5a9777b73972999b54ab865abd85065d460c3f4b0cd2d37e26ab8b639ff82cfb",
+      "original_sha256": "5a9777b73972999b54ab865abd85065d460c3f4b0cd2d37e26ab8b639ff82cfb",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R03/RESUMO.md",
+      "sha256": "ea61684069acdc622bf3604170e22a568e3bea7fa38bbcb008023dde539adff3",
+      "original_sha256": "ea61684069acdc622bf3604170e22a568e3bea7fa38bbcb008023dde539adff3",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R03/comandos.jsonl",
+      "sha256": "89dfbb68ea9d256bf95bb5ded449aaa2f2dd8059b4c2e7bc0b621729175debae",
+      "original_sha256": "89dfbb68ea9d256bf95bb5ded449aaa2f2dd8059b4c2e7bc0b621729175debae",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R03/envios.jsonl",
+      "sha256": "2174ef4f169a5797c5ee6cc004af0ea2f73ca1d4efb0a539a95950da32f42382",
+      "original_sha256": "2174ef4f169a5797c5ee6cc004af0ea2f73ca1d4efb0a539a95950da32f42382",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R03/estatisticas.json",
+      "sha256": "4627b0f3fb274509f727637144bde55d1ad40c4d04f2386ea00e325a92597791",
+      "original_sha256": "4627b0f3fb274509f727637144bde55d1ad40c4d04f2386ea00e325a92597791",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R03/estatisticas_recebidas.json",
+      "sha256": "4627b0f3fb274509f727637144bde55d1ad40c4d04f2386ea00e325a92597791",
+      "original_sha256": "4627b0f3fb274509f727637144bde55d1ad40c4d04f2386ea00e325a92597791",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R03/manifesto.json",
+      "sha256": "d2e22ca88bf20f155deb2a7891fde1a381562a87c99997e96b4e2cda6563c2a0",
+      "original_sha256": "d2e22ca88bf20f155deb2a7891fde1a381562a87c99997e96b4e2cda6563c2a0",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R03/rede.jsonl",
+      "sha256": "57533b2ae3edc774bdee0fed927812374bccc0c7e9ea6169d0b9b3a08596f048",
+      "original_sha256": "57533b2ae3edc774bdee0fed927812374bccc0c7e9ea6169d0b9b3a08596f048",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R03/resumo.json",
+      "sha256": "d5e9397b6685c60c8184657a0a6f8d0d5c4e276c38011973c16169ef611b6eea",
+      "original_sha256": "d5e9397b6685c60c8184657a0a6f8d0d5c4e276c38011973c16169ef611b6eea",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R03/roteiro.json",
+      "sha256": "1d3a82ac8bd67b29191724e70b7fd899a98ec2d375807b5682341cc445dcde65",
+      "original_sha256": "1d3a82ac8bd67b29191724e70b7fd899a98ec2d375807b5682341cc445dcde65",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R03/serial.txt",
+      "sha256": "2f550522b771329b0a9c79e6330d4b217a6e95518a2100a0345767f6d48e1909",
+      "original_sha256": "1cdb352577983d5b7e4c09bc82bdec98b3406c27e2deac7195aa4bbae7b41277",
+      "sanitized": true
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R03/tarefas.csv",
+      "sha256": "42a0ef4b0daa2353e65b5d9136b5805a2d73c50e964acf74361f86df68171f63",
+      "original_sha256": "42a0ef4b0daa2353e65b5d9136b5805a2d73c50e964acf74361f86df68171f63",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R04/RESUMO.md",
+      "sha256": "20d3f8e09b154ce3b5322a5414b8c355279c504187c80096a480c2e542fae209",
+      "original_sha256": "20d3f8e09b154ce3b5322a5414b8c355279c504187c80096a480c2e542fae209",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R04/comandos.jsonl",
+      "sha256": "4a857f05533d04755a1c67080d3d719602e515097bee36823243591afe2432ef",
+      "original_sha256": "4a857f05533d04755a1c67080d3d719602e515097bee36823243591afe2432ef",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R04/envios.jsonl",
+      "sha256": "119e2d40fa933c1b608c6a9e6c9ce385bf3cd0913e895da1c97d28335b8ea4f7",
+      "original_sha256": "119e2d40fa933c1b608c6a9e6c9ce385bf3cd0913e895da1c97d28335b8ea4f7",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R04/estatisticas.json",
+      "sha256": "7777430efc936a666b295d9979086d2b464770196d4e082c6b9ecb108a0b90da",
+      "original_sha256": "7777430efc936a666b295d9979086d2b464770196d4e082c6b9ecb108a0b90da",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R04/estatisticas_recebidas.json",
+      "sha256": "7777430efc936a666b295d9979086d2b464770196d4e082c6b9ecb108a0b90da",
+      "original_sha256": "7777430efc936a666b295d9979086d2b464770196d4e082c6b9ecb108a0b90da",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R04/manifesto.json",
+      "sha256": "672c97c8df7cdee892c9cb7203d662cc3a9bcc3a2ac93b804ef252345298f405",
+      "original_sha256": "672c97c8df7cdee892c9cb7203d662cc3a9bcc3a2ac93b804ef252345298f405",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R04/rede.jsonl",
+      "sha256": "4f4c9817bf220f1a1d17721cd3522dc6e82a5a214bf7bb5ef36b5694318e0cf0",
+      "original_sha256": "4f4c9817bf220f1a1d17721cd3522dc6e82a5a214bf7bb5ef36b5694318e0cf0",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R04/resumo.json",
+      "sha256": "fc62822628ab1f14d8174d594f0776f23c593bbf84c520f040c725419b234df9",
+      "original_sha256": "fc62822628ab1f14d8174d594f0776f23c593bbf84c520f040c725419b234df9",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R04/roteiro.json",
+      "sha256": "1d3a82ac8bd67b29191724e70b7fd899a98ec2d375807b5682341cc445dcde65",
+      "original_sha256": "1d3a82ac8bd67b29191724e70b7fd899a98ec2d375807b5682341cc445dcde65",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R04/serial.txt",
+      "sha256": "8145ac0ff588980988a468f0bc1055a00dfa772168926ec3a05223fc4574b8c3",
+      "original_sha256": "3f5f2959b8fe8934741abcca8331b4668791ab52d995f9700b73fc723e1e44b8",
+      "sanitized": true
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R04/tarefas.csv",
+      "sha256": "db8e55a50a3653ce2b804d7eba02683eccc082650c5aabd83cfcc8762c915a2e",
+      "original_sha256": "db8e55a50a3653ce2b804d7eba02683eccc082650c5aabd83cfcc8762c915a2e",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R05/RESUMO.md",
+      "sha256": "ff07b108bdd2a8e450f4742b3455df3a1291c886b45854ade9815c39944f0227",
+      "original_sha256": "ff07b108bdd2a8e450f4742b3455df3a1291c886b45854ade9815c39944f0227",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R05/comandos.jsonl",
+      "sha256": "b5b91889e50df6552ed11891af07fe4ebe201c7181861c26153e1db741ef349d",
+      "original_sha256": "b5b91889e50df6552ed11891af07fe4ebe201c7181861c26153e1db741ef349d",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R05/envios.jsonl",
+      "sha256": "973dc95c1b4e0e409f3fcd9219e5ee4fcc7bf21b0bae8663e3031d3fdfabf339",
+      "original_sha256": "973dc95c1b4e0e409f3fcd9219e5ee4fcc7bf21b0bae8663e3031d3fdfabf339",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R05/estatisticas.json",
+      "sha256": "f5f2766d8c32252a962d84b1dca9e02df80d5d1d826158a5e87faf7aa57e8b3c",
+      "original_sha256": "f5f2766d8c32252a962d84b1dca9e02df80d5d1d826158a5e87faf7aa57e8b3c",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R05/estatisticas_recebidas.json",
+      "sha256": "f5f2766d8c32252a962d84b1dca9e02df80d5d1d826158a5e87faf7aa57e8b3c",
+      "original_sha256": "f5f2766d8c32252a962d84b1dca9e02df80d5d1d826158a5e87faf7aa57e8b3c",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R05/manifesto.json",
+      "sha256": "ed8c6a2bea3e1f73daa280460bfaa48a17829875bdd37e252d5e58142b9f7241",
+      "original_sha256": "ed8c6a2bea3e1f73daa280460bfaa48a17829875bdd37e252d5e58142b9f7241",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R05/rede.jsonl",
+      "sha256": "1b30c2508338498a5f030bd5806ceb63349e38bfd12eb862842ece425bd6a35a",
+      "original_sha256": "1b30c2508338498a5f030bd5806ceb63349e38bfd12eb862842ece425bd6a35a",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R05/resumo.json",
+      "sha256": "86732ceeb9a4157530ae9e63ce7c0f2035c84e4fd932552faf218fb40bcfdbbb",
+      "original_sha256": "86732ceeb9a4157530ae9e63ce7c0f2035c84e4fd932552faf218fb40bcfdbbb",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R05/roteiro.json",
+      "sha256": "1d3a82ac8bd67b29191724e70b7fd899a98ec2d375807b5682341cc445dcde65",
+      "original_sha256": "1d3a82ac8bd67b29191724e70b7fd899a98ec2d375807b5682341cc445dcde65",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R05/serial.txt",
+      "sha256": "3e098846023d28098e1a1fd7ff430c252e2109b3d9a84ee945fd935b2c2f40ef",
+      "original_sha256": "9f482949d059245c814a50159a6cf304d2ebd1c568d64abc9ccfab12a956f66d",
+      "sanitized": true
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_TCP/R05/tarefas.csv",
+      "sha256": "a975090dec0d2b12baccb15904c6271decab62ff6a1a6df4f7e1b289e46d2c0a",
+      "original_sha256": "a975090dec0d2b12baccb15904c6271decab62ff6a1a6df4f7e1b289e46d2c0a",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R01/RESUMO.md",
+      "sha256": "ca3abc116fa1be62c37f627441d259d12325b766c859b4ea073ad6668506d13c",
+      "original_sha256": "ca3abc116fa1be62c37f627441d259d12325b766c859b4ea073ad6668506d13c",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R01/comandos.jsonl",
+      "sha256": "4ae6994aac1e1161fc509f4b64f1387387bc3c4c7b1fef7ec5f6e71ffd261400",
+      "original_sha256": "4ae6994aac1e1161fc509f4b64f1387387bc3c4c7b1fef7ec5f6e71ffd261400",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R01/envios.jsonl",
+      "sha256": "61e60f7ba237017b73440598c879cc6be595da1d664ef8f5fa91b45efd3a6c06",
+      "original_sha256": "61e60f7ba237017b73440598c879cc6be595da1d664ef8f5fa91b45efd3a6c06",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R01/estatisticas.json",
+      "sha256": "01da95b7aea52ce3d29b8e80fa9642e7408478c9b9a80d3629a825cf72801939",
+      "original_sha256": "01da95b7aea52ce3d29b8e80fa9642e7408478c9b9a80d3629a825cf72801939",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R01/estatisticas_recebidas.json",
+      "sha256": "01da95b7aea52ce3d29b8e80fa9642e7408478c9b9a80d3629a825cf72801939",
+      "original_sha256": "01da95b7aea52ce3d29b8e80fa9642e7408478c9b9a80d3629a825cf72801939",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R01/manifesto.json",
+      "sha256": "935e41795aa7630becd54c7e73ad29b59158421af4cc1f1a884a4ea187501ee3",
+      "original_sha256": "935e41795aa7630becd54c7e73ad29b59158421af4cc1f1a884a4ea187501ee3",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R01/rede.jsonl",
+      "sha256": "bfbfc50d14881d197ec1ccc6d5ebd5e67fa9f8c54e439fb1206b57e60d8172ea",
+      "original_sha256": "bfbfc50d14881d197ec1ccc6d5ebd5e67fa9f8c54e439fb1206b57e60d8172ea",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R01/resumo.json",
+      "sha256": "d0929fe2843657219d3a2455dda468ab6a26380adabfc388d42741e0fead87a5",
+      "original_sha256": "d0929fe2843657219d3a2455dda468ab6a26380adabfc388d42741e0fead87a5",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R01/roteiro.json",
+      "sha256": "1d3a82ac8bd67b29191724e70b7fd899a98ec2d375807b5682341cc445dcde65",
+      "original_sha256": "1d3a82ac8bd67b29191724e70b7fd899a98ec2d375807b5682341cc445dcde65",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R01/serial.txt",
+      "sha256": "c4c2b0aa3c05e6d13a883e90ff6a191eb9981be7839e93bf8c387f6fbe319afc",
+      "original_sha256": "cbc12f7f552d2c37725bb4b2f901bdeba296910afd8822a8cdfd21f22b921b37",
+      "sanitized": true
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R01/tarefas.csv",
+      "sha256": "524c10438a3cc7133341e14e09be3b5d1405cf6138a839d4a212dc93eb6ad464",
+      "original_sha256": "524c10438a3cc7133341e14e09be3b5d1405cf6138a839d4a212dc93eb6ad464",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R02/RESUMO.md",
+      "sha256": "c9e7bd589a9b9eba80cbca6702cc2ee233bafc201f77b057b26be5beb5da7ae7",
+      "original_sha256": "c9e7bd589a9b9eba80cbca6702cc2ee233bafc201f77b057b26be5beb5da7ae7",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R02/comandos.jsonl",
+      "sha256": "b6e2709f3991e7b3a23f45cd679a610d272fc67154a1a6ec2eceb75d0c739410",
+      "original_sha256": "b6e2709f3991e7b3a23f45cd679a610d272fc67154a1a6ec2eceb75d0c739410",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R02/envios.jsonl",
+      "sha256": "c91fe2718fdbbd4173566c8650a57b301f2e3c65908cb2b74c280a6cd86a049c",
+      "original_sha256": "c91fe2718fdbbd4173566c8650a57b301f2e3c65908cb2b74c280a6cd86a049c",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R02/estatisticas.json",
+      "sha256": "0e04d1ff126e47c9064a337f3c56d8fec26f5c08d08fd74fec76c53e307d2b62",
+      "original_sha256": "0e04d1ff126e47c9064a337f3c56d8fec26f5c08d08fd74fec76c53e307d2b62",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R02/estatisticas_recebidas.json",
+      "sha256": "0e04d1ff126e47c9064a337f3c56d8fec26f5c08d08fd74fec76c53e307d2b62",
+      "original_sha256": "0e04d1ff126e47c9064a337f3c56d8fec26f5c08d08fd74fec76c53e307d2b62",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R02/manifesto.json",
+      "sha256": "784f043e54ff959d9af0e17be9b8fb8796f380384a581b633e7f119fca4a67f9",
+      "original_sha256": "784f043e54ff959d9af0e17be9b8fb8796f380384a581b633e7f119fca4a67f9",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R02/rede.jsonl",
+      "sha256": "9c2cb81c8da3469b02dcf912845a451ac3d7086ec705ee6d17d6e6ec05f87e50",
+      "original_sha256": "9c2cb81c8da3469b02dcf912845a451ac3d7086ec705ee6d17d6e6ec05f87e50",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R02/resumo.json",
+      "sha256": "81f582daf42bc904120b8f2b67a42f04a4f198d0e0356985b743018dd1f8ab76",
+      "original_sha256": "81f582daf42bc904120b8f2b67a42f04a4f198d0e0356985b743018dd1f8ab76",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R02/roteiro.json",
+      "sha256": "1d3a82ac8bd67b29191724e70b7fd899a98ec2d375807b5682341cc445dcde65",
+      "original_sha256": "1d3a82ac8bd67b29191724e70b7fd899a98ec2d375807b5682341cc445dcde65",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R02/serial.txt",
+      "sha256": "2d755385c46eb47e7cf22dc3676537c8a5b821e319da6ce44e1c3d98c4b64900",
+      "original_sha256": "f58fa955a258620ef13579665c29f58594f8f47603114414a6a63939a1d52069",
+      "sanitized": true
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R02/tarefas.csv",
+      "sha256": "92cd065ffff0ff02b48c9a998f4c785c919e2a7aeacec938db65865db0191593",
+      "original_sha256": "92cd065ffff0ff02b48c9a998f4c785c919e2a7aeacec938db65865db0191593",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R03/RESUMO.md",
+      "sha256": "7fa260b99ebe77efbad2e97a4cabdad155676884565bfd5981d17451a0f93925",
+      "original_sha256": "7fa260b99ebe77efbad2e97a4cabdad155676884565bfd5981d17451a0f93925",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R03/comandos.jsonl",
+      "sha256": "90f675331f7f107f0bd50fad1ab3de6ee1ace09f91c37a3ec30a5c28bdda6c87",
+      "original_sha256": "90f675331f7f107f0bd50fad1ab3de6ee1ace09f91c37a3ec30a5c28bdda6c87",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R03/envios.jsonl",
+      "sha256": "497a8a3d1948535f5448b1242c709fd84b33ed85701af320325594c69cd7939f",
+      "original_sha256": "497a8a3d1948535f5448b1242c709fd84b33ed85701af320325594c69cd7939f",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R03/estatisticas.json",
+      "sha256": "1253478065dfd2ecd77b7db71a786ba81efed9d2277051b141ca95f5445d1cf2",
+      "original_sha256": "1253478065dfd2ecd77b7db71a786ba81efed9d2277051b141ca95f5445d1cf2",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R03/estatisticas_recebidas.json",
+      "sha256": "1253478065dfd2ecd77b7db71a786ba81efed9d2277051b141ca95f5445d1cf2",
+      "original_sha256": "1253478065dfd2ecd77b7db71a786ba81efed9d2277051b141ca95f5445d1cf2",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R03/manifesto.json",
+      "sha256": "01d4f1c586ba5d415b1ed4fa63ebce46b7b6a1eb3e50292ab1839dc273acb1d5",
+      "original_sha256": "01d4f1c586ba5d415b1ed4fa63ebce46b7b6a1eb3e50292ab1839dc273acb1d5",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R03/rede.jsonl",
+      "sha256": "f089fc11a25def6f9bdae99b1d6c7fe613c3050f5e6905aecc63f3b9fe1ed8db",
+      "original_sha256": "f089fc11a25def6f9bdae99b1d6c7fe613c3050f5e6905aecc63f3b9fe1ed8db",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R03/resumo.json",
+      "sha256": "51c23e98e10b6a94fe0b6e26229964bbffb157a2c84d4e4b9571ae5b342be724",
+      "original_sha256": "51c23e98e10b6a94fe0b6e26229964bbffb157a2c84d4e4b9571ae5b342be724",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R03/roteiro.json",
+      "sha256": "1d3a82ac8bd67b29191724e70b7fd899a98ec2d375807b5682341cc445dcde65",
+      "original_sha256": "1d3a82ac8bd67b29191724e70b7fd899a98ec2d375807b5682341cc445dcde65",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R03/serial.txt",
+      "sha256": "d9f53070f2d788e944bf31d13abc4a4d428e17b7634f7c0066895416c4811ee0",
+      "original_sha256": "d0d2f27f7d56d18bb88788dcc8ae8384651e4dd4cc514533fec46361614464f0",
+      "sanitized": true
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R03/tarefas.csv",
+      "sha256": "fbcf866712c132c4a34677fca12cc3ad5a7fd840d796f67231f16727d80f89d9",
+      "original_sha256": "fbcf866712c132c4a34677fca12cc3ad5a7fd840d796f67231f16727d80f89d9",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R04/RESUMO.md",
+      "sha256": "ffe6ac80b034cf3a1622cb8da2a225953c95ea9ff3db82fef47b2e550e21adce",
+      "original_sha256": "ffe6ac80b034cf3a1622cb8da2a225953c95ea9ff3db82fef47b2e550e21adce",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R04/comandos.jsonl",
+      "sha256": "40ce9d1cb9c3d447f9b816efacc1eddb71921a190228ecaa4c532ad7d844a9ac",
+      "original_sha256": "40ce9d1cb9c3d447f9b816efacc1eddb71921a190228ecaa4c532ad7d844a9ac",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R04/envios.jsonl",
+      "sha256": "c5710b0538262c181a76a436a183654b1b37a8737aa7ae6daad8c15e26f1fdf3",
+      "original_sha256": "c5710b0538262c181a76a436a183654b1b37a8737aa7ae6daad8c15e26f1fdf3",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R04/estatisticas.json",
+      "sha256": "25557f8492f20e08d86a583c93101fdbf585e32a21afc1e9f66afef9b0ac8203",
+      "original_sha256": "25557f8492f20e08d86a583c93101fdbf585e32a21afc1e9f66afef9b0ac8203",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R04/estatisticas_recebidas.json",
+      "sha256": "25557f8492f20e08d86a583c93101fdbf585e32a21afc1e9f66afef9b0ac8203",
+      "original_sha256": "25557f8492f20e08d86a583c93101fdbf585e32a21afc1e9f66afef9b0ac8203",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R04/manifesto.json",
+      "sha256": "952de58f8157840c534bca1fd87d260074d1f50e96524aa064fc40b745639d8f",
+      "original_sha256": "952de58f8157840c534bca1fd87d260074d1f50e96524aa064fc40b745639d8f",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R04/rede.jsonl",
+      "sha256": "6ee5bc4bcf2eb0b93407619b5a6c2d809062b8a001b26009b1081fcc5fba9e7c",
+      "original_sha256": "6ee5bc4bcf2eb0b93407619b5a6c2d809062b8a001b26009b1081fcc5fba9e7c",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R04/resumo.json",
+      "sha256": "209d42c8d71c8a1fdfd607b3c324175b581eeacb176c7a4ed79aec412a49302e",
+      "original_sha256": "209d42c8d71c8a1fdfd607b3c324175b581eeacb176c7a4ed79aec412a49302e",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R04/roteiro.json",
+      "sha256": "1d3a82ac8bd67b29191724e70b7fd899a98ec2d375807b5682341cc445dcde65",
+      "original_sha256": "1d3a82ac8bd67b29191724e70b7fd899a98ec2d375807b5682341cc445dcde65",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R04/serial.txt",
+      "sha256": "eb5abd66fa8f967ffe523c53f4c6a19ed5f9af556ac5908b9871528adaa4fec3",
+      "original_sha256": "4a85b5cf0dbbbd0b311dabd2a8af8ddef5584a4abc0bf3fe2b68a0a373c5826c",
+      "sanitized": true
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R04/tarefas.csv",
+      "sha256": "acc845f886d89093683de51e9356d9a22a6ab03cd8e2119dd431d3bcc0c107e5",
+      "original_sha256": "acc845f886d89093683de51e9356d9a22a6ab03cd8e2119dd431d3bcc0c107e5",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R05/RESUMO.md",
+      "sha256": "f950079551858210bd1da2b76081536e3c22f677499aa6f3fe2adc29f8499631",
+      "original_sha256": "f950079551858210bd1da2b76081536e3c22f677499aa6f3fe2adc29f8499631",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R05/comandos.jsonl",
+      "sha256": "922ee500fa6cabb26f963752ff608ee68d46b4f903dfc303e2a66ee3b39f7377",
+      "original_sha256": "922ee500fa6cabb26f963752ff608ee68d46b4f903dfc303e2a66ee3b39f7377",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R05/envios.jsonl",
+      "sha256": "eee4a0686924b47e36ef9fd0e9bc9ed6f885f20c81bb95eb4d01ca6c4da49a83",
+      "original_sha256": "eee4a0686924b47e36ef9fd0e9bc9ed6f885f20c81bb95eb4d01ca6c4da49a83",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R05/estatisticas.json",
+      "sha256": "31979f04cf822af321b45f9098604cda7e8aef42e33cf8a84b81ec815cf920cf",
+      "original_sha256": "31979f04cf822af321b45f9098604cda7e8aef42e33cf8a84b81ec815cf920cf",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R05/estatisticas_recebidas.json",
+      "sha256": "31979f04cf822af321b45f9098604cda7e8aef42e33cf8a84b81ec815cf920cf",
+      "original_sha256": "31979f04cf822af321b45f9098604cda7e8aef42e33cf8a84b81ec815cf920cf",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R05/manifesto.json",
+      "sha256": "2e80907bd610df7eb18f680296fdb68454524abd3c71e6744e96c0c4237f7b2b",
+      "original_sha256": "2e80907bd610df7eb18f680296fdb68454524abd3c71e6744e96c0c4237f7b2b",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R05/rede.jsonl",
+      "sha256": "0d95e208d354a9a92faa4503b5e58ab24f0223b4f4be11fa2bf541edd1bb0289",
+      "original_sha256": "0d95e208d354a9a92faa4503b5e58ab24f0223b4f4be11fa2bf541edd1bb0289",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R05/resumo.json",
+      "sha256": "29ddcd7aeef37ba92c5015cfa836238849f3785cb16f7127947a486ecb144e40",
+      "original_sha256": "29ddcd7aeef37ba92c5015cfa836238849f3785cb16f7127947a486ecb144e40",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R05/roteiro.json",
+      "sha256": "1d3a82ac8bd67b29191724e70b7fd899a98ec2d375807b5682341cc445dcde65",
+      "original_sha256": "1d3a82ac8bd67b29191724e70b7fd899a98ec2d375807b5682341cc445dcde65",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R05/serial.txt",
+      "sha256": "8ff54591e95e8109529dca948034714d71aece1030a1e06d0c9969f2cb99491d",
+      "original_sha256": "7d22e6ba63ff4f6ce1b3193200beaafc0018fd45f6923749dbfc9546fdcb6534",
+      "sanitized": true
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/M_UDP/R05/tarefas.csv",
+      "sha256": "9f53c7ad591909cff9e080618674a5ec8230e9cbbc409a42c68bfe69d3f9e9c3",
+      "original_sha256": "9f53c7ad591909cff9e080618674a5ec8230e9cbbc409a42c68bfe69d3f9e9c3",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R01/RESUMO.md",
+      "sha256": "7deb944eb10604ce493d8b72607f60f356b488999d4dc31ca665d7c8fa0365f7",
+      "original_sha256": "7deb944eb10604ce493d8b72607f60f356b488999d4dc31ca665d7c8fa0365f7",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R01/comandos.jsonl",
+      "sha256": "48a681e76248010ff8e9322a88fd96ce73540f1bc3d5e2bbd7b101bf42c0165b",
+      "original_sha256": "48a681e76248010ff8e9322a88fd96ce73540f1bc3d5e2bbd7b101bf42c0165b",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R01/envios.jsonl",
+      "sha256": "482523748a7e93132c4fc3e876a8e86357b69377ad7558e8a11eab5d596362fe",
+      "original_sha256": "482523748a7e93132c4fc3e876a8e86357b69377ad7558e8a11eab5d596362fe",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R01/estatisticas.json",
+      "sha256": "c55d67c7a33b66a6150309381d487f24013a74725c2798b12333b7b2832cfb81",
+      "original_sha256": "c55d67c7a33b66a6150309381d487f24013a74725c2798b12333b7b2832cfb81",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R01/estatisticas_recebidas.json",
+      "sha256": "c55d67c7a33b66a6150309381d487f24013a74725c2798b12333b7b2832cfb81",
+      "original_sha256": "c55d67c7a33b66a6150309381d487f24013a74725c2798b12333b7b2832cfb81",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R01/manifesto.json",
+      "sha256": "4a4ad0e817a7bfec3c410b14f6a50623f6cbef4632d71b1d459d0ffd1403da03",
+      "original_sha256": "4a4ad0e817a7bfec3c410b14f6a50623f6cbef4632d71b1d459d0ffd1403da03",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R01/rede.jsonl",
+      "sha256": "63c07a3d19793d2eb4394be5a828c7c449daf6dda8b7775b4e95911c30726e41",
+      "original_sha256": "63c07a3d19793d2eb4394be5a828c7c449daf6dda8b7775b4e95911c30726e41",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R01/resumo.json",
+      "sha256": "cd4a9847f4739c66f35c8df0ee66d2505fd96d044fc9cddb9d58df4ac4ea1891",
+      "original_sha256": "cd4a9847f4739c66f35c8df0ee66d2505fd96d044fc9cddb9d58df4ac4ea1891",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R01/roteiro.json",
+      "sha256": "1d3a82ac8bd67b29191724e70b7fd899a98ec2d375807b5682341cc445dcde65",
+      "original_sha256": "1d3a82ac8bd67b29191724e70b7fd899a98ec2d375807b5682341cc445dcde65",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R01/serial.txt",
+      "sha256": "46f5ac0f46135a1527e763511181545561a34c7d97389d7d63ef0d1193b7bc29",
+      "original_sha256": "f394e535e21c8821e0c568c75565dc230239f656dd47e7df82050ce48750e93d",
+      "sanitized": true
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R01/tarefas.csv",
+      "sha256": "63337d161a8eb75e70fa135b949979b6cf21e24699a132b83fe89e108d3d200f",
+      "original_sha256": "63337d161a8eb75e70fa135b949979b6cf21e24699a132b83fe89e108d3d200f",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R02/RESUMO.md",
+      "sha256": "67796e9076233606590e3ad8875d9d46e518c46ebafd618d584d5a9e0d33912a",
+      "original_sha256": "67796e9076233606590e3ad8875d9d46e518c46ebafd618d584d5a9e0d33912a",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R02/comandos.jsonl",
+      "sha256": "f3b73d0018d3ebe5f6aae33f7393a1441fe8326f76fb9e4725872c839831e5f9",
+      "original_sha256": "f3b73d0018d3ebe5f6aae33f7393a1441fe8326f76fb9e4725872c839831e5f9",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R02/envios.jsonl",
+      "sha256": "fa483b20bc42b4a57c25b5a7ac150c066e779c9c679c77c15ce59989dcbffbaf",
+      "original_sha256": "fa483b20bc42b4a57c25b5a7ac150c066e779c9c679c77c15ce59989dcbffbaf",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R02/estatisticas.json",
+      "sha256": "57c8a3c6391c1d51f8f1d60834b71f2a5ab88065091368c3cad1f2a184875607",
+      "original_sha256": "57c8a3c6391c1d51f8f1d60834b71f2a5ab88065091368c3cad1f2a184875607",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R02/estatisticas_recebidas.json",
+      "sha256": "57c8a3c6391c1d51f8f1d60834b71f2a5ab88065091368c3cad1f2a184875607",
+      "original_sha256": "57c8a3c6391c1d51f8f1d60834b71f2a5ab88065091368c3cad1f2a184875607",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R02/manifesto.json",
+      "sha256": "b61270056ac508ba0eb38277d520d19ebbee535ba1f4e99e4bc280f21161d3b9",
+      "original_sha256": "b61270056ac508ba0eb38277d520d19ebbee535ba1f4e99e4bc280f21161d3b9",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R02/rede.jsonl",
+      "sha256": "f3522a39bf59f40a613411c9c9267a55c0dece6789f5b38b845f3d4a280451f7",
+      "original_sha256": "f3522a39bf59f40a613411c9c9267a55c0dece6789f5b38b845f3d4a280451f7",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R02/resumo.json",
+      "sha256": "530e8b0aa191464847d77e0f37f94e2b2babbfe7f7a693aadbd69aa73620a429",
+      "original_sha256": "530e8b0aa191464847d77e0f37f94e2b2babbfe7f7a693aadbd69aa73620a429",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R02/roteiro.json",
+      "sha256": "1d3a82ac8bd67b29191724e70b7fd899a98ec2d375807b5682341cc445dcde65",
+      "original_sha256": "1d3a82ac8bd67b29191724e70b7fd899a98ec2d375807b5682341cc445dcde65",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R02/serial.txt",
+      "sha256": "e4da872a3488c72e490e9e53acdca5ccb3881ae8c643c2cc8a02acc5fbf740fb",
+      "original_sha256": "cb3bb4191a7453245d926e08155bde59801cc0a57d8e2fb2917c8bc06d96c73e",
+      "sanitized": true
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R02/tarefas.csv",
+      "sha256": "6580bdbcd42304790b440b2ba9c1552d7eeed798701f7103c4fa05b8e966ed32",
+      "original_sha256": "6580bdbcd42304790b440b2ba9c1552d7eeed798701f7103c4fa05b8e966ed32",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R03/RESUMO.md",
+      "sha256": "3e8aa9a9a191f5a07a3b4aa0b7c78838e3d95bf6286db92553486f35b5081c6e",
+      "original_sha256": "3e8aa9a9a191f5a07a3b4aa0b7c78838e3d95bf6286db92553486f35b5081c6e",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R03/comandos.jsonl",
+      "sha256": "6e99e42af17eb036db083cdda8f6d72b77d4d11ca9af8437d3bf629ef189ed74",
+      "original_sha256": "6e99e42af17eb036db083cdda8f6d72b77d4d11ca9af8437d3bf629ef189ed74",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R03/envios.jsonl",
+      "sha256": "fdaa39fb09f4b327a5a5250619bd4a94f502f700fb2c87cb0d683efc924f3ac3",
+      "original_sha256": "fdaa39fb09f4b327a5a5250619bd4a94f502f700fb2c87cb0d683efc924f3ac3",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R03/estatisticas.json",
+      "sha256": "46cd0236f217bb7f688dbeb0b7e65bed6aed6cf8b5359daaa278f2b2198dffad",
+      "original_sha256": "46cd0236f217bb7f688dbeb0b7e65bed6aed6cf8b5359daaa278f2b2198dffad",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R03/estatisticas_recebidas.json",
+      "sha256": "46cd0236f217bb7f688dbeb0b7e65bed6aed6cf8b5359daaa278f2b2198dffad",
+      "original_sha256": "46cd0236f217bb7f688dbeb0b7e65bed6aed6cf8b5359daaa278f2b2198dffad",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R03/manifesto.json",
+      "sha256": "45150e4e81d9d87f13cc5c2556e60319236221a4a4c2e542e36714803121309f",
+      "original_sha256": "45150e4e81d9d87f13cc5c2556e60319236221a4a4c2e542e36714803121309f",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R03/rede.jsonl",
+      "sha256": "6aa80762441a26a623fd6c4f40bc55cef9d126cc218d7e709d8fdd570708fbfb",
+      "original_sha256": "6aa80762441a26a623fd6c4f40bc55cef9d126cc218d7e709d8fdd570708fbfb",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R03/resumo.json",
+      "sha256": "2f321f5fad4ca6f1b609b9934cc7e3c5db1e751cdf76608fe504a3c74a57433e",
+      "original_sha256": "2f321f5fad4ca6f1b609b9934cc7e3c5db1e751cdf76608fe504a3c74a57433e",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R03/roteiro.json",
+      "sha256": "1d3a82ac8bd67b29191724e70b7fd899a98ec2d375807b5682341cc445dcde65",
+      "original_sha256": "1d3a82ac8bd67b29191724e70b7fd899a98ec2d375807b5682341cc445dcde65",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R03/serial.txt",
+      "sha256": "25d6b43242b290e010d6f52c1d04b09ecf8b8db4e1df8f4e65b2378cfa19492f",
+      "original_sha256": "b89575057c369eb4ef1294de7c3fe02eaa28df7b920b254681f96d85b36edf3a",
+      "sanitized": true
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R03/tarefas.csv",
+      "sha256": "bc643ab40284dd48d1499575fcf0e202874502f76462af75948e9503b5a81a69",
+      "original_sha256": "bc643ab40284dd48d1499575fcf0e202874502f76462af75948e9503b5a81a69",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R04/RESUMO.md",
+      "sha256": "91583ec71c57786470b6cc121f54aff9a9a25b3455ff12c01fdcff46a53b9d21",
+      "original_sha256": "91583ec71c57786470b6cc121f54aff9a9a25b3455ff12c01fdcff46a53b9d21",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R04/comandos.jsonl",
+      "sha256": "4fcff9bbba07565970d20058455381b236dd0828105598c6469956b02b310b82",
+      "original_sha256": "4fcff9bbba07565970d20058455381b236dd0828105598c6469956b02b310b82",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R04/envios.jsonl",
+      "sha256": "951bd7d88722d10e88e4a486bab1c0c92a604bcd68293d044248fbf1f06ada8f",
+      "original_sha256": "951bd7d88722d10e88e4a486bab1c0c92a604bcd68293d044248fbf1f06ada8f",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R04/estatisticas.json",
+      "sha256": "fb642242a1211dfd2484409834a8f057291e467ff9e467d0ca8c664eef0bbc1b",
+      "original_sha256": "fb642242a1211dfd2484409834a8f057291e467ff9e467d0ca8c664eef0bbc1b",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R04/estatisticas_recebidas.json",
+      "sha256": "fb642242a1211dfd2484409834a8f057291e467ff9e467d0ca8c664eef0bbc1b",
+      "original_sha256": "fb642242a1211dfd2484409834a8f057291e467ff9e467d0ca8c664eef0bbc1b",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R04/manifesto.json",
+      "sha256": "74cc0f3239124f025b85dea98e1cbc60b9a28fdb2e51f77990015757ffd07ce6",
+      "original_sha256": "74cc0f3239124f025b85dea98e1cbc60b9a28fdb2e51f77990015757ffd07ce6",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R04/rede.jsonl",
+      "sha256": "8e0a5a694a43eb4661e621c39cb1a649416dc17ca72568eb90f38a5b60ff86f2",
+      "original_sha256": "8e0a5a694a43eb4661e621c39cb1a649416dc17ca72568eb90f38a5b60ff86f2",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R04/resumo.json",
+      "sha256": "2343f4d78c9c1ef6e3bcfed1a398bbb31008a7069e6f64f7797582815c0c6656",
+      "original_sha256": "2343f4d78c9c1ef6e3bcfed1a398bbb31008a7069e6f64f7797582815c0c6656",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R04/roteiro.json",
+      "sha256": "1d3a82ac8bd67b29191724e70b7fd899a98ec2d375807b5682341cc445dcde65",
+      "original_sha256": "1d3a82ac8bd67b29191724e70b7fd899a98ec2d375807b5682341cc445dcde65",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R04/serial.txt",
+      "sha256": "7d309789965ee6036330dcb5e88da8c747ac40964e75f57498b0b6851be3e4b1",
+      "original_sha256": "877e8e6b9c119c4a29b039262cef90a1e083604074ccca8b31b0f6a63606ba26",
+      "sanitized": true
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R04/tarefas.csv",
+      "sha256": "5b9f8723899dc268b6d2c90f2369f39155b2b3c6a6a2752568bc12331ab9fc22",
+      "original_sha256": "5b9f8723899dc268b6d2c90f2369f39155b2b3c6a6a2752568bc12331ab9fc22",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R05/RESUMO.md",
+      "sha256": "effe49acee2422d41a55add85c0bc040f4aa141a2d48a2beccb14c36db6f8061",
+      "original_sha256": "effe49acee2422d41a55add85c0bc040f4aa141a2d48a2beccb14c36db6f8061",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R05/comandos.jsonl",
+      "sha256": "ea2b864fbb8f69b38ee03bc29a70c4e912f747a22ca9290376ba047dd5358938",
+      "original_sha256": "ea2b864fbb8f69b38ee03bc29a70c4e912f747a22ca9290376ba047dd5358938",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R05/envios.jsonl",
+      "sha256": "a96ae29bb9d3ebb1b09033c8f72b42b3bb5e48b014fc8f942764017393295b8b",
+      "original_sha256": "a96ae29bb9d3ebb1b09033c8f72b42b3bb5e48b014fc8f942764017393295b8b",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R05/estatisticas.json",
+      "sha256": "1b7b6f203550e4dade3c2ba05612698d50abc9d94f4460a060361e21dd1e3db4",
+      "original_sha256": "1b7b6f203550e4dade3c2ba05612698d50abc9d94f4460a060361e21dd1e3db4",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R05/estatisticas_recebidas.json",
+      "sha256": "1b7b6f203550e4dade3c2ba05612698d50abc9d94f4460a060361e21dd1e3db4",
+      "original_sha256": "1b7b6f203550e4dade3c2ba05612698d50abc9d94f4460a060361e21dd1e3db4",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R05/manifesto.json",
+      "sha256": "2da111f458609495fdf6444a2b22c5339beb0c7c7e778ff896789fb4d4c48a6e",
+      "original_sha256": "2da111f458609495fdf6444a2b22c5339beb0c7c7e778ff896789fb4d4c48a6e",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R05/rede.jsonl",
+      "sha256": "4257264eecee508cfca4b8cec8d5363310c1e816192ef3ad0683605da9f985d2",
+      "original_sha256": "4257264eecee508cfca4b8cec8d5363310c1e816192ef3ad0683605da9f985d2",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R05/resumo.json",
+      "sha256": "5d90f30b2858d88bf3596b93b52e580020a6ed73b969634978acbafaaf1facbf",
+      "original_sha256": "5d90f30b2858d88bf3596b93b52e580020a6ed73b969634978acbafaaf1facbf",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R05/roteiro.json",
+      "sha256": "1d3a82ac8bd67b29191724e70b7fd899a98ec2d375807b5682341cc445dcde65",
+      "original_sha256": "1d3a82ac8bd67b29191724e70b7fd899a98ec2d375807b5682341cc445dcde65",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R05/serial.txt",
+      "sha256": "5f6e511669a1431e89c8a662e82b0d6ae22fee7def0e68402439f5cce41984bd",
+      "original_sha256": "6ebd646c0614ed7962f560789d78b228178a73127b65fbf390ec2838c07ab481",
+      "sanitized": true
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_TCP/R05/tarefas.csv",
+      "sha256": "6e466ced48c447cf9ebed0b9823b2f63a7b8cdc2603117d4a1246d17d9890f12",
+      "original_sha256": "6e466ced48c447cf9ebed0b9823b2f63a7b8cdc2603117d4a1246d17d9890f12",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R01/RESUMO.md",
+      "sha256": "3961b75e505fc4238bdc3db618c8f105c72d4da813a29ecb5a2c75f1eaf06cf5",
+      "original_sha256": "3961b75e505fc4238bdc3db618c8f105c72d4da813a29ecb5a2c75f1eaf06cf5",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R01/comandos.jsonl",
+      "sha256": "7f099ba290340a1b1a44ee8f570eb93308f34c9e000f2be883f9dc880685948c",
+      "original_sha256": "7f099ba290340a1b1a44ee8f570eb93308f34c9e000f2be883f9dc880685948c",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R01/envios.jsonl",
+      "sha256": "0aa988f647af6e05ef00810d4f485784d31c61e265b60c0f62a03ee491c0cc98",
+      "original_sha256": "0aa988f647af6e05ef00810d4f485784d31c61e265b60c0f62a03ee491c0cc98",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R01/estatisticas.json",
+      "sha256": "404b92c91cd5f9f5026de833c84bedf11cbf82ff3a710d018ba2aad88d7aa07b",
+      "original_sha256": "404b92c91cd5f9f5026de833c84bedf11cbf82ff3a710d018ba2aad88d7aa07b",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R01/estatisticas_recebidas.json",
+      "sha256": "404b92c91cd5f9f5026de833c84bedf11cbf82ff3a710d018ba2aad88d7aa07b",
+      "original_sha256": "404b92c91cd5f9f5026de833c84bedf11cbf82ff3a710d018ba2aad88d7aa07b",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R01/manifesto.json",
+      "sha256": "8cccc90e71431cec0230dcd9f31918100bb6fd9bc69298d4976ff908179cc776",
+      "original_sha256": "8cccc90e71431cec0230dcd9f31918100bb6fd9bc69298d4976ff908179cc776",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R01/rede.jsonl",
+      "sha256": "b5602b7943aa913f40c689a15bfaf50b3d1011053744aee2e836a50945cc3ea5",
+      "original_sha256": "b5602b7943aa913f40c689a15bfaf50b3d1011053744aee2e836a50945cc3ea5",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R01/resumo.json",
+      "sha256": "888d0b94ee115f7bdd5b5dbba49e94894ed54f9a4cee5d8867752ea2bb0a0fca",
+      "original_sha256": "888d0b94ee115f7bdd5b5dbba49e94894ed54f9a4cee5d8867752ea2bb0a0fca",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R01/roteiro.json",
+      "sha256": "1d3a82ac8bd67b29191724e70b7fd899a98ec2d375807b5682341cc445dcde65",
+      "original_sha256": "1d3a82ac8bd67b29191724e70b7fd899a98ec2d375807b5682341cc445dcde65",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R01/serial.txt",
+      "sha256": "e364a07cdc519222e8dda539c511eb680615b2fc7d06177ed745a723fc5cd532",
+      "original_sha256": "672af503c5eacf7c74af88966427cab8c06e168cf0fdecd3bff9aa2449635923",
+      "sanitized": true
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R01/tarefas.csv",
+      "sha256": "4732fe0da84858a4298ca59c4549a999bf4ab00e596fe6b5760fc559f5b26310",
+      "original_sha256": "4732fe0da84858a4298ca59c4549a999bf4ab00e596fe6b5760fc559f5b26310",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R02/RESUMO.md",
+      "sha256": "a4bcc5af967205ce6f1f2850e46453f6e90338bf96bf9c48a35748dd1fc1e342",
+      "original_sha256": "a4bcc5af967205ce6f1f2850e46453f6e90338bf96bf9c48a35748dd1fc1e342",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R02/comandos.jsonl",
+      "sha256": "3233d8d6900a14c3ebb5db8c4f04cff14f363fb34e609c6b17a1ed315e56acc7",
+      "original_sha256": "3233d8d6900a14c3ebb5db8c4f04cff14f363fb34e609c6b17a1ed315e56acc7",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R02/envios.jsonl",
+      "sha256": "0dba7055b3e86645f1342c13f1c118d62f1999a7373b8a0c3e812c71bf95a0f3",
+      "original_sha256": "0dba7055b3e86645f1342c13f1c118d62f1999a7373b8a0c3e812c71bf95a0f3",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R02/estatisticas.json",
+      "sha256": "ef0db6c4c1e1f0bebd32d9416363dbeb2db97378a2e175c884896bd96f800bcc",
+      "original_sha256": "ef0db6c4c1e1f0bebd32d9416363dbeb2db97378a2e175c884896bd96f800bcc",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R02/estatisticas_recebidas.json",
+      "sha256": "ef0db6c4c1e1f0bebd32d9416363dbeb2db97378a2e175c884896bd96f800bcc",
+      "original_sha256": "ef0db6c4c1e1f0bebd32d9416363dbeb2db97378a2e175c884896bd96f800bcc",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R02/manifesto.json",
+      "sha256": "af7101ce7cfa08a2eeb3bd7a67d67070a0f65a9250f0af7023a62f4b1adfd54b",
+      "original_sha256": "af7101ce7cfa08a2eeb3bd7a67d67070a0f65a9250f0af7023a62f4b1adfd54b",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R02/rede.jsonl",
+      "sha256": "41495fb9f9b7ce1211696740dca61413495b5287afd4291a5e3e3a5ca3b1c23e",
+      "original_sha256": "41495fb9f9b7ce1211696740dca61413495b5287afd4291a5e3e3a5ca3b1c23e",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R02/resumo.json",
+      "sha256": "82ca08e765da2764264b36a7872622817edcb81f76e4f8c04d55fecdf7b1240b",
+      "original_sha256": "82ca08e765da2764264b36a7872622817edcb81f76e4f8c04d55fecdf7b1240b",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R02/roteiro.json",
+      "sha256": "1d3a82ac8bd67b29191724e70b7fd899a98ec2d375807b5682341cc445dcde65",
+      "original_sha256": "1d3a82ac8bd67b29191724e70b7fd899a98ec2d375807b5682341cc445dcde65",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R02/serial.txt",
+      "sha256": "8e42b69f5fa81b14a1af3d1ba1ef91583712e4c7b6ae8100375137f74fbbe01d",
+      "original_sha256": "c47ddd985b9b4b2bfde4735c4451de321d4a48e968acb8f3f5477bf391c3adc8",
+      "sanitized": true
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R02/tarefas.csv",
+      "sha256": "b27ce164201923695bc666b573dc78f0bca343b9cbc5670fbaff08a954e18676",
+      "original_sha256": "b27ce164201923695bc666b573dc78f0bca343b9cbc5670fbaff08a954e18676",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R03/RESUMO.md",
+      "sha256": "166b3a20952024e12973f4fe5c6b602892db33c13b424821ede6075e57ddca1a",
+      "original_sha256": "166b3a20952024e12973f4fe5c6b602892db33c13b424821ede6075e57ddca1a",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R03/comandos.jsonl",
+      "sha256": "8cf48805cc80838dfc52b5b810cdba2c1cc14e9b0aac1b3b03b73010517ab776",
+      "original_sha256": "8cf48805cc80838dfc52b5b810cdba2c1cc14e9b0aac1b3b03b73010517ab776",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R03/envios.jsonl",
+      "sha256": "af8380607bf547e30137ca401c86a7a49fdd7df993bfef9912ad3f5f56c36cab",
+      "original_sha256": "af8380607bf547e30137ca401c86a7a49fdd7df993bfef9912ad3f5f56c36cab",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R03/estatisticas.json",
+      "sha256": "7f82edc9851bab4e1377c715019c48ba1f9271dd2e8e84c759da8c4277a9ae95",
+      "original_sha256": "7f82edc9851bab4e1377c715019c48ba1f9271dd2e8e84c759da8c4277a9ae95",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R03/estatisticas_recebidas.json",
+      "sha256": "7f82edc9851bab4e1377c715019c48ba1f9271dd2e8e84c759da8c4277a9ae95",
+      "original_sha256": "7f82edc9851bab4e1377c715019c48ba1f9271dd2e8e84c759da8c4277a9ae95",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R03/manifesto.json",
+      "sha256": "20b2b20666499fa93264e95ac5dcf21a4e55014574634a0dded9add9f8c0e5d0",
+      "original_sha256": "20b2b20666499fa93264e95ac5dcf21a4e55014574634a0dded9add9f8c0e5d0",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R03/rede.jsonl",
+      "sha256": "3b0a6b511a17df0943643170609287f7b741a20ee89690874f4b44363b70bc6c",
+      "original_sha256": "3b0a6b511a17df0943643170609287f7b741a20ee89690874f4b44363b70bc6c",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R03/resumo.json",
+      "sha256": "e26d50ebc22b6d5b0ce093aae088e2496ce18a1c900e0a37a3b56fb10c79fac9",
+      "original_sha256": "e26d50ebc22b6d5b0ce093aae088e2496ce18a1c900e0a37a3b56fb10c79fac9",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R03/roteiro.json",
+      "sha256": "1d3a82ac8bd67b29191724e70b7fd899a98ec2d375807b5682341cc445dcde65",
+      "original_sha256": "1d3a82ac8bd67b29191724e70b7fd899a98ec2d375807b5682341cc445dcde65",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R03/serial.txt",
+      "sha256": "c56e29c2e4c63fed6d79645f97ff5849b9ec637638688c10ec089092211632d6",
+      "original_sha256": "bd2d44e322bae1470338eeda9b81f7c430df68dc40bc0da38f41ecf80504c73d",
+      "sanitized": true
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R03/tarefas.csv",
+      "sha256": "5f23d5a73e5f0431fd2eb7e6b6c63ede4b3b4572f81c8158b923f9ca475cdf0c",
+      "original_sha256": "5f23d5a73e5f0431fd2eb7e6b6c63ede4b3b4572f81c8158b923f9ca475cdf0c",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R04/RESUMO.md",
+      "sha256": "9cec8b4a43f91701fb6d20cbefea0bdd1b8268dc99fc855d42ed1357fb13ab9f",
+      "original_sha256": "9cec8b4a43f91701fb6d20cbefea0bdd1b8268dc99fc855d42ed1357fb13ab9f",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R04/comandos.jsonl",
+      "sha256": "d465b9345d16b0c3b57d8ae3ac71796c2967693235a8e1d8e27d6176305149b4",
+      "original_sha256": "d465b9345d16b0c3b57d8ae3ac71796c2967693235a8e1d8e27d6176305149b4",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R04/envios.jsonl",
+      "sha256": "ed4ecbe871d697b13d9273345305d93d469ce5bee23a6200637c39fdeacbea65",
+      "original_sha256": "ed4ecbe871d697b13d9273345305d93d469ce5bee23a6200637c39fdeacbea65",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R04/estatisticas.json",
+      "sha256": "c16d9f99e161c6745d48bca1350fa45b511070700340ec5b7181ffb2cef86819",
+      "original_sha256": "c16d9f99e161c6745d48bca1350fa45b511070700340ec5b7181ffb2cef86819",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R04/estatisticas_recebidas.json",
+      "sha256": "c16d9f99e161c6745d48bca1350fa45b511070700340ec5b7181ffb2cef86819",
+      "original_sha256": "c16d9f99e161c6745d48bca1350fa45b511070700340ec5b7181ffb2cef86819",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R04/manifesto.json",
+      "sha256": "3e72316c7311f085bcfbdda3e708fab70cabc5d48f7d53061fc8cfbac558d742",
+      "original_sha256": "3e72316c7311f085bcfbdda3e708fab70cabc5d48f7d53061fc8cfbac558d742",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R04/rede.jsonl",
+      "sha256": "d8fdd32d270ab1f10e973f367cf6111e379675751b2b1e7f16727eae82c345ac",
+      "original_sha256": "d8fdd32d270ab1f10e973f367cf6111e379675751b2b1e7f16727eae82c345ac",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R04/resumo.json",
+      "sha256": "2f5172b2c4f35051fbfaac679f236b5ffd5be8b9e6f9fd14cec2e87616662d58",
+      "original_sha256": "2f5172b2c4f35051fbfaac679f236b5ffd5be8b9e6f9fd14cec2e87616662d58",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R04/roteiro.json",
+      "sha256": "1d3a82ac8bd67b29191724e70b7fd899a98ec2d375807b5682341cc445dcde65",
+      "original_sha256": "1d3a82ac8bd67b29191724e70b7fd899a98ec2d375807b5682341cc445dcde65",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R04/serial.txt",
+      "sha256": "dfc6562c4e6d3671015358683fcc897db4c8090e7cb0c56f5e45f26d9f3005b8",
+      "original_sha256": "f352d160b94ae8f2064bbe80d9e087d7d9d87b00402dcc9906d81d79254afc24",
+      "sanitized": true
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R04/tarefas.csv",
+      "sha256": "a64d8289c16f6a9e53089b3db1c981394a6bf40ca5916b834cc634ecb57fd4ea",
+      "original_sha256": "a64d8289c16f6a9e53089b3db1c981394a6bf40ca5916b834cc634ecb57fd4ea",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R05/RESUMO.md",
+      "sha256": "9a5012d20d9d3eec05eb1a23169c60d63b46d206d2c95d22e3eb88a27c118bf9",
+      "original_sha256": "9a5012d20d9d3eec05eb1a23169c60d63b46d206d2c95d22e3eb88a27c118bf9",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R05/comandos.jsonl",
+      "sha256": "71b5f1511749250c92bbb8d90b1329b4ea96a7cc98f0a1953e48340d9cc7d52c",
+      "original_sha256": "71b5f1511749250c92bbb8d90b1329b4ea96a7cc98f0a1953e48340d9cc7d52c",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R05/envios.jsonl",
+      "sha256": "21981834eb39565561642aeb2fc3560354e527ef3f0ba5392abf855d6866b8ba",
+      "original_sha256": "21981834eb39565561642aeb2fc3560354e527ef3f0ba5392abf855d6866b8ba",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R05/estatisticas.json",
+      "sha256": "48a8b6a70e23700f85f0b38d4858f2c4262d0cd00f173537d0f0b84fd188890a",
+      "original_sha256": "48a8b6a70e23700f85f0b38d4858f2c4262d0cd00f173537d0f0b84fd188890a",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R05/estatisticas_recebidas.json",
+      "sha256": "48a8b6a70e23700f85f0b38d4858f2c4262d0cd00f173537d0f0b84fd188890a",
+      "original_sha256": "48a8b6a70e23700f85f0b38d4858f2c4262d0cd00f173537d0f0b84fd188890a",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R05/manifesto.json",
+      "sha256": "601a3c635cb65e9d4aa98e8161fb4e397ea2a4614babbef3cc77248cae57e596",
+      "original_sha256": "601a3c635cb65e9d4aa98e8161fb4e397ea2a4614babbef3cc77248cae57e596",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R05/rede.jsonl",
+      "sha256": "029ef9b30ca2588571694f615cfe3a5f9665265ac011bc69f147a104e2b96b8e",
+      "original_sha256": "029ef9b30ca2588571694f615cfe3a5f9665265ac011bc69f147a104e2b96b8e",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R05/resumo.json",
+      "sha256": "8508e4395bb3a5ffec37188633e53257c3c62df3d17ffb6a627c935d3dddcfb2",
+      "original_sha256": "8508e4395bb3a5ffec37188633e53257c3c62df3d17ffb6a627c935d3dddcfb2",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R05/roteiro.json",
+      "sha256": "1d3a82ac8bd67b29191724e70b7fd899a98ec2d375807b5682341cc445dcde65",
+      "original_sha256": "1d3a82ac8bd67b29191724e70b7fd899a98ec2d375807b5682341cc445dcde65",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R05/serial.txt",
+      "sha256": "4a628958cc1c835bc18ed56c4a749835fc5ff8ae50ecdebc5ca7256681217604",
+      "original_sha256": "603befe09e3931e3d2ba6037f38da67492dcfb6a97ca836b47891c41465bb2a4",
+      "sanitized": true
+    },
+    {
+      "path": "ensaios_M2/02_coletas/AGENDA_60S_R2/P_UDP/R05/tarefas.csv",
+      "sha256": "0c4b48b732abff45431cc627bcb6c79834901f3f4d058e9db0b354d45bf766a7",
+      "original_sha256": "0c4b48b732abff45431cc627bcb6c79834901f3f4d058e9db0b354d45bf766a7",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/README.md",
+      "sha256": "2f17132939af891fa8d05bd52b982a6f277c60ce1d3725942ce6f4915eff93cb",
+      "original_sha256": "2f17132939af891fa8d05bd52b982a6f277c60ce1d3725942ce6f4915eff93cb",
+      "sanitized": false
+    },
+    {
+      "path": "evidencias_complementares/P_TCP_R01_primeira/RESUMO.md",
+      "sha256": "59676ac8730639f487563e3c99ae90c01a6868bcae677744f921f1bc02103676",
+      "original_sha256": "59676ac8730639f487563e3c99ae90c01a6868bcae677744f921f1bc02103676",
+      "sanitized": false
+    },
+    {
+      "path": "evidencias_complementares/P_TCP_R01_primeira/comandos.jsonl",
+      "sha256": "3a5a6b0c6a69dbf16338883e2a68ec903c7b4a29045cfacc2dc2c01294ccc4e5",
+      "original_sha256": "3a5a6b0c6a69dbf16338883e2a68ec903c7b4a29045cfacc2dc2c01294ccc4e5",
+      "sanitized": false
+    },
+    {
+      "path": "evidencias_complementares/P_TCP_R01_primeira/envios.jsonl",
+      "sha256": "21df9a74593344f1d9b6f2ecd7f713e22fbd2f502ab7d249505416f9bb99da94",
+      "original_sha256": "21df9a74593344f1d9b6f2ecd7f713e22fbd2f502ab7d249505416f9bb99da94",
+      "sanitized": false
+    },
+    {
+      "path": "evidencias_complementares/P_TCP_R01_primeira/estatisticas.json",
+      "sha256": "db03983234fc4c6f10a2e1f6b7d2bf30111c47a6c062a0b81517550445817055",
+      "original_sha256": "db03983234fc4c6f10a2e1f6b7d2bf30111c47a6c062a0b81517550445817055",
+      "sanitized": false
+    },
+    {
+      "path": "evidencias_complementares/P_TCP_R01_primeira/estatisticas_recebidas.json",
+      "sha256": "db03983234fc4c6f10a2e1f6b7d2bf30111c47a6c062a0b81517550445817055",
+      "original_sha256": "db03983234fc4c6f10a2e1f6b7d2bf30111c47a6c062a0b81517550445817055",
+      "sanitized": false
+    },
+    {
+      "path": "evidencias_complementares/P_TCP_R01_primeira/manifesto.json",
+      "sha256": "edf2f087dc1bfcbcfa7787280d4c7b8fa618132c69af3efdf01e2c14bd89cc1d",
+      "original_sha256": "edf2f087dc1bfcbcfa7787280d4c7b8fa618132c69af3efdf01e2c14bd89cc1d",
+      "sanitized": false
+    },
+    {
+      "path": "evidencias_complementares/P_TCP_R01_primeira/rede.jsonl",
+      "sha256": "86607dce57ff4b9cbb58b8682119b851168f49131ec03a619fd152b252080b6a",
+      "original_sha256": "86607dce57ff4b9cbb58b8682119b851168f49131ec03a619fd152b252080b6a",
+      "sanitized": false
+    },
+    {
+      "path": "evidencias_complementares/P_TCP_R01_primeira/resumo.json",
+      "sha256": "0305b69cabe030eace0671aab089a9ea85055e89fc90c6f1884fb453cdf83e6a",
+      "original_sha256": "0305b69cabe030eace0671aab089a9ea85055e89fc90c6f1884fb453cdf83e6a",
+      "sanitized": false
+    },
+    {
+      "path": "evidencias_complementares/P_TCP_R01_primeira/roteiro.json",
+      "sha256": "1d3a82ac8bd67b29191724e70b7fd899a98ec2d375807b5682341cc445dcde65",
+      "original_sha256": "1d3a82ac8bd67b29191724e70b7fd899a98ec2d375807b5682341cc445dcde65",
+      "sanitized": false
+    },
+    {
+      "path": "evidencias_complementares/P_TCP_R01_primeira/serial.txt",
+      "sha256": "8b99e0f849e879b0d85d630cdfa206b38e4f866679df9895bdffe620618a071d",
+      "original_sha256": "48bdd83c5995446f455a177bbdc5ec728aa8cab1d266dc926ad2c2d1e9569841",
+      "sanitized": true
+    },
+    {
+      "path": "evidencias_complementares/P_TCP_R01_primeira/tarefas.csv",
+      "sha256": "bb15b604a5917fbdf52dd0bfc70989782e1dc33a69f1aa5236cdc311d2969d34",
+      "original_sha256": "bb15b604a5917fbdf52dd0bfc70989782e1dc33a69f1aa5236cdc311d2969d34",
+      "sanitized": false
+    },
+    {
+      "path": "evidencias_complementares/P_UDP_R01_primeira/RESUMO.md",
+      "sha256": "ed8a85387eb692549ba2392522ec688071c6a2c847986d95f93073d8ece3e344",
+      "original_sha256": "ed8a85387eb692549ba2392522ec688071c6a2c847986d95f93073d8ece3e344",
+      "sanitized": false
+    },
+    {
+      "path": "evidencias_complementares/P_UDP_R01_primeira/comandos.jsonl",
+      "sha256": "c0110307ca716a759aa628b2f5d71bef89eaa53bb5e2e1c9574f61ae40bbeb53",
+      "original_sha256": "c0110307ca716a759aa628b2f5d71bef89eaa53bb5e2e1c9574f61ae40bbeb53",
+      "sanitized": false
+    },
+    {
+      "path": "evidencias_complementares/P_UDP_R01_primeira/envios.jsonl",
+      "sha256": "fa5b8c0b15cbc1d945985eb866e63385733e3436834427ac171d07e3c1038392",
+      "original_sha256": "fa5b8c0b15cbc1d945985eb866e63385733e3436834427ac171d07e3c1038392",
+      "sanitized": false
+    },
+    {
+      "path": "evidencias_complementares/P_UDP_R01_primeira/estatisticas.json",
+      "sha256": "2fc35b71136111660bc15c90ba52b815fb32da772715d7dfbc7bea21f571ad20",
+      "original_sha256": "2fc35b71136111660bc15c90ba52b815fb32da772715d7dfbc7bea21f571ad20",
+      "sanitized": false
+    },
+    {
+      "path": "evidencias_complementares/P_UDP_R01_primeira/estatisticas_recebidas.json",
+      "sha256": "2fc35b71136111660bc15c90ba52b815fb32da772715d7dfbc7bea21f571ad20",
+      "original_sha256": "2fc35b71136111660bc15c90ba52b815fb32da772715d7dfbc7bea21f571ad20",
+      "sanitized": false
+    },
+    {
+      "path": "evidencias_complementares/P_UDP_R01_primeira/manifesto.json",
+      "sha256": "a7975e751b6523e8b7f5a2ffdf2a33df67658482e735b1f3b41962f83ec251a1",
+      "original_sha256": "a7975e751b6523e8b7f5a2ffdf2a33df67658482e735b1f3b41962f83ec251a1",
+      "sanitized": false
+    },
+    {
+      "path": "evidencias_complementares/P_UDP_R01_primeira/rede.jsonl",
+      "sha256": "88779e6e73c63541243bcc2a4246dcc8dff2c71f86645030df458967608fe609",
+      "original_sha256": "88779e6e73c63541243bcc2a4246dcc8dff2c71f86645030df458967608fe609",
+      "sanitized": false
+    },
+    {
+      "path": "evidencias_complementares/P_UDP_R01_primeira/resumo.json",
+      "sha256": "bd191db21fe72c9478bbbded5292312b78f6e05cec3e1e468a3a027a6ebf0564",
+      "original_sha256": "bd191db21fe72c9478bbbded5292312b78f6e05cec3e1e468a3a027a6ebf0564",
+      "sanitized": false
+    },
+    {
+      "path": "evidencias_complementares/P_UDP_R01_primeira/roteiro.json",
+      "sha256": "1d3a82ac8bd67b29191724e70b7fd899a98ec2d375807b5682341cc445dcde65",
+      "original_sha256": "1d3a82ac8bd67b29191724e70b7fd899a98ec2d375807b5682341cc445dcde65",
+      "sanitized": false
+    },
+    {
+      "path": "evidencias_complementares/P_UDP_R01_primeira/serial.txt",
+      "sha256": "7c5621700cef1d42fd90b4148fbbaf038f441dc8d7d0b90e4bdbbb7b58d28975",
+      "original_sha256": "026a566bda86173517d4543e436a7443eb0a9d3d2db8d1932870e8aa179ae60c",
+      "sanitized": true
+    },
+    {
+      "path": "evidencias_complementares/P_UDP_R01_primeira/tarefas.csv",
+      "sha256": "e3fefe838678b8b5e83b21922628c7223da5a6b39fcb0196d37a48f685cde5c1",
+      "original_sha256": "e3fefe838678b8b5e83b21922628c7223da5a6b39fcb0196d37a48f685cde5c1",
+      "sanitized": false
+    },
+    {
+      "path": "evidencias_complementares/README.md",
+      "sha256": "04889de3bdbc7c617cbadb7fde789e3ad51a63024dd0fca6b8f79730da2f8b7b",
+      "original_sha256": "04889de3bdbc7c617cbadb7fde789e3ad51a63024dd0fca6b8f79730da2f8b7b",
+      "sanitized": false
+    },
+    {
+      "path": "fontes_campanha/main/CMakeLists.txt",
+      "sha256": "fc414827d0f28945b5d19021e675498c0d487f3e21fb1ecb023e135d9fc3e6f2",
+      "original_sha256": "fc414827d0f28945b5d19021e675498c0d487f3e21fb1ecb023e135d9fc3e6f2",
+      "sanitized": false
+    },
+    {
+      "path": "fontes_campanha/main/Kconfig.projbuild",
+      "sha256": "9a8622ef26320ae3abeb35a5338621974519b0072c409b3768953f24aa36c61e",
+      "original_sha256": "9a8622ef26320ae3abeb35a5338621974519b0072c409b3768953f24aa36c61e",
+      "sanitized": false
+    },
+    {
+      "path": "fontes_campanha/main/event_auto.c",
+      "sha256": "09f7d79d742581e3cbdcdf75015393423ec6461318badd8f9403c5e423aaa1e9",
+      "original_sha256": "09f7d79d742581e3cbdcdf75015393423ec6461318badd8f9403c5e423aaa1e9",
+      "sanitized": false
+    },
+    {
+      "path": "fontes_campanha/main/event_auto.h",
+      "sha256": "4ae5c76da1d134d4388cde5631a30e5f64c636b0a0ee9d0e20660e8c0ed8632d",
+      "original_sha256": "4ae5c76da1d134d4388cde5631a30e5f64c636b0a0ee9d0e20660e8c0ed8632d",
+      "sanitized": false
+    },
+    {
+      "path": "fontes_campanha/main/event_script.c",
+      "sha256": "d2213dc24f91c7f1f409011a887e46fbf4f6a2cc00b5c08446d3ee63cb952745",
+      "original_sha256": "d2213dc24f91c7f1f409011a887e46fbf4f6a2cc00b5c08446d3ee63cb952745",
+      "sanitized": false
+    },
+    {
+      "path": "fontes_campanha/main/event_script.h",
+      "sha256": "93cae184dfd9b283dc325e1765c0e1cf9a019c9ef671fbfe9beabfcbf0c2fd36",
+      "original_sha256": "93cae184dfd9b283dc325e1765c0e1cf9a019c9ef671fbfe9beabfcbf0c2fd36",
+      "sanitized": false
+    },
+    {
+      "path": "fontes_campanha/main/experiment.c",
+      "sha256": "5bcd22a62db27c5d121ff38b3fc6f4e8c428d2fe88433303b3d292cdf1b763c5",
+      "original_sha256": "5bcd22a62db27c5d121ff38b3fc6f4e8c428d2fe88433303b3d292cdf1b763c5",
+      "sanitized": false
+    },
+    {
+      "path": "fontes_campanha/main/experiment.h",
+      "sha256": "90b33f11d17af21d8cac87b5272b050d0899bcfe7b11c2ff8599311022e92e77",
+      "original_sha256": "90b33f11d17af21d8cac87b5272b050d0899bcfe7b11c2ff8599311022e92e77",
+      "sanitized": false
+    },
+    {
+      "path": "fontes_campanha/main/main.c",
+      "sha256": "608f4a838ff1e61a5273467b0884089ec589365cf81d62fb4a8cb56174e04714",
+      "original_sha256": "608f4a838ff1e61a5273467b0884089ec589365cf81d62fb4a8cb56174e04714",
+      "sanitized": false
+    },
+    {
+      "path": "fontes_campanha/main/monitor.c",
+      "sha256": "514b7dc5d018418898940a47036521ad9be6c97a02400dc904c88375bbd1681a",
+      "original_sha256": "514b7dc5d018418898940a47036521ad9be6c97a02400dc904c88375bbd1681a",
+      "sanitized": false
+    },
+    {
+      "path": "fontes_campanha/main/monitor.h",
+      "sha256": "369ef2d303251db538d44296f3eb357adc23296c188a95527baa291d93c4648d",
+      "original_sha256": "369ef2d303251db538d44296f3eb357adc23296c188a95527baa291d93c4648d",
+      "sanitized": false
+    },
+    {
+      "path": "fontes_campanha/main/monitor_protocol.c",
+      "sha256": "e8a1f89404cbb588abbd45bd2e60140d140b39ebf33c7be4cb2c3ea85bb51122",
+      "original_sha256": "e8a1f89404cbb588abbd45bd2e60140d140b39ebf33c7be4cb2c3ea85bb51122",
+      "sanitized": false
+    },
+    {
+      "path": "fontes_campanha/main/monitor_protocol.h",
+      "sha256": "56625a5f50c27f27a8e340f60ae5c86a09fdfac5cafaa2c7a7b07d7888239cb3",
+      "original_sha256": "56625a5f50c27f27a8e340f60ae5c86a09fdfac5cafaa2c7a7b07d7888239cb3",
+      "sanitized": false
+    },
+    {
+      "path": "fontes_campanha/main/time_task.c",
+      "sha256": "3c7673ad7f4a0dc0c5926e86cbe18d82f3425368867e84b3d8d29b4845094773",
+      "original_sha256": "3c7673ad7f4a0dc0c5926e86cbe18d82f3425368867e84b3d8d29b4845094773",
+      "sanitized": false
+    },
+    {
+      "path": "fontes_campanha/main/time_task.h",
+      "sha256": "04bd04a3545784be7e1a5cf40063487d8bb771e5754a5901cfcde162f86f8c6f",
+      "original_sha256": "04bd04a3545784be7e1a5cf40063487d8bb771e5754a5901cfcde162f86f8c6f",
+      "sanitized": false
+    },
+    {
+      "path": "fontes_campanha/pc/agenda.py",
+      "sha256": "8cc17c709de943a35e07b872f5f118646985fe2474e1c27695777c577dad4c43",
+      "original_sha256": "8cc17c709de943a35e07b872f5f118646985fe2474e1c27695777c577dad4c43",
+      "sanitized": false
+    },
+    {
+      "path": "fontes_campanha/pc/executar_ensaio.py",
+      "sha256": "3b1edf72644819de8ce5d3b89ba4223b097e26e23bd2576b1e407bf689e72cf4",
+      "original_sha256": "3b1edf72644819de8ce5d3b89ba4223b097e26e23bd2576b1e407bf689e72cf4",
+      "sanitized": false
+    },
+    {
+      "path": "fontes_campanha/pc/monitor_pc.py",
+      "sha256": "a9056f2525b933cf2997a6b1e7f156429566268b1a6d097873947ae360f2bbec",
+      "original_sha256": "a9056f2525b933cf2997a6b1e7f156429566268b1a6d097873947ae360f2bbec",
+      "sanitized": false
+    },
+    {
+      "path": "fontes_campanha/pc/relogio_sntp.py",
+      "sha256": "3a885d8d2c7d4f1605e034564e72dcd2f4e1e29d20c11bacf91487a4554c9265",
+      "original_sha256": "3a885d8d2c7d4f1605e034564e72dcd2f4e1e29d20c11bacf91487a4554c9265",
+      "sanitized": false
+    },
+    {
+      "path": "fontes_campanha/pc/requirements.txt",
+      "sha256": "95fdad543f34e4a191cd17219e1a73b4ab4b0b5ad9806a25c3b49e7b48ab8ca0",
+      "original_sha256": "95fdad543f34e4a191cd17219e1a73b4ab4b0b5ad9806a25c3b49e7b48ab8ca0",
+      "sanitized": false
+    },
+    {
+      "path": "fontes_campanha/tools/analisar_ensaio.py",
+      "sha256": "f76c59237e0de407d547d82d28737d15cd21b8ed83cae68c9cc525af49598e9a",
+      "original_sha256": "f76c59237e0de407d547d82d28737d15cd21b8ed83cae68c9cc525af49598e9a",
+      "sanitized": false
+    },
+    {
+      "path": "fontes_campanha/tools/arquivar_anexo.py",
+      "sha256": "b3ecbcb438e232b82ae59c8e77e94d3710cc6f6a58e4d4d9f3ab09b72ee04dde",
+      "original_sha256": "b3ecbcb438e232b82ae59c8e77e94d3710cc6f6a58e4d4d9f3ab09b72ee04dde",
+      "sanitized": false
+    },
+    {
+      "path": "fontes_campanha/tools/atualizar_indice.py",
+      "sha256": "ec43ee9567798077232b08a5a8a266e106c0b10f00ad5ded2db8e0df104cd3a5",
+      "original_sha256": "ec43ee9567798077232b08a5a8a266e106c0b10f00ad5ded2db8e0df104cd3a5",
+      "sanitized": false
+    },
+    {
+      "path": "fontes_campanha/tools/configurar_teste.py",
+      "sha256": "8f81813b727318ea776c154aa1b006442ca9a65d1d9461f5479c160cc42b8fe4",
+      "original_sha256": "8f81813b727318ea776c154aa1b006442ca9a65d1d9461f5479c160cc42b8fe4",
+      "sanitized": false
+    },
+    {
+      "path": "fontes_campanha/tools/verificar_base.py",
+      "sha256": "a83fb5de57d748f57715518c5a0a93951ef3b026e7ebdf672887f85e15f7a7d2",
+      "original_sha256": "a83fb5de57d748f57715518c5a0a93951ef3b026e7ebdf672887f85e15f7a7d2",
+      "sanitized": false
+    },
+    {
+      "path": "main/CMakeLists.txt",
+      "sha256": "fc414827d0f28945b5d19021e675498c0d487f3e21fb1ecb023e135d9fc3e6f2",
+      "original_sha256": "fc414827d0f28945b5d19021e675498c0d487f3e21fb1ecb023e135d9fc3e6f2",
+      "sanitized": false
+    },
+    {
+      "path": "main/Kconfig.projbuild",
+      "sha256": "9a8622ef26320ae3abeb35a5338621974519b0072c409b3768953f24aa36c61e",
+      "original_sha256": "9a8622ef26320ae3abeb35a5338621974519b0072c409b3768953f24aa36c61e",
+      "sanitized": false
+    },
+    {
+      "path": "main/event_auto.c",
+      "sha256": "09f7d79d742581e3cbdcdf75015393423ec6461318badd8f9403c5e423aaa1e9",
+      "original_sha256": "09f7d79d742581e3cbdcdf75015393423ec6461318badd8f9403c5e423aaa1e9",
+      "sanitized": false
+    },
+    {
+      "path": "main/event_auto.h",
+      "sha256": "4ae5c76da1d134d4388cde5631a30e5f64c636b0a0ee9d0e20660e8c0ed8632d",
+      "original_sha256": "4ae5c76da1d134d4388cde5631a30e5f64c636b0a0ee9d0e20660e8c0ed8632d",
+      "sanitized": false
+    },
+    {
+      "path": "main/event_script.c",
+      "sha256": "d2213dc24f91c7f1f409011a887e46fbf4f6a2cc00b5c08446d3ee63cb952745",
+      "original_sha256": "d2213dc24f91c7f1f409011a887e46fbf4f6a2cc00b5c08446d3ee63cb952745",
+      "sanitized": false
+    },
+    {
+      "path": "main/event_script.h",
+      "sha256": "93cae184dfd9b283dc325e1765c0e1cf9a019c9ef671fbfe9beabfcbf0c2fd36",
+      "original_sha256": "93cae184dfd9b283dc325e1765c0e1cf9a019c9ef671fbfe9beabfcbf0c2fd36",
+      "sanitized": false
+    },
+    {
+      "path": "main/experiment.c",
+      "sha256": "5bcd22a62db27c5d121ff38b3fc6f4e8c428d2fe88433303b3d292cdf1b763c5",
+      "original_sha256": "5bcd22a62db27c5d121ff38b3fc6f4e8c428d2fe88433303b3d292cdf1b763c5",
+      "sanitized": false
+    },
+    {
+      "path": "main/experiment.h",
+      "sha256": "90b33f11d17af21d8cac87b5272b050d0899bcfe7b11c2ff8599311022e92e77",
+      "original_sha256": "90b33f11d17af21d8cac87b5272b050d0899bcfe7b11c2ff8599311022e92e77",
+      "sanitized": false
+    },
+    {
+      "path": "main/main.c",
+      "sha256": "608f4a838ff1e61a5273467b0884089ec589365cf81d62fb4a8cb56174e04714",
+      "original_sha256": "608f4a838ff1e61a5273467b0884089ec589365cf81d62fb4a8cb56174e04714",
+      "sanitized": false
+    },
+    {
+      "path": "main/monitor.c",
+      "sha256": "514b7dc5d018418898940a47036521ad9be6c97a02400dc904c88375bbd1681a",
+      "original_sha256": "514b7dc5d018418898940a47036521ad9be6c97a02400dc904c88375bbd1681a",
+      "sanitized": false
+    },
+    {
+      "path": "main/monitor.h",
+      "sha256": "369ef2d303251db538d44296f3eb357adc23296c188a95527baa291d93c4648d",
+      "original_sha256": "369ef2d303251db538d44296f3eb357adc23296c188a95527baa291d93c4648d",
+      "sanitized": false
+    },
+    {
+      "path": "main/monitor_protocol.c",
+      "sha256": "e8a1f89404cbb588abbd45bd2e60140d140b39ebf33c7be4cb2c3ea85bb51122",
+      "original_sha256": "e8a1f89404cbb588abbd45bd2e60140d140b39ebf33c7be4cb2c3ea85bb51122",
+      "sanitized": false
+    },
+    {
+      "path": "main/monitor_protocol.h",
+      "sha256": "56625a5f50c27f27a8e340f60ae5c86a09fdfac5cafaa2c7a7b07d7888239cb3",
+      "original_sha256": "56625a5f50c27f27a8e340f60ae5c86a09fdfac5cafaa2c7a7b07d7888239cb3",
+      "sanitized": false
+    },
+    {
+      "path": "main/time_task.c",
+      "sha256": "3c7673ad7f4a0dc0c5926e86cbe18d82f3425368867e84b3d8d29b4845094773",
+      "original_sha256": "3c7673ad7f4a0dc0c5926e86cbe18d82f3425368867e84b3d8d29b4845094773",
+      "sanitized": false
+    },
+    {
+      "path": "main/time_task.h",
+      "sha256": "04bd04a3545784be7e1a5cf40063487d8bb771e5754a5901cfcde162f86f8c6f",
+      "original_sha256": "04bd04a3545784be7e1a5cf40063487d8bb771e5754a5901cfcde162f86f8c6f",
+      "sanitized": false
+    },
+    {
+      "path": "pc/agenda.py",
+      "sha256": "8cc17c709de943a35e07b872f5f118646985fe2474e1c27695777c577dad4c43",
+      "original_sha256": "8cc17c709de943a35e07b872f5f118646985fe2474e1c27695777c577dad4c43",
+      "sanitized": false
+    },
+    {
+      "path": "pc/executar_ensaio.py",
+      "sha256": "9a83a026167034165b5380e4ff441d732a50c0582ed4e3de3f00b6d7ad451a08",
+      "original_sha256": "9a83a026167034165b5380e4ff441d732a50c0582ed4e3de3f00b6d7ad451a08",
+      "sanitized": false
+    },
+    {
+      "path": "pc/monitor_pc.py",
+      "sha256": "a9056f2525b933cf2997a6b1e7f156429566268b1a6d097873947ae360f2bbec",
+      "original_sha256": "a9056f2525b933cf2997a6b1e7f156429566268b1a6d097873947ae360f2bbec",
+      "sanitized": false
+    },
+    {
+      "path": "pc/relogio_sntp.py",
+      "sha256": "3a885d8d2c7d4f1605e034564e72dcd2f4e1e29d20c11bacf91487a4554c9265",
+      "original_sha256": "3a885d8d2c7d4f1605e034564e72dcd2f4e1e29d20c11bacf91487a4554c9265",
+      "sanitized": false
+    },
+    {
+      "path": "pc/requirements.txt",
+      "sha256": "95fdad543f34e4a191cd17219e1a73b4ab4b0b5ad9806a25c3b49e7b48ab8ca0",
+      "original_sha256": "95fdad543f34e4a191cd17219e1a73b4ab4b0b5ad9806a25c3b49e7b48ab8ca0",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/m1/tabelas_graficos/dados/metricas_finais_por_tarefa.csv",
+      "sha256": "2ab44461f099e0859cb75157fd04a461e260920e58cb28bc269368cf06113dd9",
+      "original_sha256": "2ab44461f099e0859cb75157fd04a461e260920e58cb28bc269368cf06113dd9",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/m1/tabelas_graficos/dados/resumo_cenarios.csv",
+      "sha256": "9e97d7033e3bfa2738b0a61421c73fd5f2458143e85427b42449ae045ab0d22a",
+      "original_sha256": "9e97d7033e3bfa2738b0a61421c73fd5f2458143e85427b42449ae045ab0d22a",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/professor/IMPORTACAO_NETWORK_ESP32.json",
+      "sha256": "b7bcb42afbf7f8b2a18912c4b6b8875895f6131d303d83a236ee88669e15d1da",
+      "original_sha256": "b7bcb42afbf7f8b2a18912c4b6b8875895f6131d303d83a236ee88669e15d1da",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/professor/Network_ESP32/README.md",
+      "sha256": "a0ae134ecb9fa5bd1014531541eb361e24ae1be3c2a3e19c1d766b78cb418d7e",
+      "original_sha256": "a0ae134ecb9fa5bd1014531541eb361e24ae1be3c2a3e19c1d766b78cb418d7e",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/professor/Network_ESP32/esp32_sntp_con.c",
+      "sha256": "ae51694b292a62089cb931460695817fb1c4acf1b5f37ca7ea1c0d10b3be54fd",
+      "original_sha256": "ae51694b292a62089cb931460695817fb1c4acf1b5f37ca7ea1c0d10b3be54fd",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/professor/Network_ESP32/tcp_client.py",
+      "sha256": "4daf34776a3f484cfce2e4cb4171c03fba96c43d7c007e2e393f6706046b301a",
+      "original_sha256": "4daf34776a3f484cfce2e4cb4171c03fba96c43d7c007e2e393f6706046b301a",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/professor/Network_ESP32/tcp_udp_esp32_wifi_con.c",
+      "sha256": "3053f6378aae2b7f292c593f75b1af06862be61f9dc58b509ce808deefb1c508",
+      "original_sha256": "3053f6378aae2b7f292c593f75b1af06862be61f9dc58b509ce808deefb1c508",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/professor/Network_ESP32/udp_server.py",
+      "sha256": "220f3e14f8c9e21f555b8becc2597e994630cddea345cde5016d18ef593c0496",
+      "original_sha256": "220f3e14f8c9e21f555b8becc2597e994630cddea345cde5016d18ef593c0496",
+      "sanitized": false
+    },
+    {
+      "path": "referencias/professor/README.md",
+      "sha256": "1ca8118f8ffe2d1a13293641144f917b43e1f84562a770179396a32e29ff6069",
+      "original_sha256": "1ca8118f8ffe2d1a13293641144f917b43e1f84562a770179396a32e29ff6069",
+      "sanitized": false
+    },
+    {
+      "path": "sdkconfig.defaults",
+      "sha256": "a01d28a3b9409bca34c08ed5ca1cbe6c1684bc469ee7e9046ab7f5a4dca04298",
+      "original_sha256": "a01d28a3b9409bca34c08ed5ca1cbe6c1684bc469ee7e9046ab7f5a4dca04298",
+      "sanitized": false
+    },
+    {
+      "path": "sdkconfig.wifi.example",
+      "sha256": "c9366e06c6d5ddec4e2f5518478b8c0013c9d85067960ecc31ac2d3244b737a5",
+      "original_sha256": "c9366e06c6d5ddec4e2f5518478b8c0013c9d85067960ecc31ac2d3244b737a5",
+      "sanitized": false
+    },
+    {
+      "path": "tests/test_ensaios.py",
+      "sha256": "e22af063748d34d408d9133bc9cda6cfad4f33060085e27f92be2fc3e9475a10",
+      "original_sha256": "e22af063748d34d408d9133bc9cda6cfad4f33060085e27f92be2fc3e9475a10",
+      "sanitized": false
+    },
+    {
+      "path": "tests/test_modos_entrada.py",
+      "sha256": "1a6b16e60a45312e77c419fe6817b572576cbf7de2fbb759cd3a18757384c90b",
+      "original_sha256": "1a6b16e60a45312e77c419fe6817b572576cbf7de2fbb759cd3a18757384c90b",
+      "sanitized": false
+    },
+    {
+      "path": "tests/test_monitor_pc.py",
+      "sha256": "c993d317083ab59e80cc54a6ef22d8a36c6e5e841210630448a9c41d3dc07e79",
+      "original_sha256": "c993d317083ab59e80cc54a6ef22d8a36c6e5e841210630448a9c41d3dc07e79",
+      "sanitized": false
+    },
+    {
+      "path": "tools/analisar_ensaio.py",
+      "sha256": "f76c59237e0de407d547d82d28737d15cd21b8ed83cae68c9cc525af49598e9a",
+      "original_sha256": "f76c59237e0de407d547d82d28737d15cd21b8ed83cae68c9cc525af49598e9a",
+      "sanitized": false
+    },
+    {
+      "path": "tools/arquivar_anexo.py",
+      "sha256": "b3ecbcb438e232b82ae59c8e77e94d3710cc6f6a58e4d4d9f3ab09b72ee04dde",
+      "original_sha256": "b3ecbcb438e232b82ae59c8e77e94d3710cc6f6a58e4d4d9f3ab09b72ee04dde",
+      "sanitized": false
+    },
+    {
+      "path": "tools/atualizar_indice.py",
+      "sha256": "ec43ee9567798077232b08a5a8a266e106c0b10f00ad5ded2db8e0df104cd3a5",
+      "original_sha256": "ec43ee9567798077232b08a5a8a266e106c0b10f00ad5ded2db8e0df104cd3a5",
+      "sanitized": false
+    },
+    {
+      "path": "tools/auditar_campanha.py",
+      "sha256": "1614737509f8956ec5a958cfdd2a18cfca9a4a8d068bd638fed2e7cb0e3e2291",
+      "original_sha256": "1614737509f8956ec5a958cfdd2a18cfca9a4a8d068bd638fed2e7cb0e3e2291",
+      "sanitized": false
+    },
+    {
+      "path": "tools/configurar_teste.py",
+      "sha256": "6194b60fce4a0820b71fac336e902a34022e1e601bbf2344d4b8602d05f9d9cd",
+      "original_sha256": "6194b60fce4a0820b71fac336e902a34022e1e601bbf2344d4b8602d05f9d9cd",
+      "sanitized": false
+    },
+    {
+      "path": "tools/gerar_analise_final.py",
+      "sha256": "6d84a63feff38b2afc1c8e43702c7faf2dafbec6159500d33e05a8af780afb03",
+      "original_sha256": "6d84a63feff38b2afc1c8e43702c7faf2dafbec6159500d33e05a8af780afb03",
+      "sanitized": false
+    },
+    {
+      "path": "tools/preparar_publicacao_final.py",
+      "sha256": "ebdb35e6e00267b07b4639422279d23cd042814703fcf249053b1ae117559dc3",
+      "original_sha256": "ebdb35e6e00267b07b4639422279d23cd042814703fcf249053b1ae117559dc3",
+      "sanitized": false
+    },
+    {
+      "path": "tools/verificar_base.py",
+      "sha256": "a83fb5de57d748f57715518c5a0a93951ef3b026e7ebdf672887f85e15f7a7d2",
+      "original_sha256": "a83fb5de57d748f57715518c5a0a93951ef3b026e7ebdf672887f85e15f7a7d2",
+      "sanitized": false
+    },
+    {
+      "path": "ensaios_M2/INDICE.csv",
+      "sha256": "e37c8893e2bf2cfee86e6629684c18172096f461e332391c7d5379c0bedb508f",
+      "generated_from_public_data": true
     }
   ]
 }

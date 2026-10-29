@@ -1,7 +1,7 @@
 """Cliente de laboratorio baseado nos exemplos TCP/UDP do Prof. Felipe Viel.
 
-Somente biblioteca padrao. Firmware da ESP32 em C. Uma sessao e um comando
-pendente por cliente; retransmissoes UDP usam exatamente o mesmo identificador.
+Somente biblioteca padrao. Firmware da ESP32 em C. O cliente interativo espera
+ACK; a agenda pode manter varias requisicoes pendentes, correlacionadas por seq.
 """
 
 import argparse
@@ -48,9 +48,11 @@ class JsonLines:
 
 
 class MonitorClient:
-    def __init__(self, host, port=5000, protocol="udp", output="monitor.jsonl", show_time=False):
+    def __init__(self, host, port=5000, protocol="udp", output="monitor.jsonl", show_time=False,
+                 show_jobs=True):
         self.protocol = protocol.lower()
         self.show_time = show_time
+        self.show_jobs = show_jobs
         self.clock_reference = None
         self.session = secrets.randbelow(0xFFFFFFFF) + 1
         self.sequence = 0
@@ -92,7 +94,7 @@ class MonitorClient:
             while self.running:
                 try:
                     data = self.sock.recv(65536)
-                    received_mono_ns = time.monotonic_ns()
+                    received_mono_ns = time.perf_counter_ns()
                     received_wall_ns = time.time_ns()
                 except socket.timeout:
                     continue
@@ -115,9 +117,10 @@ class MonitorClient:
                         self.condition.notify_all()
                     if message.get("type") == "ack" and message.get("session") == self.session:
                         with self.condition:
-                            self.acks[message["seq"]] = (message, record["pc_mono_ns"])
+                            # Conservar a primeira resposta, mesmo se houver duplicatas UDP.
+                            self.acks.setdefault(message["seq"], (message, record["pc_mono_ns"]))
                             self.condition.notify_all()
-                    elif message.get("type") == "job" and message.get("command_seq"):
+                    elif self.show_jobs and message.get("type") == "job" and message.get("command_seq"):
                         print("JOB:", json.dumps(message), flush=True)
                     elif message.get("type") == "time" and self.show_time:
                         print(format_time_status(message), flush=True)
@@ -127,67 +130,141 @@ class MonitorClient:
                     self.failure = error
                     self.condition.notify_all()
 
-    def command(self, command, timeout=2.0, attempts=3):
+    def _new_request(self, command):
         command = command.upper()
         if command not in {"HELLO", "PING", "NAV", "FS", "BEGIN", "REPORT"}:
             raise ValueError("Comando deve ser HELLO, PING, NAV, FS, BEGIN ou REPORT")
         if self.sequence >= 0xFFFFFFFF:
             raise ValueError("Sequencia esgotada; abra uma nova sessao")
         self.sequence += 1
-        sequence = self.sequence
-        payload = f"CMD;{self.session:010d};{sequence:010d};{command}\n".encode("ascii")
-        first_sent = None
+        return dict(command=command, seq=self.sequence, session=self.session,
+                    attempts=0, pc_tx_mono_ns=None)
+
+    def _send_request(self, request):
+        """Chamado somente pela thread emissora. Nao espera ACK."""
+        if self.failure:
+            raise ConnectionError(str(self.failure))
+        payload = (f"CMD;{self.session:010d};{request['seq']:010d};"
+                   f"{request['command']}\n").encode('ascii')
+        sent_wall_ns = time.time_ns()
+        sent_mono_ns = time.perf_counter_ns()
+        if request['pc_tx_mono_ns'] is None:
+            request['pc_tx_mono_ns'] = sent_mono_ns
+        request['attempts'] += 1
+        # sendall tem timeout limitado; em falha TCP nao reutilizar um frame parcial.
+        try:
+            self.sock.sendall(payload)
+        except OSError as error:
+            with self.condition:
+                self.failure = error
+                self.condition.notify_all()
+            self._save(dict(type='pc_send_error', **request, error=str(error)))
+            raise
+        returned_ns = time.perf_counter_ns()
+        request['send_return_mono_ns'] = returned_ns
+        self._save(dict(type='pc_send', protocol=self.protocol.upper(),
+                        session=self.session, seq=request['seq'], command=request['command'],
+                        attempt=request['attempts'], tx_bytes=len(payload),
+                        pc_wall_ns=sent_wall_ns, pc_mono_ns=sent_mono_ns,
+                        send_return_mono_ns=returned_ns))
+
+    def start_command(self, command):
+        """Uma tentativa de envio; a resposta sera recolhida separadamente por seq."""
+        request = self._new_request(command)
+        self._send_request(request)
+        return request
+
+    def _result(self, request, message, received_ns):
+        if message.get('command') != request['command']:
+            raise ValueError('ACK com comando diferente para a mesma sequencia')
+        first_sent = request['pc_tx_mono_ns']
+        result = dict(ack=message, round_trip_ms=(received_ns-first_sent)/1e6,
+                      attempts=request['attempts'], pc_tx_mono_ns=first_sent,
+                      pc_rx_mono_ns=received_ns)
+        self._save(dict(type='pc_roundtrip', protocol=self.protocol.upper(),
+                        session=self.session, seq=request['seq'], command=request['command'], **result))
+        return result
+
+    def finish_command(self, request, timeout=5.0):
+        """Prazo contado desde o envio, nao desde esta chamada.
+
+        ACK recebido apos o prazo continua registrado, identificado como tardio.
+        Ausencia de ACK nao prova ausencia de execucao na ESP32.
+        """
+        limit_ns = request['pc_tx_mono_ns'] + int(timeout * 1e9)
+        with self.condition:
+            while request['seq'] not in self.acks and self.failure is None:
+                remaining = (limit_ns - time.perf_counter_ns()) / 1e9
+                if remaining <= 0:
+                    break
+                self.condition.wait(remaining)
+            response = self.acks.pop(request['seq'], None)
+        if response:
+            result = self._result(request, *response)
+            result['ack_late'] = response[1] > limit_ns
+            return result
+        self._save(dict(type='command_timeout', **request, pc_mono_ns=time.perf_counter_ns()))
+        raise TimeoutError(f"Sem ACK para {request['command']} seq={request['seq']}; execucao incerta")
+
+    def command(self, command, timeout=2.0, attempts=3):
+        request = self._new_request(command)
+        sequence = request['seq']
         retries = attempts if self.protocol == "udp" else 1
         for attempt in range(retries):
-            sent_wall_ns = time.time_ns()
-            sent_mono_ns = time.monotonic_ns()
-            if first_sent is None: first_sent = sent_mono_ns
-            # Inicio da chamada de envio; nao e timestamp de transmissao no radio.
-            self.sock.sendall(payload)
-            self._save({"type": "pc_send", "protocol": self.protocol.upper(),
-                        "session": self.session, "seq": sequence, "command": command,
-                        "attempt": attempt + 1, "tx_bytes": len(payload),
-                        "pc_wall_ns": sent_wall_ns, "pc_mono_ns": sent_mono_ns,
-                        "send_return_mono_ns": time.monotonic_ns()})
-            limit = time.monotonic() + timeout
+            self._send_request(request)
+            limit = time.perf_counter() + timeout
             with self.condition:
                 while sequence not in self.acks and self.failure is None:
-                    remaining = limit - time.monotonic()
+                    remaining = limit - time.perf_counter()
                     if remaining <= 0:
                         break
                     self.condition.wait(remaining)
                 if sequence in self.acks:
                     message, received_ns = self.acks.pop(sequence)
-                    result = {"ack": message, "round_trip_ms": (received_ns - first_sent) / 1e6,
-                              "attempts": attempt + 1, "pc_tx_mono_ns": first_sent,
-                              "pc_rx_mono_ns": received_ns}
-                    self._save({"type": "pc_roundtrip", "protocol": self.protocol.upper(),
-                                "session": self.session, "seq": sequence, "command": command,
-                                "pc_tx_mono_ns": first_sent, "pc_rx_mono_ns": received_ns,
-                                **result})
-                    # Inclui a espera pelo ciclo de 500 ms; nao e latencia pura de Wi-Fi.
-                    return result
+                    return self._result(request, message, received_ns)
                 if self.failure:
                     raise ConnectionError(str(self.failure))
         self._save({"type": "command_timeout", "session": self.session, "seq": sequence,
-                    "command": command, "attempts": retries, "pc_mono_ns": time.monotonic_ns()})
+                    "command": command, "attempts": retries, "pc_mono_ns": time.perf_counter_ns()})
         raise TimeoutError(f"Sem ACK para {command}; resultado da execucao e incerto")
 
     def wait_for(self, predicate, timeout=10):
-        limit = time.monotonic() + timeout
+        limit = time.perf_counter() + timeout
         with self.condition:
             while not predicate(self):
                 if self.failure: raise ConnectionError(str(self.failure))
-                remaining = limit - time.monotonic()
+                remaining = limit - time.perf_counter()
                 if remaining <= 0: raise TimeoutError("Estado esperado nao recebido")
                 self.condition.wait(remaining)
 
-    def report(self, timeout=8):
+    def report(self, timeout=30, on_progress=None):
         result = self.command("REPORT")
+        if result['ack'].get('status') != 'OK':
+            raise ValueError(f"REPORT recusado: {result['ack']}")
         seq = result["ack"]["seq"]
-        self.wait_for(lambda c: sum(key[0] == seq for key in c.analyses) == 6, timeout)
-        with self.condition:
-            return [value.copy() for (report, _), value in self.analyses.items() if report == seq]
+        tasks = ('FUS_IMU', 'CTRL_ATT', 'NAV_PLAN', 'FAIL_SAFE', 'MONITOR_TASK', 'TIME_TASK')
+        limit = time.perf_counter() + timeout
+        previous = None
+        while True:
+            with self.condition:
+                received = {name: self.analyses[(seq, name)].copy() for name in tasks
+                            if (seq, name) in self.analyses}
+                failure = self.failure
+            if len(received) != previous:
+                if on_progress: on_progress(seq, tuple(received), tasks)
+                previous = len(received)
+            if len(received) == len(tasks):
+                return [received[name] for name in tasks]
+            if failure: raise ConnectionError(str(failure))
+            remaining = limit - time.perf_counter()
+            if remaining <= 0:
+                missing = ', '.join(name for name in tasks if name not in received)
+                raise TimeoutError(f'REPORT seq={seq} incompleto apos {timeout:g} s: '
+                                   f'{len(received)}/6 tarefas; faltam {missing}')
+            # Espera notificada pela thread receptora. Nenhum novo REPORT reseta
+            # a sequencia de envio do firmware enquanto este prazo nao terminar.
+            with self.condition:
+                self.condition.wait(min(1.0, remaining))
 
     def close(self):
         self.running = False

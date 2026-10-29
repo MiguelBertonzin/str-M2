@@ -3,7 +3,7 @@ menu "M2 - Drone e experimentos"
     config M2_RUN_SECONDS
         int "Duracao da janela de medicao (segundos)"
         range 30 600
-        default 180
+        default 60
 
     config M2_AUTO_WAIT_PC
         bool "Roteiro automatico aguarda comando BEGIN do PC"
@@ -83,7 +83,7 @@ menu "M2 - Drone e experimentos"
             config M2_SNTP_INTERVAL_S
                 int "Intervalo entre atualizacoes SNTP (segundos)"
                 range 15 86400
-                default 60
+                default 20
                 help
                     Independente do periodo de 1s da TIME_TASK. O intervalo
                     real depende da rede, DNS, retentativas e servidor.

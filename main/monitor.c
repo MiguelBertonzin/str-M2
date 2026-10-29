@@ -19,12 +19,16 @@
 #include "lwip/sockets.h"
 #include "nvs_flash.h"
 
-#define LOG_CAPACITY 64
+#define LOG_CAPACITY 32
+#define EVENT_LOG_CAPACITY 32
 #define TX_CAPACITY 16
 #define FRAME_SIZE 1400
 #define MAX_COMMANDS 8U
 #define MAX_LOGS 16U
 #define WORK_BUDGET_US 20000LL
+#define RX_BUDGET_US 5000LL
+#define BACKGROUND_CAPACITY (TX_CAPACITY - MAX_COMMANDS)
+#define EVENT_TX_CAPACITY (TX_CAPACITY - 4U)
 #if CONFIG_M2_MONITOR_TCP
 #define PROTOCOL "TCP"
 #define PC_SOURCE "PC_TCP"
@@ -35,6 +39,7 @@
 
 static const char *TAG = "MONITOR";
 static QueueHandle_t s_jobs;
+static QueueHandle_t s_event_jobs;
 static QueueHandle_t s_releases;
 static monitor_dispatch_t s_dispatch;
 static monitor_cycle_t s_record;
@@ -47,6 +52,8 @@ static uint32_t s_tx_dropped;
 static uint32_t s_bad_frames;
 static uint32_t s_sent;
 static uint32_t s_received;
+static uint32_t s_ack_dropped;
+static uint32_t s_event_log_dropped;
 static uint32_t s_stream;
 static int s_server = -1;
 static int s_client = -1;
@@ -71,7 +78,8 @@ static unsigned s_report_next = EXP_TASKS;
 static uint32_t s_report_sequence;
 static bool s_config_pending;
 
-typedef struct { char data[FRAME_SIZE]; size_t size, base_size, offset; } tx_frame_t;
+typedef enum { TX_BACKGROUND, TX_EVENT, TX_CONTROL } tx_priority_t;
+typedef struct { char data[FRAME_SIZE]; size_t size, base_size, offset; tx_priority_t priority; } tx_frame_t;
 static tx_frame_t s_tx[TX_CAPACITY];
 static size_t s_tx_head, s_tx_count;
 
@@ -110,22 +118,55 @@ static void close_network(void) {
     s_server = -1;
 }
 
-static void queue_frame(const char *format, ...) {
-    if (s_tx_count == TX_CAPACITY) { ++s_tx_dropped; return; }
-    tx_frame_t *frame = &s_tx[(s_tx_head + s_tx_count) % TX_CAPACITY];
-    va_list args;
-    va_start(args, format);
-    int length = vsnprintf(frame->data, sizeof(frame->data), format, args);
-    va_end(args);
-    if (length <= 0 || (size_t)length >= sizeof(frame->data)) {
+static bool queue_frame_v(tx_priority_t priority, const char *format, va_list args) {
+    size_t capacity = priority == TX_CONTROL ? TX_CAPACITY :
+                      priority == TX_EVENT ? EVENT_TX_CAPACITY : BACKGROUND_CAPACITY;
+    if (s_tx_count >= capacity) {
         ++s_tx_dropped;
-        return;
+        return false;
+    }
+    tx_frame_t frame = {.priority = priority};
+    int length = vsnprintf(frame.data, sizeof(frame.data), format, args);
+    if (length <= 0 || (size_t)length + 170 >= sizeof(frame.data)) {
+        ++s_tx_dropped;
+        return false;
     }
     // Reserva espaco para timestamps e tamanho adicionados na chamada send.
-    if ((size_t)length + 170 >= sizeof(frame->data)) { ++s_tx_dropped; return; }
-    frame->base_size = frame->size = (size_t)length;
-    frame->offset = 0;
+    frame.base_size = frame.size = (size_t)length;
+    size_t position = s_tx_count;
+    if (priority != TX_BACKGROUND) {
+        // Controle > eventos NAV/FS > amostras. Nao intercalar um JSON TCP parcial.
+        position = s_tx_count && s_tx[s_tx_head].offset ? 1U : 0U;
+        while (position < s_tx_count && s_tx[(s_tx_head + position) % TX_CAPACITY].priority >= priority)
+            ++position;
+        for (size_t i = s_tx_count; i > position; --i)
+            s_tx[(s_tx_head + i) % TX_CAPACITY] = s_tx[(s_tx_head + i - 1U) % TX_CAPACITY];
+    }
+    s_tx[(s_tx_head + position) % TX_CAPACITY] = frame;
     ++s_tx_count;
+    return true;
+}
+
+static bool queue_priority(tx_priority_t priority, const char *format, ...) {
+    va_list args;
+    va_start(args, format);
+    bool queued = queue_frame_v(priority, format, args);
+    va_end(args);
+    return queued;
+}
+
+static void queue_frame(const char *format, ...) {
+    va_list args;
+    va_start(args, format);
+    queue_frame_v(TX_BACKGROUND, format, args);
+    va_end(args);
+}
+
+static void queue_ack(const char *format, ...) {
+    va_list args;
+    va_start(args, format);
+    if (!queue_frame_v(TX_CONTROL, format, args)) ++s_ack_dropped;
+    va_end(args);
 }
 
 // Nenhum send bloqueante. TCP conserva o deslocamento de envios parciais;
@@ -183,7 +224,7 @@ static void acknowledge(const monitor_request_t *request, const char *status) {
     if (clock.synced && s_socket_received_us >= clock.last_sync_mono_us)
         snprintf(rx_utc, sizeof(rx_utc), "%" PRId64,
                  (clock.unix_ms * 1000 - clock.mono_us + s_socket_received_us) / 1000);
-    queue_frame("{\"type\":\"ack\",\"protocol\":\"%s\",\"session\":%" PRIu32
+    queue_ack("{\"type\":\"ack\",\"protocol\":\"%s\",\"session\":%" PRIu32
                 ",\"seq\":%" PRIu32 ",\"command\":\"%s\",\"status\":\"%s\","
                 "\"rx_us\":%" PRId64 ",\"queued_us\":%" PRId64
                 ",\"queued_unix_ms\":%s,\"time_sync_count\":%" PRIu32
@@ -252,7 +293,7 @@ static void receive_commands(int64_t deadline) {
     }
     unsigned commands = 0;
     unsigned reads = 0;
-    while (commands < MAX_COMMANDS && esp_timer_get_time() < deadline) {
+    while (commands < MAX_COMMANDS && s_tx_count < TX_CAPACITY && esp_timer_get_time() < deadline) {
         if (s_rx_pos == s_rx_size) {
             if (++reads > 8) break;
             int received = recv(s_client, s_rx, sizeof(s_rx), 0);
@@ -273,7 +314,7 @@ static void receive_commands(int64_t deadline) {
         }
     }
 #else
-    for (unsigned i = 0; i < MAX_COMMANDS && esp_timer_get_time() < deadline; ++i) {
+    for (unsigned i = 0; i < MAX_COMMANDS && s_tx_count < TX_CAPACITY && esp_timer_get_time() < deadline; ++i) {
         char data[MONITOR_COMMAND_MAX + 1U];
         struct sockaddr_in sender;
         socklen_t address_size = sizeof(sender);
@@ -397,17 +438,22 @@ void monitor_publish_job(const monitor_job_t *job) {
         stamped.end_unix_ms = (clock.unix_ms * 1000 - (clock.mono_us - job->end_us)) / 1000;
         stamped.time_sync_count = clock.sync_count;
     }
-    if (xQueueSend(s_jobs, &stamped, 0) != pdTRUE)
+    bool event = !strcmp(job->task, "NAV_PLAN") || !strcmp(job->task, "FAIL_SAFE");
+    if (xQueueSend(event ? s_event_jobs : s_jobs, &stamped, 0) != pdTRUE) {
         __atomic_fetch_add(&s_log_dropped, 1U, __ATOMIC_RELAXED);
+        if (event) __atomic_fetch_add(&s_event_log_dropped, 1U, __ATOMIC_RELAXED);
+    }
 }
 
-static void transmit_logs(int64_t deadline) {
-    for (unsigned i = 0; i < MAX_LOGS && esp_timer_get_time() < deadline; ++i) {
+static void transmit_logs_from(QueueHandle_t queue, tx_priority_t priority,
+                               unsigned limit, int64_t deadline) {
+    for (unsigned i = 0; i < limit && esp_timer_get_time() < deadline; ++i) {
         monitor_job_t job;
-        if (s_tx_count == TX_CAPACITY || xQueueReceive(s_jobs, &job, 0) != pdTRUE) break;
+        size_t capacity = priority == TX_EVENT ? EVENT_TX_CAPACITY : BACKGROUND_CAPACITY;
+        if (s_tx_count >= capacity || xQueuePeek(queue, &job, 0) != pdTRUE) break;
         char utc[24] = "null";
         if (job.end_unix_ms >= 0) snprintf(utc, sizeof(utc), "%" PRId64, job.end_unix_ms);
-        queue_frame("{\"type\":\"job\",\"protocol\":\"%s\",\"stream\":%" PRIu32
+        bool queued = queue_priority(priority, "{\"type\":\"job\",\"protocol\":\"%s\",\"stream\":%" PRIu32
                     ",\"task\":\"%s\",\"source\":\"%s\",\"job\":%" PRIu64
                     ",\"event_us\":%" PRId64 ",\"start_us\":%" PRId64 ",\"end_us\":%" PRId64
                     ",\"miss\":%s,\"session\":%" PRIu32 ",\"command_seq\":%" PRIu32
@@ -417,6 +463,8 @@ static void transmit_logs(int64_t deadline) {
                     job.event_us, job.start_us, job.end_us, job.miss ? "true" : "false",
                     job.session, job.command_sequence, utc, job.time_sync_count,
                     job.safe_us, job.sample_sequence);
+        if (!queued) break;
+        xQueueReceive(queue, &job, 0);
     }
 }
 
@@ -462,7 +510,7 @@ static void transmit_report(int64_t deadline) {
         time_task_snapshot(&clock);
         wifi_ap_record_t ap = {0};
         esp_err_t ap_result = esp_wifi_sta_get_ap_info(&ap);
-        queue_frame("{\"type\":\"config\",\"revision\":\"M2-METRICS-2\",\"protocol\":\"%s\","
+        bool queued = queue_priority(TX_CONTROL, "{\"type\":\"config\",\"revision\":\"M2-METRICS-4\",\"protocol\":\"%s\","
                     "\"policy\":%d,\"cpu_mhz\":%d,\"preemption\":%d,\"slicing\":%d,"
                     "\"input\":\"%s\",\"sample_n\":%d,\"time_enabled\":%s,\"duration_s\":%d,"
                     "\"auto_wait_pc\":%s,\"tick_hz\":%d,\"sntp_interval_s\":%u,"
@@ -474,13 +522,13 @@ static void transmit_report(int64_t deadline) {
                     CONFIG_M2_RUN_SECONDS, wait_pc ? "true" : "false", CONFIG_FREERTOS_HZ,
                     sntp_interval, ap_result == ESP_OK ? ap.rssi : 0,
                     ap_result == ESP_OK ? ap.primary : 0, begin, end);
-        s_config_pending = false;
+        if (queued) s_config_pending = false;
     }
     for (unsigned n = 0; n < 2 && s_report_next < EXP_TASKS &&
          s_tx_count < TX_CAPACITY && esp_timer_get_time() < deadline; ++n) {
         experiment_snapshot_t a;
         experiment_snapshot(s_report_next, &a);
-        queue_frame("{\"type\":\"analysis\",\"report_seq\":%" PRIu32 ",\"task\":\"%s\","
+        bool queued = queue_priority(TX_CONTROL, "{\"type\":\"analysis\",\"report_seq\":%" PRIu32 ",\"task\":\"%s\","
             "\"run_start_us\":%" PRId64 ",\"run_end_us\":%" PRId64
             ",\"jobs\":%" PRIu32 ",\"misses\":%" PRIu32 ",\"lost\":%" PRIu32 ",\"invalid\":%" PRIu32
             ",\"exec_sum_us\":%" PRIu64 ",\"exec_max_us\":%" PRIu32 ",\"wcrt_us\":%" PRIu32
@@ -496,6 +544,7 @@ static void transmit_report(int64_t deadline) {
             a.isr_jobs, a.isr_latency_max_us, a.isr_safe_max_us,
             a.p99_low_us, a.p99_high_us, a.histogram_overflow,
             a.windows, a.violations, a.min_hits, a.last_event_us, a.last_start_us, a.last_end_us);
+        if (!queued) break;
         ++s_report_next;
     }
 }
@@ -540,22 +589,27 @@ static void task_monitor(void *context) {
         } else {
             if (s_server < 0) create_server();
             if (s_server >= 0) {
-                if (peer_ready()) flush_frames(deadline);
-                receive_commands(deadline);
+                // RX tem uma oportunidade antes dos envios, mesmo com backlog.
+                receive_commands(esp_timer_get_time() + RX_BUDGET_US);
                 if (peer_ready()) {
                     time_snapshot_t clock;
                     time_task_snapshot(&clock);
                     transmit_report(deadline);
+                    transmit_logs_from(s_event_jobs, TX_EVENT, 4U, deadline);
                     queue_frame("{\"type\":\"status\",\"protocol\":\"%s\",\"cycle\":%" PRIu32
                                 ",\"mono_us\":%" PRId64 ",\"time_synced\":%s,\"sample_n\":%d,"
                                 "\"log_dropped\":%" PRIu32 ",\"tx_dropped\":%" PRIu32
-                                ",\"release_dropped\":%" PRIu32 ",\"bad_frames\":%" PRIu32 "}\n",
+                                ",\"release_dropped\":%" PRIu32 ",\"bad_frames\":%" PRIu32
+                                ",\"rx_commands\":%" PRIu32 ",\"ack_dropped\":%" PRIu32
+                                ",\"tx_pending\":%u,\"event_log_dropped\":%" PRIu32 "}\n",
                                 PROTOCOL, cycles + 1U, clock.mono_us, clock.synced ? "true" : "false",
                                 CONFIG_M2_MONITOR_SAMPLE_N,
                                 __atomic_load_n(&s_log_dropped, __ATOMIC_RELAXED), s_tx_dropped,
-                                __atomic_load_n(&s_release_dropped, __ATOMIC_RELAXED), s_bad_frames);
+                                __atomic_load_n(&s_release_dropped, __ATOMIC_RELAXED), s_bad_frames,
+                                s_received, s_ack_dropped, (unsigned)s_tx_count,
+                                __atomic_load_n(&s_event_log_dropped, __ATOMIC_RELAXED));
                     transmit_time(&clock);
-                    transmit_logs(deadline);
+                    transmit_logs_from(s_jobs, TX_BACKGROUND, MAX_LOGS, deadline);
                     flush_frames(deadline);
                 }
             }
@@ -582,8 +636,9 @@ esp_err_t monitor_start(monitor_dispatch_t dispatch, monitor_cycle_t record,
     s_dispatch = dispatch;
     s_record = record;
     s_jobs = xQueueCreate(LOG_CAPACITY, sizeof(monitor_job_t));
+    s_event_jobs = xQueueCreate(EVENT_LOG_CAPACITY, sizeof(monitor_job_t));
     s_releases = xQueueCreate(4, sizeof(int64_t));
-    if (!s_jobs || !s_releases) return ESP_ERR_NO_MEM;
+    if (!s_jobs || !s_event_jobs || !s_releases) return ESP_ERR_NO_MEM;
     return xTaskCreatePinnedToCore(task_monitor, "MONITOR_TASK", 10240, NULL, 1, handle, 0)
            == pdPASS ? ESP_OK : ESP_ERR_NO_MEM;
 }
