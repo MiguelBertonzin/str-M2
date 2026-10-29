@@ -111,25 +111,3 @@ python tools/gerar_analise_final.py
 
 Os detalhes de reprodução, agregação e dependências estão no README da análise.
 
-## Limitações e atendimento ao enunciado
-
-A matriz corresponde às configurações de melhor/pior atendimento selecionadas
-na M1, cruzadas com UDP/TCP. WCRT é o máximo observado; HWM99 usa intervalos
-de histograma, sem equivaler a WCET formal. O modelo soft adotado é (9,10),
-sem formar janelas entre reinicializações.
-
-RTT inclui o atendimento periódico do monitor de 500 ms, filas e transporte.
-UTC via SNTP não garante precisão de 1 ms. Os cenários P descartam logs
-secundários; isso deve ser distinguido de perdas de comandos e de pacotes
-no rádio. As execuções em blocos e a variação de RSSI limitam a atribuição
-causal das diferenças somente ao protocolo.
-
-O PDF exige sensores touch. Nesta campanha, os estímulos foram gerados por
-GPTimer; a latência apresentada é ISR → tarefa, não contato físico → tarefa.
-A conformidade física depende de demonstração específica ou aceite da
-substituição. O extra de acender LED por FS remoto não está implementado.
-O fail-safe permanece ativo até reiniciar; os FS remotos da agenda reafirmam
-um estado já seguro.
-
-Este material reúne implementação, evidências e análise técnica para a
-elaboração do relatório final em PDF e para a defesa presencial.
