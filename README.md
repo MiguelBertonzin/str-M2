@@ -98,16 +98,4 @@ e o cliente interativo conforme [APRESENTACAO.md](docs/APRESENTACAO.md).
 - `referencias/`: evidências M1 da escolha de configurações e exemplos do
   professor com atribuição de origem.
 
-As opções de apresentação foram acrescentadas aos scripts depois da coleta.
-O firmware medido permanece preservado. O manifesto de publicação identifica
-os hashes das cópias públicas e eventuais remoções de credenciais dos logs;
-os originais de medição permanecem preservados localmente.
-
-```powershell
-python -m unittest discover -s tests -v
-python -m pip install -r analise_final/requirements.txt
-python tools/gerar_analise_final.py
-```
-
-Os detalhes de reprodução, agregação e dependências estão no README da análise.
 
