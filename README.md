@@ -5,12 +5,6 @@ fail-safe, comunicação Wi-Fi UDP/TCP e sincronização SNTP. O projeto dá
 continuidade à M1 e investiga a resposta temporal das seis tarefas em quatro
 configurações. As ferramentas de coleta e análise no PC são escritas em Python.
 
-[Enunciado](Trabalho%20M2%20-%20STR%20.pdf) ·
-[Análise dos resultados](analise_final/README.md) ·
-[Arquitetura](docs/ARQUITETURA_FINAL.md) ·
-[Metodologia](docs/METODOLOGIA_FINAL.md) ·
-[Modos de entrada](docs/MODOS_ENTRADA.md)
-
 ## Resultados da campanha
 
 Campanha `AGENDA_60S_R2`: cinco repetições de 60 segundos por cenário,
